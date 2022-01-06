@@ -23,7 +23,7 @@ const Navbar2 = () => {
     const toggleTheme = () => {setTheme(theme === 'dark' ? 'light' : 'dark')}
 
     return (
-        <nav className="fixed w-full md:flex justify-between items-center text-center bg-frosted dark:bg-red-500 p-5 z-50">
+        <nav className="fixed w-full md:flex justify-between items-center text-white text-center bg-frosted dark:bg-red-500 p-9 md:p-3 z-50">
             <div className="flex items-center justify-between">
                 <Link href='/'>
                 <a className='inline-flex items-center p-2 mr-4 '>
@@ -37,7 +37,7 @@ const Navbar2 = () => {
                     <button
                         aria-label="Toggle Dark Mode"
                         type="button"
-                        className="p-3 h-12 w-12 md:hidden flex"
+                        className="h-12 w-12 md:hidden flex items-center"
                         onClick={toggleTheme}
                         >
                         {theme === 'dark' ? (<MdDarkMode/>) : (<MdOutlineWbSunny/>)}
@@ -47,14 +47,13 @@ const Navbar2 = () => {
                 <div className="block md:hidden"> 
                     {showNav ? (
                     <AiOutlineClose
-
                         onClick={toggleSidebar}
-                        className="w-10 h-10 p-2 cursor-pointer"
+                        className="w-10 h-10 cursor-pointer"
                     />
                     ) : (
                     <AiOutlineBars
                         onClick={toggleSidebar}
-                        className="w-10 h-10 p-2 cursor-pointer"
+                        className="w-10 h-10 cursor-pointer"
                     />
                     )}
                 </div>
@@ -64,7 +63,7 @@ const Navbar2 = () => {
                 style={{transition: "0.3s all"}} 
                 className={`${
                 showNav ? "left-0" : "-left-full" }
-                " md:static fixed bottom-0 top-0 flex flex-col md:flex-row justify-center md:space-x-7 m-0 items-center md:bg-transparent bg-gray-500 bg-opacity-90 md:w-auto w-10/12 p-2"
+                " md:static fixed bottom-0 top-0 flex flex-col md:flex-row justify-center md:space-x-7 m-0 items-center md:bg-transparent bg-gray-500 dark:bg-red-200 bg-opacity-90 dark:bg-opacity-90 md:w-auto w-10/12 p-2"
                 `}
             >
                 {
@@ -81,7 +80,7 @@ const Navbar2 = () => {
                     <button
                         aria-label="Toggle Dark Mode"
                         type="button"
-                        className="p-3 h-12 w-12 hidden md:flex"
+                        className="h-12 w-12 hidden md:flex items-center"
                         onClick={toggleTheme}
                         >
                         {theme === 'dark' ? (<MdDarkMode/>) : (<MdOutlineWbSunny/>)}

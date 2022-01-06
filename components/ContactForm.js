@@ -43,7 +43,7 @@ const ContactForm = () => {
                         />
                     </div>
                     <div className="w-full md:w-1/2 ">
-                        <h3 className="text-success md:text-4xl">Drop me a message</h3>
+                        <h3 className="text-success md:text-4xl mb-12">Drop me a message</h3>
                         <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="flex flex-col relative mb-7">
                             <label className="mb-3 dark:text-black" htmlFor="name">

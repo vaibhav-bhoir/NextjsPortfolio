@@ -35,10 +35,10 @@ html {
 }
 
 html.dark body {
-  background-color: #F7F5F6;
+  background-color: #F7F5F6;;
 }
 
-body {
+html.light body {
   color: var(--main-primary);
   background-color: #05182c;
   font-family: 'Poppins', sans-serif;

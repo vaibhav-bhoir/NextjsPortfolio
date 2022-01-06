@@ -8,19 +8,19 @@ import SKILL_DATA from '../components/skill.data'
 
 const About = () => {
     return (
-        <div className="min-h-screen px-3">
+        <div className="px-3">
 
             <Head>
                 <title>About - Vaibhav Bhoir</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <div className="min-h-screen flex flex-col items-center justify-center">
-                <div className="h-1/4 mt-96 container relative w-full flex justify-center items-center">
+            <div className="flex flex-col items-center justify-center mb-64 pt-20">
+                <div className="container relative w-full flex justify-center items-center mt-96">
                     <h1 className=" text-8xl md:text-15xl absolute bottom-20 text-transparent" style={{ WebkitTextStrokeWidth: '.5px', WebkitTextStrokeColor: 'var(--main-yellow)', zIndex: '-1' }}>&lt;About /&gt; </h1>
                     <h1 className=" hidden md:flex text-10xl text-secondary-100 dark:text-red-500 font-extrabold" >Vaibhav Bhoir</h1>
                 </div>
-                <main className="container px-5 md:px-36 lg:px-56 mb-20">
+                <main className="container px-10 md:px-36 lg:px-56 mb-20">
                     <h3 className="text-success md:text-4xl" data-aos="fade-in">Let me tell you a few things....</h3>
                     <h3 className="text-secondary-900 text-3xl md:text-4xl max-w-6xl my-8" data-aos="fade-in">I am creative Web developer based in Mumbai, India. I Have Done Bachelor of engineering in Electronics and Telecommunications.</h3>
                     <h4 className="text-secondary-900 text-3xl md:text-4xl max-w-6xl my-8" data-aos="fade-in">I have build several websites , looking at the design I can convert it into a HTML CSS template with pixel perfect precision. I use bootstrap very often , so the turn around of my project is very quick and I always use GIT to track my progress and files, as well to collaborate with other developers.
@@ -33,12 +33,12 @@ const About = () => {
                 </main>
             </div>
 
-            <div className="min-h-screen flex flex-col items-center justify-center mt-64 mb-64">
-                <div className="h-1/4 container relative w-full flex justify-center items-center">
+            <div className="flex flex-col items-center justify-center my-40">
+                <div className="container relative w-full flex justify-center items-center">
                     <h1 className=" text-8xl md:text-15xl absolute bottom-20 text-transparent" style={{ WebkitTextStrokeWidth: '.5px', WebkitTextStrokeColor: 'var(--main-yellow)', zIndex: '-1' }}>&lt;Toolbox /&gt; </h1>
                     <h1 className=" hidden md:flex text-10xl text-secondary-100 dark:text-red-500 font-extrabold" >My Weapons ⚔</h1>
                 </div>
-                <main className="container px-5 md:px-36 lg:px-56">
+                <main className="container px-10 md:px-36 lg:px-56">
                     <h3 className="text-success md:text-4xl">Technologies that I use</h3>
                     <div className="flex flex-wrap justify-center items-center">
                         {

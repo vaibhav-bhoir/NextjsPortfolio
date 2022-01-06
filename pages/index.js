@@ -26,15 +26,15 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen px-3 overflow-hidden">
+    <div className="px-3 overflow-hidden">
 
       <Head>
         <title>Vaibhav Bhoir</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="h-screen flex flex-col items-center justify-center mt-64">
-        <main className="container px-5 md:px-36 lg:px-56 flex flex-row flex-wrap items-center justify-center">
+      <div className="flex flex-col items-center justify-center mt-64 md:mb-0">
+        <main className="container px-10 md:px-36 lg:px-56 flex flex-row flex-wrap items-center justify-center">
           <div className="w-full md:w-1/2">
           <h3
             className="text-success md:text-4xl"
@@ -57,7 +57,7 @@ export default function Home() {
           </h1>
           <p className="text-secondary-900 text-3xl md:text-4xl max-w-6xl" data-aos="fade-in" data-aos-delay={1500}>I’m a <span className="text-success font-bold">Web Developer</span> based in Mumbai, India specializing in building exceptional digital experiences. I enjoy using my skill-set to empower people to accomplish their goals.</p>
           <Link href="/contact">
-            <button className="rounded-lg border-2 px-8 py-4 my-4 border-success text-success hover:bg-success hover:text-black" data-aos="fade-in" data-aos-delay={2000}>Contact Now</button>
+            <button className="rounded-lg border-2 px-8 py-4 mt-4 mb-24 border-success text-success hover:bg-success hover:text-black" data-aos="fade-in" data-aos-delay={2000}>Contact Now</button>
           </Link>
           </div>
           <div className=" hidden md:block w-full md:w-1/2 p-16">
@@ -70,12 +70,12 @@ export default function Home() {
         </main>
       </div>
 
-      <div className="min-h-screen flex flex-col items-center justify-center my-64">
-        <div className="h-1/4 container relative w-full flex justify-center items-center">
+      <div className="flex flex-col items-center justify-center my-64">
+        <div className="container relative w-full flex justify-center items-center">
           <h1 className=" text-8xl md:text-15xl absolute bottom-20 text-transparent" style={{ WebkitTextStrokeWidth: '.5px', WebkitTextStrokeColor: 'var(--main-yellow)', zIndex: '-1' }}>&lt;About /&gt; </h1>
           <h1 className=" hidden md:flex text-10xl text-secondary-100 dark:text-red-500 font-extrabold" >Vaibhav Bhoir</h1>
         </div>
-        <main className="container px-5 md:px-36 lg:px-56 flex flex-row flex-wrap items-center justify-center">
+        <main className="container px-10 md:px-36 lg:px-56 flex flex-row flex-wrap items-center justify-center">
           <div className="w-full lg:w-1/2 md:p-16">
             <Image
             alt=""
@@ -89,18 +89,18 @@ export default function Home() {
             <h4 className="text-secondary-900 text-3xl md:text-4xl max-w-6xl my-8" data-aos="fade-in">I have build several websites , looking at the design I can convert it into a HTML CSS template with pixel perfect precision . I use bootstrap very often , so the turn around of my project is very quick and I always use GIT to track my progress and files, as well to collaborate with other developers.
             </h4>
             <Link href="/about">
-              <button data-aos="fade-in" className="rounded-lg border-2 px-8 py-4 my-4 border-success text-success hover:bg-success hover:text-black">Learn More</button>
+              <button data-aos="fade-in" className="rounded-lg border-2 px-8 py-4 mt-4 mb-24 border-success text-success hover:bg-success hover:text-black">Learn More</button>
             </Link>
           </div>
         </main>
       </div>
 
-      <div className="min-h-screen flex flex-col items-center justify-center my-64">
-        <div className="h-1/4 container relative w-full flex justify-center items-center">
+      <div className="flex flex-col items-center justify-center my-64">
+        <div className="container relative w-full flex justify-center items-center">
           <h1 className=" text-8xl md:text-15xl absolute bottom-20 text-transparent" style={{ WebkitTextStrokeWidth: '.5px', WebkitTextStrokeColor: 'var(--main-yellow)', zIndex: '-1' }}>&lt;Work /&gt; </h1>
           <h1 className=" hidden md:flex text-10xl text-secondary-100 dark:text-red-500 font-extrabold" >Experience</h1>
         </div>
-        <main className="container px-5 md:px-36 lg:px-56">
+        <main className="container px-10 md:px-36 lg:px-56">
           <h3 className="text-success md:text-4xl" data-aos="fade-in">Projects on which I've worked</h3>
           <div className="flex flex-wrap items-center justify-center my-12 transition ease-in-out">
             {
@@ -110,8 +110,8 @@ export default function Home() {
         </main>
       </div>
 
-      <div className="min-h-screen flex flex-col items-center justify-center">
-        <div className="h-1/4 container relative w-full flex justify-center items-center">
+      <div className="flex flex-col items-center justify-center">
+        <div className="container relative w-full flex justify-center items-center">
           <h1 className=" text-8xl md:text-15xl absolute bottom-20 text-transparent" style={{ WebkitTextStrokeWidth: '.5px', WebkitTextStrokeColor: 'var(--main-yellow)', zIndex: '-1' }}>&lt;Work /&gt; </h1>
           <h1 className=" hidden md:flex text-10xl text-secondary-100 dark:text-red-500 font-extrabold" >Featured Projects</h1>
 
@@ -137,12 +137,12 @@ export default function Home() {
         </main>
       </div>
 
-      <div className="flex flex-col items-center justify-center mt-96 mb-40 md:mb-0">
-        <div className="h-1/4 container relative w-full flex justify-center items-center">
+      <div className="flex flex-col items-center justify-center mt-96 md:mb-0">
+        <div className="container relative w-full flex justify-center items-center">
           <h1 className=" text-8xl md:text-15xl absolute bottom-20 text-transparent" style={{ WebkitTextStrokeWidth: '.5px', WebkitTextStrokeColor: 'var(--main-yellow)', zIndex: '-1' }}>&lt;Contact /&gt; </h1>
           <h1 className=" hidden md:flex text-10xl text-secondary-100 dark:text-red-500 font-extrabold" >Say Hello</h1>
         </div>
-        <main className="container px-5 md:px-36 lg:px-56">
+        <main className="container px-10 md:px-36 lg:px-56">
           <h3 className="text-success md:text-4xl" data-aos="fade-in">Get in Touch</h3>
           <h2 className="text-secondary-900 text-3xl md:text-4xl max-w-6xl my-8" data-aos="fade-in">This is how you can reach me. Let’s work together to create something worth sharing.</h2>
           <div className="flex">

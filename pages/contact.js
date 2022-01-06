@@ -5,19 +5,19 @@ import ContactForm from '../components/ContactForm'
 
 const Contact = () => {
     return (
-        <div className="min-h-screen px-3">
+        <div className="px-3">
 
             <Head>
                 <title>Contact - Vaibhav Bhoir</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <div className="min-h-screen flex flex-col items-center justify-center">
-                <div className="h-1/4 container relative w-full flex justify-center items-center mt-96">
+            <div className="flex flex-col items-center justify-center pt-20">
+                <div className="container relative w-full flex justify-center items-center mt-96">
                     <h1 className=" text-8xl md:text-15xl absolute bottom-20 text-transparent" style={{ WebkitTextStrokeWidth: '.5px', WebkitTextStrokeColor: 'var(--main-yellow)', zIndex: '-1' }}>&lt;Contact /&gt; </h1>
                     <h1 className=" hidden md:flex text-10xl text-secondary-100 dark:text-red-500 font-extrabold" >Say Hello</h1>
                 </div>
-                <main className="container px-5 md:px-36 lg:px-56">
+                <main className="container px-10 md:px-36 lg:px-56">
                     <h3 className="text-success md:text-4xl">Get in Touch</h3>
                     <h2 className="text-secondary-900 text-3xl md:text-4xl max-w-6xl my-8">This is how you can reach me. Let’s work together to create something worth sharing.</h2>
                     <div className="flex">
