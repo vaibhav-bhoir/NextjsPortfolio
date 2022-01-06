@@ -38,7 +38,7 @@ const WorkCover = ({ data }) => {
             </a>
             <div className="flex flex-wrap md:flex my-6">
                 {
-                    tech.map((e, index) => <div key={index} className="px-4 bg-primary dark:bg-red-200 text-white rounded-full mx-3 my-3">{e}</div>)
+                    tech.map((e, index) => <div key={index} className="px-4 bg-primary dark:bg-red-200 text-white rounded-full mx-2 my-3">{e}</div>)
                 }
             </div>
         </div>

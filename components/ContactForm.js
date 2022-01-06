@@ -128,7 +128,7 @@ const ContactForm = () => {
                             </span>
                         </div>
                         <button
-                            data-aos="fade-in" className="rounded-lg border-2 px-4 py-2 my-10 md:px-8 md:py-4 flex items-center justify-between border-info text-info hover:bg-info hover:text-black"
+                            data-aos="fade-in" className="rounded-lg border-2 px-4 py-2 my-10 md:px-8 md:py-4 flex items-center justify-between  border-info text-info hover:bg-info hover:text-black"
                             type="submit"
                         >
                             Submit

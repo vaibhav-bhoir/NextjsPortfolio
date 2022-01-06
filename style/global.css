@@ -48,28 +48,6 @@ li {
   list-style: none;
 }
 
-.typewriter {
-  overflow: hidden;
-  border-right: .15em solid orange; 
-  white-space: nowrap; 
-  margin: 0 auto; 
-  animation: 
-    typing 3.5s steps(30, end),
-    blink-caret .5s step-end infinite;
-}
-
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange }
-}
-
 @media only screen and (max-width: 767px) {
   .isOpen {
     overflow: hidden;
@@ -99,4 +77,8 @@ li {
     opacity: 0;
     visibility: hidden;
   }
+}
+
+.typed-cursor {
+  color: #02ef63;
 }
