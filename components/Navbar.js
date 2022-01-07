@@ -23,7 +23,7 @@ const Navbar2 = () => {
     const toggleTheme = () => {setTheme(theme === 'dark' ? 'light' : 'dark')}
 
     return (
-        <nav className="fixed w-full md:flex justify-between items-center text-white text-center bg-frosted dark:bg-red-500 p-9 md:p-3 z-50">
+        <nav className="fixed w-full md:flex justify-between items-center text-white text-center bg-frosted dark:bg-darkblue p-9 md:p-3 z-50">
             <div className="flex items-center justify-between">
                 <Link href='/'>
                 <a className='inline-flex items-center p-2 mr-4 '>
@@ -63,14 +63,14 @@ const Navbar2 = () => {
                 style={{transition: "0.3s all"}} 
                 className={`${
                 showNav ? "left-0" : "-left-full" }
-                " md:static fixed bottom-0 top-0 flex flex-col md:flex-row justify-center md:space-x-7 m-0 items-center md:bg-transparent bg-gray-500 dark:bg-red-200 bg-opacity-90 dark:bg-opacity-90 md:w-auto w-10/12 p-2"
+                " md:static fixed bottom-0 top-0 flex flex-col md:flex-row justify-center md:space-x-7 m-0 items-center md:bg-transparent md:dark:bg-transparent bg-gray-500 dark:bg-darkblue bg-opacity-90 dark:bg-opacity-90 md:w-auto w-10/12 p-2"
                 `}
             >
                 {
                     navLinks.map((link, index) => (
 
                         <Link href={link.path} key={index}>
-                            <a onClick={toggleSidebar} className={`${router.pathname == link.path ? "border-b-2" : "" }  px-3 my-6 md:py-2 text-7xl md:text-3xl text-white font-bold items-center justify-center hover:bg-primary dark:hover:bg-red-400 hover:text-white `}>
+                            <a onClick={toggleSidebar} className={`${router.pathname == link.path ? "border-b-2" : "" }  px-3 my-6 md:py-2 text-7xl md:text-3xl text-white font-bold items-center justify-center hover:bg-primary dark:hover:bg-jaguar hover:text-white `}>
                                 {link.name}
                             </a>
                         </Link>

@@ -35,7 +35,8 @@ html {
 }
 
 html.dark body {
-  background-color: #F7F5F6;;
+  background-color: #D6E0F4;;
+  font-family: 'Poppins', sans-serif;
 }
 
 html.light body {
@@ -79,6 +80,10 @@ li {
   }
 }
 
-.typed-cursor {
+html.dark body .typed-cursor {
+  color: #282F66;
+}
+
+html.light body .typed-cursor {
   color: #02ef63;
 }
