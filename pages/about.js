@@ -35,7 +35,7 @@ const About = () => {
 
             <div className="flex flex-col items-center justify-center my-40">
                 <div className="container relative w-full flex justify-center items-center">
-                    <h1 className=" text-8xl md:text-15xl absolute bottom-20 text-transparent" style={{ WebkitTextStrokeWidth: '.5px', WebkitTextStrokeColor: 'var(--main-yellow)', zIndex: '-1' }}>&lt;Toolbox /&gt; </h1>
+                    <h1 className=" text-8xl md:text-15xl absolute bottom-20 text-transparent">&lt;Toolbox /&gt; </h1>
                     <h1 className=" hidden md:flex text-10xl text-secondary-100 dark:text-darkblue font-extrabold" >My Weapons ⚔</h1>
                 </div>
                 <main className="container px-10 md:px-36 lg:px-56">

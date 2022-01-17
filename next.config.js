@@ -7,3 +7,9 @@ module.exports = withPWA({
         skipWaiting: true,
     }
 })
+
+module.exports = {
+    publicRuntimeConfig: {
+    BASE_URL: process.env.BASE_URL
+    }
+}

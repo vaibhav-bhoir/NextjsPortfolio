@@ -1,36 +1,51 @@
-import React, { useRef } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import Image from 'next/image'
+import Image from 'next/image';
 import axios from 'axios';
+import Loader from './loader';
+import getConfig from 'next/config';
+
 
 const ContactForm = () => {
 
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors, isSubmitting, isSubmitSuccessful } } = useForm();
 
+    const [loader, setLoader] = useState(false);
+
+    const {publicRuntimeConfig} = getConfig()
+    const {BASE_URL} = publicRuntimeConfig
+
+
+    
+    const apiUrl = `${BASE_URL}/api/contact`;
+    
+    
     async function onSubmit (values) {
-        console.log(values);
-        reset();
+        setLoader(true);
 
-        // let config = {
-        //     method : 'post',
-        //     url : 'http://localhost:3000/api/contact',
-        //     headers : {
-        //         'Content-Type' : 'application/json',
-        //     },
-        //     data : values,
-        // };
+        let config = {
+            method : 'post',
+            url : apiUrl,
+            headers : {
+                'Content-Type' : 'application/json',
+            },
+            data : values,
+        };
 
-        // try {
-        //     const responce = await axios(config);
-        //     if (responce.status == 200) {
-        //         console.log('successful');
-        //         reset();
-        //         // router.push('/');
-        //     }
-        // } catch (error) {
-        //     console.log(error)
-        // }
-
+        try {
+            const responce = await axios(config);
+            console.log(responce)
+            if (responce.status == 201) {
+                console.log('successful');
+                // router.push('/');
+                setLoader(false);
+                reset()
+            }
+        } 
+        catch (error) {
+            console.log(error)
+        }
     }
     
     return (
@@ -44,7 +59,7 @@ const ContactForm = () => {
                         width="100%" height="100%" layout="responsive" objectFit="contain"
                         />
                     </div>
-                    <div className="w-full md:w-1/2 ">
+                    <div className="w-full md:w-1/2 loading-wrapper ">
                         <h3 className="text-success dark:text-darkblue md:text-4xl mb-12">Drop me a message</h3>
                         <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="flex flex-col relative mb-7">
@@ -129,12 +144,22 @@ const ContactForm = () => {
                                 {errors?.message?.message}
                             </span>
                         </div>
-                        <button
+                        { loader ? 
+                            <button disabled={isSubmitting}
                             data-aos="fade-in" className="rounded-lg border-2 px-4 py-2 my-10 md:px-8 md:py-4 flex items-center justify-between dark:text-white dark:bg-darkblue dark:border-darkblue  border-info text-info hover:bg-info hover:text-black"
                             type="submit"
-                        >
-                            Submit
-                        </button>
+                            >
+                                Submitting
+                            </button> :
+                            <button disabled={isSubmitting}
+                            data-aos="fade-in" className="rounded-lg border-2 px-4 py-2 my-10 md:px-8 md:py-4 flex items-center justify-between dark:text-white dark:bg-darkblue dark:border-darkblue  border-info text-info hover:bg-info hover:text-black"
+                            type="submit"
+                            >
+                                Submit
+                            </button>
+                        }
+                        {isSubmitting && <Loader/>}
+                        {isSubmitSuccessful && <div className='text-success dark:text-darkblue'>Thank you. Form Submitted Successfully</div>}
                         </form>
                     </div>
                 </div>
