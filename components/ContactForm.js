@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Image from 'next/image';
 import axios from 'axios';
-import Loader from './loader';
+import Loader from './Loader';
 import getConfig from 'next/config';
 
 
