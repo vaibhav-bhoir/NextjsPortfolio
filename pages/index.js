@@ -58,7 +58,7 @@ export default function Home() {
                       loop >
             </Typed>
           </h1>
-          <p className="text-secondary-900 text-3xl md:text-4xl max-w-6xl" data-aos="fade-in" data-aos-delay={1500}>I’m a <span className="text-success dark:text-darkblue font-bold">Web Developer</span> based in Mumbai, India specializing in building exceptional digital experiences. I enjoy using my skill-set to empower people to accomplish their goals.</p>
+          <p className="text-secondary-900 text-3xl md:text-4xl max-w-6xl" data-aos="fade-in" data-aos-delay={1500}>I'm a <span className="text-success dark:text-darkblue font-bold">Web Developer</span> based in Mumbai, India. Passionate Full Stack Web Developer with MERN as a stack having hands-on experience in developing scalable webapps using a wide range of front-end and back-end skills and best code practices. I enjoy using my skill-set to empower people to accomplish their goals.</p>
           <Link href="/contact">
             <button className="rounded-lg border-2 px-8 py-4 mt-4 mb-24 border-success text-success dark:text-white dark:bg-darkblue dark:border-darkblue hover:bg-success hover:text-black" data-aos="fade-in" data-aos-delay={2000}>Contact Now</button>
           </Link>

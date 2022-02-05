@@ -45,6 +45,20 @@ html.light body {
   font-family: 'Poppins', sans-serif;
 }
 
+.logo {
+  width: 140px;
+  height: auto;
+  margin-left: 45px;
+}
+
+@media only screen and (max-width: 767px) {
+  .logo {
+    width: 65px;
+    height: auto;
+    margin-left: 0;
+  }
+}
+
 li {
   list-style: none;
 }

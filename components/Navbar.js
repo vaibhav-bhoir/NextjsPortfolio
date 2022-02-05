@@ -5,6 +5,8 @@ import {useTheme} from 'next-themes';
 import navLinks from "./header_data";
 import { MdDarkMode, MdOutlineWbSunny } from "react-icons/md";
 import { AiOutlineBars, AiOutlineClose } from "react-icons/ai";
+import Image from 'next/image';
+
 
 const Navbar2 = () => {
 
@@ -27,9 +29,10 @@ const Navbar2 = () => {
             <div className="flex items-center justify-between">
                 <Link href='/'>
                 <a className='inline-flex items-center p-2 mr-4 '>
-                    <span className='text-4xl text-white font-bold uppercase tracking-wide'>
+                    {/* <span className='text-4xl text-white font-bold uppercase tracking-wide'>
                     Vaibhav Bhoir
-                    </span>
+                    </span> */}
+                    <img className="logo" src="logo.png" alt="logo"  />
                 </a>
                 </Link>
 

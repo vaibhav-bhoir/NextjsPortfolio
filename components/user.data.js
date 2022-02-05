@@ -5,7 +5,7 @@ const USER_DATA =
             "I Love to Develop. 📱💻",
             "Just getting started. 📈",
             "I speak in code...",
-            "Beginner in veeva systems.",
+            "Beginner in veeva sys.",
             "I'm Creative...",
         ],
     }
