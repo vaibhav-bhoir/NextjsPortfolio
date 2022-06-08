@@ -65,6 +65,17 @@ const PROJECTS_DATA = [
         github: 'https://github.com/vaibhav-bhoir/react-portfolio',
         type: 'Website',
     },
+    {
+        id: 7,
+        name: 'React Admin Dashboard',
+        desc: 'lorem ipsum lorem ipsum lorem ipsdum lorem ipsum',
+        image: '/projects/react-dashboard.png',
+        tech: [{ class: '/icons/html5.svg', name: 'HTML' }, { class: '/icons/css.svg', name: 'CSS' }, { class: '/icons/javascript.svg', name: 'JS' }, { class: '/icons/netlify.svg', name: 'Netlify' }],
+        date: '--',
+        link: 'https://react-admin-vaibhav-bhoir.vercel.app/',
+        github: 'https://github.com/vaibhav-bhoir/react-admin',
+        type: 'Website',
+    }
 ]
 
 export default PROJECTS_DATA

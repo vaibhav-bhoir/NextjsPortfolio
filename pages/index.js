@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Cover from '../components/Cover';
 import PROJECTS_DATA from '../components/projects.data';
 import { AiOutlineGithub, AiOutlineLinkedin , AiOutlineMail} from "react-icons/ai";
@@ -12,9 +12,6 @@ import Typed from 'react-typed';
 import Image from 'next/image';
 import heroImg from '../public/landing.svg';
 import projectImg from '../public/projects.svg';
-
-
-
 
 
 export default function Home() {
@@ -60,7 +57,10 @@ export default function Home() {
           </h1>
           <p className="text-secondary-900 text-3xl md:text-4xl max-w-6xl" data-aos="fade-in" data-aos-delay={1500}>I'm a <span className="text-success dark:text-darkblue font-bold">Web Developer</span> based in Mumbai, India. Passionate Full Stack Web Developer with MERN as a stack having hands-on experience in developing scalable webapps using a wide range of front-end and back-end skills and best code practices. I enjoy using my skill-set to empower people to accomplish their goals.</p>
           <Link href="/contact">
-            <button className="rounded-lg border-2 px-8 py-4 mt-4 mb-24 border-success text-success dark:text-white dark:bg-darkblue dark:border-darkblue hover:bg-success hover:text-black" data-aos="fade-in" data-aos-delay={2000}>Contact Now</button>
+            <button className="rounded-lg border-2 px-4 py-2 md:px-8 md:py-4 mt-4 mb-24 border-success text-success dark:text-white dark:bg-darkblue dark:border-darkblue hover:bg-success hover:text-black" data-aos="fade-in" data-aos-delay={2000}>Hire Me</button>
+          </Link>
+          <Link href="https://drive.google.com/file/d/1SQBc9-Px8UvT6FeuOBZyCaugx4lPemx6/view?usp=drivesdk">
+            <a target="_blank" rel="noopener noreferrer" className="rounded-lg border-2 px-4 py-2 md:px-8 md:py-4 mt-4 mb-24  ml-6 md:ml-8 border-info text-info dark:text-white dark:bg-darkblue dark:border-darkblue hover:bg-info hover:text-black" data-aos="fade-in" data-aos-delay={2000}>Get Resume</a>
           </Link>
           </div>
           <div className=" hidden md:block w-full md:w-1/2 p-16">
@@ -88,8 +88,8 @@ export default function Home() {
           </div>
           <div className="w-full lg:w-1/2">
             <h3 className="text-success dark:text-jaguar md:text-4xl" data-aos="fade-in">About Me</h3>
-            <h3 className="text-secondary-900 text-3xl md:text-4xl max-w-6xl my-8" data-aos="fade-in">I am creative Web developer based in Mumbai, India. I Have Done Bachelor of engineering in Electronics and Telecommunications.</h3>
-            <h4 className="text-secondary-900 text-3xl md:text-4xl max-w-6xl my-8" data-aos="fade-in">I have build several websites , looking at the design I can convert it into a HTML CSS template with pixel perfect precision . I use bootstrap very often , so the turn around of my project is very quick and I always use GIT to track my progress and files, as well to collaborate with other developers.
+            <h3 className="text-secondary-900 text-3xl md:text-4xl max-w-6xl my-8" data-aos="fade-left">I am creative Web developer based in Mumbai, India. I Have Done Bachelor of engineering in Electronics and Telecommunications.</h3>
+            <h4 className="text-secondary-900 text-3xl md:text-4xl max-w-6xl my-8" data-aos="fade-left">I have build several websites , looking at the design I can convert it into a HTML CSS template with pixel perfect precision . I use bootstrap very often , so the turn around of my project is very quick and I always use GIT to track my progress and files, as well to collaborate with other developers.
             </h4>
             <Link href="/about">
               <button data-aos="fade-in" className="rounded-lg border-2 px-8 py-4 mt-4 mb-24 dark:text-white dark:bg-darkblue dark:border-darkblue border-success text-success hover:bg-success hover:text-black">Learn More</button>

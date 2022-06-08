@@ -46,14 +46,14 @@ html.light body {
 }
 
 .logo {
-  width: 140px;
+  width: 200px;
   height: auto;
   margin-left: 45px;
 }
 
 @media only screen and (max-width: 767px) {
   .logo {
-    width: 65px;
+    width: 120px;
     height: auto;
     margin-left: 0;
   }

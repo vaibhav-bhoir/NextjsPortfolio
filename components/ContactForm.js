@@ -64,7 +64,7 @@ const ContactForm = () => {
                         <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="flex flex-col relative mb-7">
                             <label className="mb-3 dark:text-black" htmlFor="name">
-                            Your Full Name
+                            Your Full Name <span className="text-red-500">*</span>
                             </label>
                             <input
                             className={`${errors.name ? 'ring-2 ring-red-500' : null} outline-none py-2 px-4 bg-gray-700 dark:bg-white border-primary border-2 rounded-md placeholder-gray-400 dark:text-black`}
@@ -84,7 +84,7 @@ const ContactForm = () => {
                         </div>
                         <div className="flex flex-col relative mb-7">
                             <label className="mb-3 dark:text-black" htmlFor="email">
-                            Your E-mail
+                            Your E-mail <span className="text-red-500">*</span>
                             </label>
                             <input
                             className={`${errors.email ? 'ring-2 ring-red-500' : null} outline-none py-2 px-4 bg-gray-700 dark:bg-white border-primary border-2 rounded-md placeholder-gray-400 dark:text-black`}
@@ -116,7 +116,7 @@ const ContactForm = () => {
                         </div>
                         <div className="flex flex-col relative mb-7">
                             <label className="my-2 dark:text-black" htmlFor="message">
-                            Your message
+                            Your message <span className="text-red-500">*</span>
                             </label>
                             <textarea
                             className={`${errors.message ? 'ring-2 ring-red-500' : null} outline-none h-28 max-h-56 py-2 px-4 bg-gray-700 dark:bg-white border-primary border-2 rounded-md dark:text-black`}
@@ -135,7 +135,7 @@ const ContactForm = () => {
                                     message: "Your message can't be more than 1000 characters",
                                 },
                                 minLength: {
-                                    value: 40,
+                                    value: 30,
                                     message: 'Your message must be longer than this!',
                                 },
                             })} 
