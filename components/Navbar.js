@@ -11,13 +11,16 @@ import Image from 'next/image';
 const Navbar2 = () => {
 
     const [showNav, setShowNav] = useState(false);
-
-    const {theme, setTheme} = useTheme()
-
+    const [scroll, setScroll] = useState(false);
+    const {theme, setTheme} = useTheme() 
     const router = useRouter();
 
     useEffect(() => {
         document.body.classList.toggle('isOpen', showNav);
+        
+        window.addEventListener("scroll", () => {
+            setScroll(window.scrollY > 0);
+        });
     },[showNav])
 
     const toggleSidebar = () => {setShowNav(!showNav)}
@@ -25,7 +28,7 @@ const Navbar2 = () => {
     const toggleTheme = () => {setTheme(theme === 'dark' ? 'light' : 'dark')}
 
     return (
-        <nav className="fixed w-full md:flex justify-between items-center text-white text-center bg-frosted dark:bg-darkblue p-4 md:px-3 md:py-0 z-50">
+        <nav className={` ${ scroll ? "navbar-shrink" : '' } fixed w-full md:flex justify-between items-center text-white text-center bg-frosted dark:bg-darkblue p-4 md:px-3 md:py-0 z-50`}>
             <div className="flex items-center justify-between">
                 <Link href='/'>
                 <a className='inline-flex items-center p-2 mr-4 '>

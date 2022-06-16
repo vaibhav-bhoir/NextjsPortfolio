@@ -158,8 +158,12 @@ const ContactForm = () => {
                                 Submit
                             </button>
                         }
-                        {isSubmitting && <Loader/>}
-                        {isSubmitSuccessful && <div className='text-success dark:text-darkblue'>Thank you. Form Submitted Successfully</div>}
+                        {isSubmitting && 
+                            <div className="loader-wrapper">
+                                <Loader/>
+                            </div>
+                        }
+                        {isSubmitSuccessful && <div className='text-success dark:text-darkblue'>Thank you! We will get in touch with you shortly.</div>}
                         </form>
                     </div>
                 </div>
