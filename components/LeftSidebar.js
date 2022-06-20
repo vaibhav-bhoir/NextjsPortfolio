@@ -25,7 +25,7 @@ const LeftSidebar = () => {
                 </h1>
             </a>
             <div className="whatsapp">
-                <a target="_blank" href="https://api.whatsapp.com/send/?phone=8975588567">
+                <a target="_blank" href="https://wa.me/+918975588567?text=Hi%20Vaibhav.%20I%27d%20like%20to%20chat%20with%20you">
                 <AiOutlineWhatsApp />
                 </a>
             </div>

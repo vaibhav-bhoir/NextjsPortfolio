@@ -170,6 +170,11 @@ html.light .text-transparent {
   left: 5px;
 }
 
+.whatsapp a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 
 /* loader css  */
 .loader-wrapper {
