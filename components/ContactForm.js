@@ -163,7 +163,7 @@ const ContactForm = () => {
                                 <Loader/>
                             </div>
                         }
-                        {isSubmitSuccessful && <div className='text-success dark:text-darkblue'>Thank you! We will get in touch with you shortly.</div>}
+                        {isSubmitSuccessful && <div className='text-success dark:text-darkblue'>Thank you! We will get in touch with you shortly. for quick responce connect me on whatsapp.</div>}
                         </form>
                     </div>
                 </div>

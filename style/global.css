@@ -56,6 +56,18 @@ nav.fixed.navbar-shrink {
   padding-bottom: 0;
 }
 
+@media only screen and (max-width: 767px) {
+    nav.fixed {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    nav.fixed.navbar-shrink {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+}
+
 .logo {
   width: 250px;
   height: auto;
@@ -132,6 +144,30 @@ html.light .text-transparent {
   -webkit-text-stroke-color: #fccf0c;
   -webkit-text-stroke-width: 0.5px;
   z-index: -1;
+}
+
+
+.whatsapp {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  background: #5dc354;
+  border-radius: 50%;
+  box-shadow: 2px 2px 6pxrgba(0,0,0,.4);
+  z-index: 100;
+  transition: all ease-out .2s 0s;
+}
+
+.whatsapp:hover {
+  box-shadow: 2px 2px 11px rgba(0,0,0,.7);
+}
+
+.whatsapp a {
+  color: white;
+  font-size: 36px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
 }
 
 

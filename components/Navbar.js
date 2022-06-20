@@ -39,27 +39,27 @@ const Navbar2 = () => {
                 </a>
                 </Link>
 
-                <div className=""> 
+                <div className="text-5xl"> 
                     <button
                         aria-label="Toggle Dark Mode"
                         type="button"
-                        className="h-12 w-12 md:hidden flex items-center"
+                        className="h-16 w-16 md:hidden flex items-center"
                         onClick={toggleTheme}
                         >
                         {theme === 'dark' ? (<MdDarkMode/>) : (<MdOutlineWbSunny/>)}
                     </button>
                 </div>
 
-                <div className="block md:hidden"> 
+                <div className="block md:hidden pr-4 text-6xl"> 
                     {showNav ? (
                     <AiOutlineClose
                         onClick={toggleSidebar}
-                        className="w-10 h-10 cursor-pointer"
+                        className="cursor-pointer"
                     />
                     ) : (
                     <AiOutlineBars
                         onClick={toggleSidebar}
-                        className="w-10 h-10 cursor-pointer"
+                        className="cursor-pointer"
                     />
                     )}
                 </div>
@@ -82,7 +82,7 @@ const Navbar2 = () => {
                         </Link>
                     ))
                 }
-                <div className=""> 
+                <div className="text-3xl"> 
                     <button
                         aria-label="Toggle Dark Mode"
                         type="button"
