@@ -1,6 +1,6 @@
 # Portfolio Website
 
-This is my portfolio webiste made with tailwind CSS and nextJs
+This is my portfolio website made with tailwind CSS, nextJs and react-hook-forms
 
 ## Preview
 

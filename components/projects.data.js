@@ -1,6 +1,17 @@
 const PROJECTS_DATA = [
     {
         id: 1,
+        name: 'React Admin Dashboard',
+        desc: 'lorem ipsum lorem ipsum lorem ipsdum lorem ipsum',
+        image: '/projects/react-dashboard.png',
+        tech: [{ class: '/icons/html5.svg', name: 'HTML' }, { class: '/icons/css.svg', name: 'CSS' }, { class: '/icons/javascript.svg', name: 'JS' }, { class: '/icons/netlify.svg', name: 'Netlify' }],
+        date: '--',
+        link: 'https://react-admin-vaibhav-bhoir.vercel.app/',
+        github: 'https://github.com/vaibhav-bhoir/react-admin',
+        type: 'Website',
+    },
+    {
+        id: 2,
         name: 'Restaurant Website',
         desc: 'The Restaurant website is created with Html5, Css3 and scrollreveal plugin for scrolling animations.',
         image: '/projects/restaurant.jpg',
@@ -11,7 +22,7 @@ const PROJECTS_DATA = [
         type: 'Website',
     },
     {
-        id: 2,
+        id: 3,
         name: 'Brochure website',
         desc: 'This website is made using html, css, bootstrap and little bit JavaScript.It has smooth scrolling effects and also has scroll to top button.',
         image: '/projects/brochure.jpg',
@@ -22,7 +33,7 @@ const PROJECTS_DATA = [
         type: 'Website',
     },
     {
-        id: 3,
+        id: 4,
         name: 'E-commerce Website',
         desc: 'This website i created using bootstrap framework, SASS and vanilla JavaScript. This site included product, all product , product details page.It also has cart page where we can see how many items are added to the cart.',
         image: '/projects/ecommerce.jpg',
@@ -33,7 +44,7 @@ const PROJECTS_DATA = [
         type: 'Website',
     },
     {
-        id: 4,
+        id: 5,
         name: 'Landing Page',
         desc: 'Simple Landing Page Created using HTML, CSS and Bootstrap.',
         image: '/projects/landing.jpg',
@@ -44,7 +55,7 @@ const PROJECTS_DATA = [
         type: 'Website',
     },
     {
-        id: 5,
+        id: 6,
         name: 'Registration and Login',
         desc: 'This is a user login and registration app using Node.js, Express, Passport, Mongoose, EJS and some other packages.',
         image: '/projects/registartion-login.jpg',
@@ -55,7 +66,7 @@ const PROJECTS_DATA = [
         type: 'Website',
     },
     {
-        id: 6,
+        id: 7,
         name: 'My Portfolio',
         desc: 'lorem ipsum lorem ipsum lorem ipsdum lorem ipsum',
         image: '/projects/code.jpg',
@@ -64,18 +75,8 @@ const PROJECTS_DATA = [
         link: 'https://vaibhav-bhoir.github.io/react-portfolio',
         github: 'https://github.com/vaibhav-bhoir/react-portfolio',
         type: 'Website',
-    },
-    {
-        id: 7,
-        name: 'React Admin Dashboard',
-        desc: 'lorem ipsum lorem ipsum lorem ipsdum lorem ipsum',
-        image: '/projects/react-dashboard.png',
-        tech: [{ class: '/icons/html5.svg', name: 'HTML' }, { class: '/icons/css.svg', name: 'CSS' }, { class: '/icons/javascript.svg', name: 'JS' }, { class: '/icons/netlify.svg', name: 'Netlify' }],
-        date: '--',
-        link: 'https://react-admin-vaibhav-bhoir.vercel.app/',
-        github: 'https://github.com/vaibhav-bhoir/react-admin',
-        type: 'Website',
     }
+    
 ]
 
 export default PROJECTS_DATA

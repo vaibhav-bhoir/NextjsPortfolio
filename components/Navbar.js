@@ -19,7 +19,7 @@ const Navbar2 = () => {
         document.body.classList.toggle('isOpen', showNav);
         
         window.addEventListener("scroll", () => {
-            setScroll(window.scrollY > 0);
+            setScroll(window.scrollY > 250);
         });
     },[showNav])
 

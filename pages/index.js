@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Cover from '../components/Cover';
 import PROJECTS_DATA from '../components/projects.data';
-import { AiOutlineGithub, AiOutlineLinkedin , AiOutlineMail} from "react-icons/ai";
 import ExCover from '../components/ExCover';
 import ContactForm from '../components/ContactForm';
 import EXP_DATA from '../components/experience.data';
@@ -12,6 +11,7 @@ import Typed from 'react-typed';
 import Image from 'next/image';
 import heroImg from '../public/landing.svg';
 import projectImg from '../public/projects.svg';
+import GetInTouch from '../components/GetInTouch';
 
 
 export default function Home() {
@@ -57,7 +57,7 @@ export default function Home() {
           </h1>
           <p className="text-secondary-900 text-3xl md:text-4xl max-w-6xl" data-aos="fade-in" data-aos-delay={1500}>I'm a <span className="text-success dark:text-darkblue font-bold">Web Developer</span> based in Mumbai, India. Passionate Full Stack Web Developer with MERN as a stack having hands-on experience in developing scalable webapps using a wide range of front-end and back-end skills and best code practices. I enjoy using my skill-set to empower people to accomplish their goals.</p>
           <Link href="/contact">
-            <button className="rounded-lg border-2 px-4 py-2 md:px-8 md:py-4 mt-4 mb-24 border-success text-success dark:text-white dark:bg-darkblue dark:border-darkblue hover:bg-success hover:text-black" data-aos="fade-in" data-aos-delay={2000}>Hire Me</button>
+            <a className="rounded-lg border-2 px-4 py-2 md:px-8 md:py-4 mt-4 mb-24 border-success text-success dark:text-white dark:bg-darkblue dark:border-darkblue hover:bg-success hover:text-black" data-aos="fade-in" data-aos-delay={2000}>Hire Me</a>
           </Link>
           <Link href="https://drive.google.com/file/d/1SQBc9-Px8UvT6FeuOBZyCaugx4lPemx6/view?usp=drivesdk">
             <a target="_blank" rel="noopener noreferrer" className="rounded-lg border-2 px-4 py-2 md:px-8 md:py-4 mt-4 mb-24  ml-6 md:ml-8 border-info text-info dark:text-white dark:bg-darkblue dark:border-darkblue hover:bg-info hover:text-black" data-aos="fade-in" data-aos-delay={2000}>Get Resume</a>
@@ -145,30 +145,7 @@ export default function Home() {
           <h1 className=" text-8xl md:text-15xl absolute bottom-20 text-transparent">&lt;Contact /&gt; </h1>
           <h1 className=" hidden md:flex text-10xl text-secondary-100 dark:text-darkblue font-extrabold" >Say Hello</h1>
         </div>
-        <main className="container px-10 md:px-36 lg:px-56">
-          <h3 className="text-success dark:text-jaguar md:text-4xl" data-aos="fade-in">Get in Touch</h3>
-          <h2 className="text-secondary-900 text-3xl md:text-4xl max-w-6xl my-8" data-aos="fade-in">This is how you can reach me. Let’s work together to create something worth sharing.</h2>
-          <div className="flex">
-              <a href="mailto:bhoirvaibhav90@gmail.com" target="_blank">
-              <button data-aos="fade-in" className="rounded-lg border-2 px-4 py-2 my-2 mr-3 md:px-8 md:py-4 md:my-4 md:mx-4 flex items-center justify-between dark:text-white dark:bg-darkblue dark:border-darkblue border-success text-success hover:bg-success hover:text-black">
-                  <AiOutlineMail/>
-                  <span className="mx-2">Mail</span>
-              </button>
-              </a>
-              <a href="https://www.linkedin.com/in/vaibhav-bhoir-b50a9a185" target="_blank">
-              <button data-aos="fade-in" className="rounded-lg border-2 px-4 py-2 my-2 mx-3 md:px-8 md:py-4 md:my-4 md:mx-4 flex items-center justify-between dark:text-white dark:bg-darkblue dark:border-darkblue border-info text-info hover:bg-info hover:text-black">
-                  <AiOutlineLinkedin />
-                  <span className="mx-2">LinkedIn</span>
-              </button>
-              </a>
-              <a href="https://github.com/vaibhav-bhoir" target="_blank">
-              <button data-aos="fade-in" className="rounded-lg border-2 px-4 py-2 my-2 mx-3 md:px-8 md:py-4 md:my-4 md:mx-4 flex items-center justify-between dark:text-white dark:bg-darkblue dark:border-darkblue border-normal text-normal hover:bg-normal hover:text-black">
-                  <AiOutlineGithub/>
-                  <span className="mx-2">GitHub</span>
-              </button>
-              </a>
-          </div>
-        </main>
+        <GetInTouch/>
       </div>
       <ContactForm/>
     </div>

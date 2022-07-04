@@ -38,6 +38,14 @@ const EXP_DATA = [
         location: 'Mirum India pvt ltd',
         desc: 'Managed backend data with the help of wordpress CMS.',
         date: 'Oct 2021 - DEC 2021'
+    },
+    {
+        id: 6,
+        name: 'MUTUAL FUNDS sahi Hai',
+        post: 'Associate Developer',
+        location: 'Mirum India pvt ltd',
+        desc: 'Worked on front-end part of their website.',
+        date: ''
     }
 ]
 

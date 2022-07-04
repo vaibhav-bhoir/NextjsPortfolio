@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+*:focus-visible {
+  outline: solid !important;
+}
+
 :root {
   --bg-primary: #05182c;
   --main-primary: #fffefe;
@@ -156,6 +160,7 @@ html.light .text-transparent {
   box-shadow: 2px 2px 6pxrgba(0,0,0,.4);
   z-index: 100;
   transition: all ease-out .2s 0s;
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
 
 .whatsapp:hover {
@@ -173,6 +178,24 @@ html.light .text-transparent {
 .whatsapp a:hover {
   color: white;
   text-decoration: none;
+}
+
+@-webkit-keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
 }
 
 
