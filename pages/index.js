@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Cover from '../components/Cover';
-import PROJECTS_DATA from '../components/projects.data';
+import PROJECTS_DATA from '../public/data/projects.data';
 import ExCover from '../components/ExCover';
 import ContactForm from '../components/ContactForm';
-import EXP_DATA from '../components/experience.data';
-import USER_DATA from '../components/user.data';
+import EXP_DATA from '../public/data/experience.data';
+import USER_DATA from '../public/data/user.data';
 import Typed from 'react-typed';
 import Image from 'next/image';
 import heroImg from '../public/landing.svg';
@@ -126,7 +126,7 @@ export default function Home() {
               data.length === 0 ? (
                 <div className="flex flex-col justify-center items-center">
                   <img src="/noData.svg" alt="" className="w-1/2 h-auto my-12" />
-                  <h3 className="text-success md:text-4xl" data-aos="fade-in">No Projects Opened</h3>
+                  <h3 className="text-success dark:text-jaguar md:text-4xl" data-aos="fade-in">No Projects Opened</h3>
                 </div>
               ) : data.map((e) => <Cover data={e} key={e.id} handleClose={handleClose} />)
             }

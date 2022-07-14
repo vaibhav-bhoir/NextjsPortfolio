@@ -1,9 +1,18 @@
 import React from 'react'
 import { AiOutlineGithub, AiOutlineLink } from "react-icons/ai";
 
-const WorkCover = ({ data }) => {
+interface WorkProps {
+    data: {
+        name: string;
+        github: string;
+        link: string;
+        tech: Array<any>;
+    }
+}
 
-    const { id, name, github, tech, link } = data;
+const WorkCover = ({ data }: WorkProps) => {
+
+    const { name, github, tech, link } = data;
 
     return (
         <div className="w-full border-1 my-12 border-secondary-900 bg-frosted dark:bg-white dark:border-darkblue rounded-xl px-4 transform transition-transform hover:scale-[1.02]">

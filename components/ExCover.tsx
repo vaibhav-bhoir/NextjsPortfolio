@@ -1,9 +1,19 @@
 import React from 'react'
 import { MdLocationPin} from "react-icons/md";
 
-const ExCover = ({ data }) => {
+interface ExCoverProps {
+    data: {
+        date: string;
+        desc: string;
+        name: string;
+        location: string;
+        post: string;
+    }
+}
 
-    const { date, desc, name, location, post, id } = data;
+const ExCover = ({ data }: ExCoverProps) => {
+
+    const { date, desc, name, location, post } = data;
 
     return (
         <div className="w-full border-1 mx-4 my-4 border-secondary-900 bg-frosted dark:bg-white dark:border-darkblue rounded-xl px-4 transform transition-transform hover:scale-[1.02]">

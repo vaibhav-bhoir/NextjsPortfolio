@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import LIST_DATA from '../components/project.list';
+import LIST_DATA from '../public/data/project.list';
 import WorkCover from '../components/WorkCover';
 
 const Work = () => {
