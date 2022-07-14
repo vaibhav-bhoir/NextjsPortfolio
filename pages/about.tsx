@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Circle from '../components/Circle'
-import SKILL_DATA from '../components/skill.data'
+import SKILL_DATA from '../public/data/skill.data'
 
 
 

@@ -1,9 +1,22 @@
 import React from 'react'
 import { AiOutlineGithub, AiOutlineLink} from "react-icons/ai";
 
-const Cover = ({ data, handleClose }) => {
+interface CoverProps {
+    data: {
+        id: number;
+        name: string;
+        github: string;
+        date: string;
+        link: string;
+        type: string;
+        image: string;
+    }
+    handleClose:any;
+}
 
-    const { id, name, github, tech, date, link, type, image } = data;
+const Cover = ({ data, handleClose }: CoverProps) => {
+
+    const { id, name, github, date, link, type, image } = data;
 
     return (
         <div className="md:w-100 h-full border-1 mx-4 my-4 border-secondary-900 bg-frosted dark:bg-darkblue dark:border-white rounded-xl px-4 transform transition-transform hover:scale-[1.02]">

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Link from 'next/link';
 import { useRouter } from "next/router";
 import {useTheme} from 'next-themes';
-import navLinks from "./header_data";
+import navLinks from "../public/data/header_data";
 import { MdDarkMode, MdOutlineWbSunny } from "react-icons/md";
 import { AiOutlineBars, AiOutlineClose } from "react-icons/ai";
 import Image from 'next/image';
