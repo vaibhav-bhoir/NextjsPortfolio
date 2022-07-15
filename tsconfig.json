@@ -102,7 +102,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/ContactForm.js", "pages/index.js", "pages/_app.js", "components/Navbar.tsx"  ],
+, "components/ContactForm.js", "pages/index.js", "pages/_app.js", "components/Navbar.tsx", "components/Header.jsx"  ],
   "exclude": [
     "node_modules"
   ]
