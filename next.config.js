@@ -10,6 +10,9 @@ module.exports = withPWA({
 
 module.exports = {
     publicRuntimeConfig: {
-    BASE_URL: process.env.BASE_URL
+        BASE_URL: process.env.BASE_URL
+    },
+    images: {
+        domains: ["images.ctfassets.net"]
     }
 }

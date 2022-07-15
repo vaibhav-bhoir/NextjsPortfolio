@@ -1,29 +1,26 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import { createClient } from "contentful";
 import Link from 'next/link';
 import { useState } from 'react';
 import Cover from '../components/Cover';
 import PROJECTS_DATA from '../public/data/projects.data';
 import ExCover from '../components/ExCover';
 import ContactForm from '../components/ContactForm';
-import EXP_DATA from '../public/data/experience.data';
-import USER_DATA from '../public/data/user.data';
-import Typed from 'react-typed';
 import Image from 'next/image';
-import heroImg from '../public/landing.svg';
 import projectImg from '../public/projects.svg';
 import GetInTouch from '../components/GetInTouch';
+import Header from '../components/Header';
 
 
-export default function Home() {
+export default function Home({EXP_DATA, PROJECTS_DATA, hero}) {
 
   const [data, setData] = useState(PROJECTS_DATA)
-
-  const {name, subtitles} = USER_DATA;
 
   const handleClose = (id) => {
     const newData = data.filter((e) => e.id !== id)
     setData(newData)
   }
+
 
   return (
     <div className="px-3 overflow-hidden">
@@ -33,45 +30,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex flex-col items-center justify-center mt-64 md:mb-0">
-        <main className="container px-10 md:px-36 lg:px-56 flex flex-row flex-wrap items-center justify-center">
-          <div className="w-full md:w-1/2">
-          <h3
-            className="text-success dark:text-jaguar md:text-4xl"
-            data-aos="fade-in"
-          >
-            👋 Hi, I am
-          </h3>
-          <h1
-            className="text-secondary-100 dark:text-darkblue text-9xl md:text-7xl lg:text-8xl font-bold"
-            data-aos="fade-in"
-            data-aos-delay={500}
-          >{name}</h1>
-          <h1 className='text-secondary-900 dark:text-jaguar text-4xl md:text-6xl'>
-            <Typed
-                  strings={subtitles}
-                      typeSpeed={40}
-                      backSpeed={60}
-                      loop >
-            </Typed>
-          </h1>
-          <p className="text-secondary-900 text-3xl md:text-4xl max-w-6xl" data-aos="fade-in" data-aos-delay={1500}>I'm a <span className="text-success dark:text-darkblue font-bold">Web Developer</span> based in Mumbai, India. Passionate Full Stack Web Developer with MERN as a stack having hands-on experience in developing scalable webapps using a wide range of front-end and back-end skills and best code practices. I enjoy using my skill-set to empower people to accomplish their goals.</p>
-          <Link href="/contact">
-            <a className="rounded-lg border-2 px-4 py-2 md:px-8 md:py-4 mt-4 mb-24 border-success text-success dark:text-white dark:bg-darkblue dark:border-darkblue hover:bg-success hover:text-black" data-aos="fade-in" data-aos-delay={2000}>Hire Me</a>
-          </Link>
-          <Link href="https://drive.google.com/file/d/1SQBc9-Px8UvT6FeuOBZyCaugx4lPemx6/view?usp=drivesdk">
-            <a target="_blank" rel="noopener noreferrer" className="rounded-lg border-2 px-4 py-2 md:px-8 md:py-4 mt-4 mb-24  ml-6 md:ml-8 border-info text-info dark:text-white dark:bg-darkblue dark:border-darkblue hover:bg-info hover:text-black" data-aos="fade-in" data-aos-delay={2000}>Get Resume</a>
-          </Link>
-          </div>
-          <div className=" hidden md:block w-full md:w-1/2 p-16">
-            <Image
-            alt=""
-            src={heroImg}
-            width="100%" height="100%" layout="responsive" objectFit="contain"
-            />
-          </div>
-        </main>
-      </div>
+      <Header heroProps = {hero[0].fields}/>
 
       <div className="flex flex-col items-center justify-center my-64">
         <div className="container relative w-full flex justify-center items-center">
@@ -107,7 +66,7 @@ export default function Home() {
           <h3 className="text-success dark:text-jaguar md:text-4xl" data-aos="fade-in">Projects on which I've worked</h3>
           <div className="flex flex-wrap items-center justify-center my-12 transition ease-in-out">
             {
-              EXP_DATA.map((e) => <ExCover data={e} key={e.id} />)
+              EXP_DATA.map((expData) => <ExCover expData={expData} key={expData.sys.id} />)
             }
           </div>
         </main>
@@ -128,7 +87,7 @@ export default function Home() {
                   <img src="/noData.svg" alt="" className="w-1/2 h-auto my-12" />
                   <h3 className="text-success dark:text-jaguar md:text-4xl" data-aos="fade-in">No Projects Opened</h3>
                 </div>
-              ) : data.map((e) => <Cover data={e} key={e.id} handleClose={handleClose} />)
+              ) : data.map((pdata) => <Cover pdata={pdata} key={pdata.sys.id} handleClose={handleClose} />)
             }
           </div>
           {
@@ -150,4 +109,25 @@ export default function Home() {
       <ContactForm/>
     </div>
   )
+}
+
+export async function getStaticProps() {
+
+    const client = createClient({
+      space: process.env.CONTENTFUL_SPACE_ID,
+      accessToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN
+    })
+
+    const projectListRes = await client.getEntries({ content_type: "projectsOnWhichIveWorked" })
+    const hero = await client.getEntries({ content_type: "heading" })
+    const featuredProjects = await client.getEntries({ content_type: "featuredProjects" })
+
+    return {
+        props: {
+          EXP_DATA : projectListRes.items,
+          hero : hero.items,
+          PROJECTS_DATA: featuredProjects.items
+        },
+        revalidate : 10
+    }
 }
