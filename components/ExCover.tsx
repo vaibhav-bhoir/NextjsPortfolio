@@ -17,7 +17,7 @@ const ExCover = ({ expData }: ExCoverProps) => {
 
 
     return (
-        <div className="w-full border-1 mx-4 my-4 border-secondary-900 bg-frosted dark:bg-white dark:border-darkblue rounded-xl px-4 transform transition-transform hover:scale-[1.02]">
+        <div className="w-full md:w-100 border-1 mx-4 my-4 border-secondary-900 bg-frosted dark:bg-white dark:border-darkblue rounded-xl px-4 transform transition-transform hover:scale-[1.02]">
             <div className="justify-between items-center mx-2 flex">
                 <div className="flex my-6">
                     <span className="w-6 h-6 bg-red-500 rounded-full cursor-pointer"></span>
