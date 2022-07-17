@@ -3,24 +3,24 @@ import { createClient } from "contentful";
 import Link from 'next/link';
 import { useState } from 'react';
 import Cover from '../components/Cover';
-import PROJECTS_DATA from '../public/data/projects.data';
 import ExCover from '../components/ExCover';
 import ContactForm from '../components/ContactForm';
 import Image from 'next/image';
-import projectImg from '../public/projects.svg';
 import GetInTouch from '../components/GetInTouch';
 import Header from '../components/Header';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 
 export default function Home({EXP_DATA, PROJECTS_DATA, hero}) {
 
   const [data, setData] = useState(PROJECTS_DATA)
 
+  const heroProps = hero[0].fields
+
   const handleClose = (id) => {
     const newData = data.filter((e) => e.id !== id)
     setData(newData)
   }
-
 
   return (
     <div className="px-3 overflow-hidden">
@@ -30,7 +30,7 @@ export default function Home({EXP_DATA, PROJECTS_DATA, hero}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header heroProps = {hero[0].fields}/>
+      <Header heroProps = {heroProps}/>
 
       <div className="flex flex-col items-center justify-center my-64">
         <div className="container relative w-full flex justify-center items-center">
@@ -41,15 +41,20 @@ export default function Home({EXP_DATA, PROJECTS_DATA, hero}) {
           <div className="w-full lg:w-1/2 md:p-16">
             <Image
             alt=""
-            src={projectImg}
-            width="100%" height="100%" layout="responsive" objectFit="contain"
+            src={`https:${heroProps.aboutImage.fields.file.url}`} 
+            width={heroProps.aboutImage.fields.file.details.image.width} 
+            height={heroProps.aboutImage.fields.file.details.image.height}
+            layout="responsive" 
+            objectFit="contain"
             />
           </div>
           <div className="w-full lg:w-1/2">
-            <h3 className="text-success dark:text-jaguar md:text-4xl" data-aos="fade-in">About Me</h3>
-            <h3 className="text-secondary-900 text-3xl md:text-4xl max-w-6xl my-8" data-aos="fade-left">I am creative Web developer based in Mumbai, India. I Have Done Bachelor of engineering in Electronics and Telecommunications.</h3>
-            <h4 className="text-secondary-900 text-3xl md:text-4xl max-w-6xl my-8" data-aos="fade-left">I have build several websites , looking at the design I can convert it into a HTML CSS template with pixel perfect precision . I use bootstrap very often , so the turn around of my project is very quick and I always use GIT to track my progress and files, as well to collaborate with other developers.
-            </h4>
+            <h3 className="text-success dark:text-jaguar md:text-4xl" data-aos="fade-in">
+                {heroProps.aboutHeading}
+            </h3>
+            <h3 className="text-secondary-900 text-3xl md:text-4xl max-w-6xl my-8" data-aos="fade-left">
+                {documentToReactComponents(heroProps.aboutDescription)}
+            </h3>
             <Link href="/about">
               <button data-aos="fade-in" className="rounded-lg border-2 px-8 py-4 mt-4 mb-24 dark:text-white dark:bg-darkblue dark:border-darkblue border-success text-success hover:bg-success hover:text-black">Learn More</button>
             </Link>
@@ -64,7 +69,7 @@ export default function Home({EXP_DATA, PROJECTS_DATA, hero}) {
         </div>
         <main className="container px-10 md:px-36 lg:px-56">
           <h3 className="text-success dark:text-jaguar md:text-4xl" data-aos="fade-in">Projects on which I've worked</h3>
-          <div className="flex flex-wrap items-center justify-center my-12 transition ease-in-out">
+          <div className="flex flex-wrap justify-center my-12 transition ease-in-out">
             {
               EXP_DATA.map((expData) => <ExCover expData={expData} key={expData.sys.id} />)
             }

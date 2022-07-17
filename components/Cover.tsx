@@ -1,11 +1,11 @@
 import React from 'react'
 import { AiOutlineGithub, AiOutlineLink} from "react-icons/ai";
-
+import Image from 'next/image';
 interface CoverProps {
     pdata: {
         fields: {
             title: string;
-            url: string;
+            githubUrl: string;
             date: string;
             liveUrl: string;
             type: string;
@@ -13,7 +13,14 @@ interface CoverProps {
                 fields: {
                     file: {
                         url: string;
-                    }
+                        details: {
+                            image: {
+                                width: number;
+                                height: number
+                            }
+                        }
+                    };
+                    
                 }
             };
         },
@@ -60,26 +67,31 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
                     </p>
                     <p className="text-secondary-900 text-3xl mx-4 cursor-pointer">
                         {
-                            pdata.fields.url && <a href={pdata.fields.url} target="_blank">
+                            pdata.fields.githubUrl && <a href={pdata.fields.githubUrl} target="_blank">
                                 <AiOutlineGithub />
                             </a>
                         }
-
                     </p>
                 </div>
             </div>
-            <img  src={`http:${pdata.fields.thumbnailImage.fields.file.url}`} alt="" height={100} width={100} className="h-auto w-full rounded-2xl" />
+            <Image 
+                src={`https:${pdata.fields.thumbnailImage.fields.file.url}`} 
+                alt="" 
+                height={pdata.fields.thumbnailImage.fields.file.details.image.height} 
+                width={pdata.fields.thumbnailImage.fields.file.details.image.width} 
+                className="rounded-2xl" 
+            />
             <div className="flex flex-wrap justify-between items-center my-4 mx-4">
                 <p className="text-secondary-900 text-3xl mx-4 cursor-pointer">
-                        {
-                            pdata.fields.url && <a href={pdata.fields.url} target='_blank' className="font-semibold text-2xl">GitHub </a>
-                        }
+                    {
+                        pdata.fields.githubUrl && <a href={pdata.fields.githubUrl} target='_blank' className="font-semibold text-2xl">GitHub </a>
+                    }
                 </p>
                 <p className="text-secondary-900 text-3xl mx-4 cursor-pointer">
-                        {
-                            pdata.fields.liveUrl && <a href={pdata.fields.liveUrl} target="_blank" className="font-semibold text-2xl">Visit </a>
+                    {
+                        pdata.fields.liveUrl && <a href={pdata.fields.liveUrl} target="_blank" className="font-semibold text-2xl">Visit </a>
 
-                        }
+                    }
                 </p>
             </div>
         </div>
