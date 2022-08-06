@@ -1,5 +1,8 @@
 import React from 'react'
 import { AiOutlineGithub, AiOutlineLink } from "react-icons/ai";
+import Link from 'next/link';
+
+
 
 interface WorkProps {
     data: {
@@ -25,26 +28,26 @@ const WorkCover = ({ data }: WorkProps) => {
                 <div className="flex my-6">
                     <p className="text-secondary-900 my-0 text-3xl mx-4 cursor-pointer">
                         {
-                            link && <a href={link} target="_blank">
+                            link && <Link href={link} target="_blank">
                                 <AiOutlineLink />
-                            </a>
+                            </Link>
                         }
 
                     </p>
                     <p className="text-secondary-900 my-0 text-3xl mx-4 cursor-pointer">
                         {
-                            github && <a href={github} target="_blank">
+                            github && <Link href={github} target="_blank">
                                 <AiOutlineGithub />
-                            </a>
+                            </Link>
                         }
 
                     </p>
                 </div>
             </div>
             <hr />
-            <a href={link} target="_blank">
+            <Link href={link} target="_blank">
                 <h1 className="text-secondary-100 dark:text-darkblue text-4xl mx-4 my-6">{name}</h1>
-            </a>
+            </Link>
             <div className="flex flex-wrap md:flex my-6">
                 {
                     tech.map((e, index) => <div key={index} className="px-4 bg-primary dark:bg-darkblue text-white rounded-full mx-2 my-3">{e}</div>)

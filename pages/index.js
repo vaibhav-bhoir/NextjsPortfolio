@@ -18,7 +18,7 @@ export default function Home({EXP_DATA, PROJECTS_DATA, hero}) {
   const heroProps = hero[0].fields
 
   const handleClose = (id) => {
-    const newData = data.filter((e) => e.id !== id)
+    const newData = data.filter((e) => e.sys.id !== id)
     setData(newData)
   }
 
@@ -38,7 +38,7 @@ export default function Home({EXP_DATA, PROJECTS_DATA, hero}) {
           <h1 className=" hidden md:flex text-10xl text-secondary-100 dark:text-darkblue font-extrabold" >Vaibhav Bhoir</h1>
         </div>
         <main className="container px-10 md:px-36 lg:px-56 flex flex-row flex-wrap items-center justify-center">
-          <div className="w-full lg:w-1/2 md:p-16">
+          <div className="w-full lg:w-1/2 md:p-16 mb-24">
             <Image
             alt=""
             src={`https:${heroProps.aboutImage.fields.file.url}`} 
@@ -89,7 +89,14 @@ export default function Home({EXP_DATA, PROJECTS_DATA, hero}) {
             {
               data.length === 0 ? (
                 <div className="flex flex-col justify-center items-center">
-                  <img src="/noData.svg" alt="" className="w-1/2 h-auto my-12" />
+                  <div className="w-1/2 h-auto my-12">
+                    <Image 
+                        src="/noData.svg"                      
+                        alt="" 
+                        height={250}
+                        width={250}
+                    />
+                  </div>
                   <h3 className="text-success dark:text-jaguar md:text-4xl" data-aos="fade-in">No Projects Opened</h3>
                 </div>
               ) : data.map((pdata) => <Cover pdata={pdata} key={pdata.sys.id} handleClose={handleClose} />)

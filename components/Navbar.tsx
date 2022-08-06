@@ -6,6 +6,7 @@ import navLinks from "../public/data/header_data";
 import { MdDarkMode, MdOutlineWbSunny } from "react-icons/md";
 import { AiOutlineBars, AiOutlineClose } from "react-icons/ai";
 import Image from 'next/image';
+import Logo from "../public/icons/brand-logo.png";
 
 
 const Navbar2 = () => {
@@ -31,12 +32,16 @@ const Navbar2 = () => {
         <nav className={` ${ scroll ? "navbar-shrink" : '' } fixed w-full md:flex justify-between items-center text-white text-center bg-frosted dark:bg-darkblue p-4 md:px-3 md:py-0 z-50`}>
             <div className="flex items-center justify-between">
                 <Link href='/'>
-                <a className='inline-flex items-center p-2 mr-4 '>
-                    {/* <span className='text-4xl text-white font-bold uppercase tracking-wide'>
-                    Vaibhav Bhoir
-                    </span> */}
-                    <img className="logo" src="brand-logo.png" alt="logo"  />
-                </a>
+                    <a className='inline-flex items-center mr-4 '>
+                        <div className="logo">
+                            <Image
+                                src={Logo}                     
+                                alt="brand-logo" 
+                                width={521}
+                                height={178}
+                            />
+                        </div>
+                    </a>
                 </Link>
 
                 <div className="text-5xl"> 
@@ -50,7 +55,7 @@ const Navbar2 = () => {
                     </button>
                 </div>
 
-                <div className="block md:hidden pr-4 text-6xl"> 
+                <div className="block md:hidden text-6xl"> 
                     {showNav ? (
                     <AiOutlineClose
                         onClick={toggleSidebar}
