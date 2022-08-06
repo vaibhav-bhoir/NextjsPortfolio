@@ -56,8 +56,8 @@ nav.fixed {
 }
 
 nav.fixed.navbar-shrink {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 @media only screen and (max-width: 767px) {
@@ -73,7 +73,9 @@ nav.fixed.navbar-shrink {
 }
 
 .logo {
-  width: 250px;
+  display: flex;
+  align-items: center;
+  width: 285px;
   height: auto;
   margin-left: 45px;
   transition: width 0.3s ease-in-out;
@@ -85,7 +87,7 @@ nav.fixed.navbar-shrink .logo {
 
 @media only screen and (max-width: 767px) {
   .logo {
-    width: 160px;
+    width: 200px;
     height: auto;
     margin-left: 0;
   }

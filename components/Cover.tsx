@@ -1,6 +1,7 @@
 import React from 'react'
 import { AiOutlineGithub, AiOutlineLink} from "react-icons/ai";
 import Image from 'next/image';
+import Link from 'next/link';
 interface CoverProps {
     pdata: {
         fields: {
@@ -47,9 +48,9 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
             <hr />
             {
                 pdata.fields.liveUrl ? (
-                    <a href={pdata.fields.liveUrl} target="_blank">
+                    <Link href={pdata.fields.liveUrl} target="_blank" >
                         <h1 className="text-secondary-100 text-4xl mx-4 my-4">{pdata.fields.title}</h1>
-                    </a>
+                    </Link>
                 ) : (
                     <h1 className="text-secondary-100 text-4xl mx-4 my-4">{pdata.fields.title}</h1>
                 )
@@ -60,16 +61,16 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
                 <div className="flex">
                     <p className="text-secondary-900 text-3xl mx-4 cursor-pointer">
                         {
-                            pdata.fields.liveUrl && <a href={pdata.fields.liveUrl} target="_blank">
+                            pdata.fields.liveUrl && <Link href={pdata.fields.liveUrl} target="_blank">
                                 <AiOutlineLink />
-                            </a>
+                            </Link>
                         }
                     </p>
                     <p className="text-secondary-900 text-3xl mx-4 cursor-pointer">
                         {
-                            pdata.fields.githubUrl && <a href={pdata.fields.githubUrl} target="_blank">
+                            pdata.fields.githubUrl && <Link href={pdata.fields.githubUrl} target="_blank">
                                 <AiOutlineGithub />
-                            </a>
+                            </Link>
                         }
                     </p>
                 </div>
@@ -82,14 +83,14 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
                 className="rounded-2xl" 
             />
             <div className="flex flex-wrap justify-between items-center my-4 mx-4">
-                <p className="text-secondary-900 text-3xl mx-4 cursor-pointer">
+                <p className="text-secondary-900 text-2xl mx-4 cursor-pointer font-semibold">
                     {
-                        pdata.fields.githubUrl && <a href={pdata.fields.githubUrl} target='_blank' className="font-semibold text-2xl">GitHub </a>
+                        pdata.fields.githubUrl && <Link href={pdata.fields.githubUrl}><a target="_blank">GitHub</a></Link>
                     }
                 </p>
-                <p className="text-secondary-900 text-3xl mx-4 cursor-pointer">
+                <p className="text-secondary-900 text-2xl mx-4 cursor-pointer font-semibold">
                     {
-                        pdata.fields.liveUrl && <a href={pdata.fields.liveUrl} target="_blank" className="font-semibold text-2xl">Visit </a>
+                        pdata.fields.liveUrl && <Link href={pdata.fields.liveUrl}><a target="_blank">Visit</a></Link>
 
                     }
                 </p>
