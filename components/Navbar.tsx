@@ -81,7 +81,7 @@ const Navbar2 = () => {
                     navLinks.map((link, index) => (
 
                         <Link href={link.path} key={index}>
-                            <a onClick={toggleSidebar} className={`${router.pathname == link.path ? "border-b-2" : "" }  px-3 my-6 md:py-2 text-7xl md:text-3xl text-white font-bold items-center justify-center hover:border-b-2 hover:text-white `}>
+                            <a onClick={toggleSidebar} className={`${router.pathname == link.path ? "border-b-2" : "" }  px-3 my-6 md:py-2 text-7xl md:text-3xl text-white font-bold items-center justify-center hover:border-b-2 hover:text-white text-transform: uppercase`}>
                                 {link.name}
                             </a>
                         </Link>

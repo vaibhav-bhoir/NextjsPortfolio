@@ -52,15 +52,15 @@ const ContactForm = () => {
         <>
             <div className='min-h-screen flex items-center justify-center mb-40 md:mb-20'>
                 <div className="h-1/4 container relative w-full flex flex-wrap justify-center items-center px-5 md:px-36 lg:px-56">
-                    <div className="w-full md:w-1/2">
+                    <div data-aos="fade-right" data-aos-duration="1000" className="w-full md:w-1/2">
                         <Image
                         alt="Illustration of man sitting on a block"
                         src="/contact.svg"
                         width="100%" height="100%" layout="responsive" objectFit="contain"
                         />
                     </div>
-                    <div className="w-full md:w-1/2 loading-wrapper ">
-                        <h3 className="text-success dark:text-darkblue md:text-4xl mb-12">Drop me a message</h3>
+                    <div data-aos="fade-left" data-aos-duration="1000" className="w-full md:w-1/2 loading-wrapper ">
+                        <h3 className="text-success dark:text-darkblue text-5xl md:text-4xl mb-12">Drop me a message</h3>
                         <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="flex flex-col relative mb-7">
                             <label className="mb-3 dark:text-black" htmlFor="name">

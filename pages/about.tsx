@@ -21,7 +21,7 @@ const About = () => {
                     <h1 className=" hidden md:flex text-10xl text-secondary-100 dark:text-darkblue font-extrabold" >Vaibhav Bhoir</h1>
                 </div>
                 <main className="container px-10 md:px-36 lg:px-56 mb-20">
-                    <h3 className="text-success dark:text-jaguar md:text-4xl" data-aos="fade-in">Let me tell you a few things....</h3>
+                    <h3 className="text-success dark:text-jaguar text-5xl md:text-4xl" data-aos="fade-in">Let me tell you a few things....</h3>
                     <p className="text-secondary-900 text-3xl md:text-4xl max-w-6xl my-8" data-aos="fade-in">I am creative Web developer based in Mumbai, India. I Have Done Bachelor of engineering in Electronics and Telecommunications.</p>
                     <p className="text-secondary-900 text-3xl md:text-4xl max-w-6xl my-8" data-aos="fade-in">I have build several websites , looking at the design I can convert it into a HTML CSS template with pixel perfect precision. I use bootstrap very often , so the turn around of my project is very quick and I always use GIT to track my progress and files, as well to collaborate with other developers.
                     </p>                    
@@ -37,7 +37,7 @@ const About = () => {
                     <h1 className=" hidden md:flex text-10xl text-secondary-100 dark:text-darkblue font-extrabold" >My Weapons ⚔</h1>
                 </div>
                 <main className="container px-10 md:px-36 lg:px-56">
-                    <h3 className="text-success dark:text-jaguar md:text-4xl mb-14">Technologies that I use</h3>
+                    <h3 className="text-success dark:text-jaguar text-5xl md:text-4xl mb-14">Technologies that I use</h3>
                     <div className="flex flex-wrap justify-center items-center">
                         {
                             SKILL_DATA.map((e) => <Circle data={e} key={e.id} />)

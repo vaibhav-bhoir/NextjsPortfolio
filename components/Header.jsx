@@ -29,7 +29,7 @@ const Header = ({heroProps}) => {
                 data-aos="fade-in"
                 data-aos-delay={500}
             >{heading}</h1>
-            <h1 className='text-secondary-900 dark:text-jaguar text-4xl md:text-6xl'>
+            <h1 className='text-secondary-900 dark:text-jaguar text-4xl md:text-6xl'  data-aos="fade-in" data-aos-delay={1000}>
                 <Typed
                     strings={subheadings}
                         typeSpeed={40}
@@ -37,7 +37,7 @@ const Header = ({heroProps}) => {
                         loop >
                 </Typed>
             </h1>
-            <p className="text-secondary-900 text-3xl md:text-4xl max-w-6xl mb-16" data-aos="fade-in" data-aos-delay={1500}>
+            <p className="text-secondary-900 dark:text-secondary-500 text-3xl md:text-4xl max-w-6xl mb-16" data-aos="fade-in" data-aos-delay={1500}>
                 {description}
             </p>
             <Link href="/contact">
@@ -47,7 +47,8 @@ const Header = ({heroProps}) => {
                 <a target="_blank" rel="noopener noreferrer" className="rounded-lg border-2 px-8 py-4 mt-4 mb-24  ml-6 md:ml-8 border-info text-info dark:text-white dark:bg-darkblue dark:border-darkblue hover:bg-info hover:text-black" data-aos="fade-in" data-aos-delay={2000}>Get Resume</a>
             </Link>
             </div>
-            <div className=" hidden md:block w-full md:w-1/2 p-16">
+            <div data-aos="fade-in"
+                data-aos-delay={1000} className=" hidden md:block w-full md:w-1/2 p-16">
                 <Image
                     alt=""
                     src={`https:${heroImage.fields.file.url}`}
