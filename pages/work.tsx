@@ -18,7 +18,7 @@ const Work = () => {
                     <h1 className=" hidden md:flex text-10xl text-secondary-100 dark:text-darkblue font-extrabold" >More Projects</h1>
                 </div>
                 <main className="container px-10 md:px-36 lg:px-56 flex flex-col items-center justify-center">
-                    <h3 className="text-success dark:text-jaguar md:text-4xl self-start">All Projects</h3>
+                    <h3 className="text-success dark:text-jaguar text-5xl md:text-4xl self-start">All Projects</h3>
                     <div className="w-full min-h-screen my-12 transition ease-in-out">
                         {
                             LIST_DATA.map((e) => <WorkCover data={e} key={e.id} />)

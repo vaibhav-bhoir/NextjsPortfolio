@@ -35,7 +35,7 @@ interface CoverProps {
 const Cover = ({ pdata, handleClose }: CoverProps) => {
 
     return (
-        <div className="md:w-100 h-full border-1 mx-4 my-4 border-secondary-900 bg-frosted dark:bg-darkblue dark:border-white rounded-xl px-4 transform transition-transform hover:scale-[1.02]">
+        <div data-aos="fade-up" data-aos-duration="1000" className="md:w-100 h-full border-1 mx-4 my-4 border-secondary-900 bg-frosted dark:bg-darkblue dark:border-white rounded-xl px-4 transform transition-transform hover:scale-[1.02]">
             <div className="justify-between items-center mx-2 flex">
                 <div className="flex my-6">
                     <span className="w-6 h-6 bg-red-500 rounded-full cursor-pointer" onClick={() => handleClose(pdata.sys.id)} ></span>

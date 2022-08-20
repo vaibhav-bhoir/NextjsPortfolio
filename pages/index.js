@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { createClient } from "contentful";
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Cover from '../components/Cover';
 import ExCover from '../components/ExCover';
 import ContactForm from '../components/ContactForm';
@@ -9,6 +9,8 @@ import Image from 'next/image';
 import GetInTouch from '../components/GetInTouch';
 import Header from '../components/Header';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 export default function Home({EXP_DATA, PROJECTS_DATA, hero}) {
@@ -21,6 +23,12 @@ export default function Home({EXP_DATA, PROJECTS_DATA, hero}) {
     const newData = data.filter((e) => e.sys.id !== id)
     setData(newData)
   }
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+      AOS.refresh();
+  }, []);
+
 
   return (
     <div className="px-3 overflow-hidden">
@@ -38,7 +46,7 @@ export default function Home({EXP_DATA, PROJECTS_DATA, hero}) {
           <h1 className=" hidden md:flex text-10xl text-secondary-100 dark:text-darkblue font-extrabold" >Vaibhav Bhoir</h1>
         </div>
         <main className="container px-10 md:px-36 lg:px-56 flex flex-row flex-wrap items-center justify-center">
-          <div className="w-full lg:w-1/2 md:p-16 mb-24">
+          <div data-aos="fade-right" data-aos-duration="1000" className="w-full lg:w-1/2 md:p-16 mb-24">
             <Image
             alt=""
             src={`https:${heroProps.aboutImage.fields.file.url}`} 
@@ -48,15 +56,15 @@ export default function Home({EXP_DATA, PROJECTS_DATA, hero}) {
             objectFit="contain"
             />
           </div>
-          <div className="w-full lg:w-1/2">
-            <h3 className="text-success dark:text-jaguar md:text-4xl" data-aos="fade-in">
+          <div data-aos="fade-left" data-aos-duration="1000" className="w-full lg:w-1/2">
+            <h3 className="text-success dark:text-jaguar text-5xl md:text-4xl">
                 {heroProps.aboutHeading}
             </h3>
-            <h3 className="text-secondary-900 text-3xl md:text-4xl max-w-6xl my-8" data-aos="fade-left">
+            <h3 className="text-secondary-900 text-3xl md:text-4xl max-w-6xl my-8">
                 {documentToReactComponents(heroProps.aboutDescription)}
             </h3>
             <Link href="/about">
-              <button data-aos="fade-in" className="rounded-lg border-2 px-8 py-4 mt-4 mb-24 dark:text-white dark:bg-darkblue dark:border-darkblue border-success text-success hover:bg-success hover:text-black">Learn More</button>
+              <button  className="rounded-lg border-2 px-8 py-4 mt-4 mb-24 dark:text-white dark:bg-darkblue dark:border-darkblue border-success text-success hover:bg-success hover:text-black">Learn More</button>
             </Link>
           </div>
         </main>
@@ -68,7 +76,7 @@ export default function Home({EXP_DATA, PROJECTS_DATA, hero}) {
           <h1 className=" hidden md:flex text-10xl text-secondary-100 dark:text-darkblue font-extrabold" >Experience</h1>
         </div>
         <main className="container px-10 md:px-36 lg:px-56">
-          <h3 className="text-success dark:text-jaguar md:text-4xl" data-aos="fade-in">Projects on which I've worked</h3>
+          <h3 className="text-success dark:text-jaguar text-5xl md:text-4xl" data-aos="fade-in">Projects on which I've worked</h3>
           <div className="flex flex-wrap justify-center my-12 transition ease-in-out">
             {
               EXP_DATA.map((expData) => <ExCover expData={expData} key={expData.sys.id} />)
@@ -84,8 +92,8 @@ export default function Home({EXP_DATA, PROJECTS_DATA, hero}) {
 
         </div>
         <main className="container px-10 md:px-36 lg:px-56 flex flex-wrap flex-col items-center justify-center">
-          <h3 className="text-success dark:text-jaguar md:text-4xl self-start">Some Selected Projects</h3>
-          <div className="flex flex-wrap items-center justify-center my-12 transition ease-in-out">
+          <h3 className="text-success dark:text-jaguar text-5xl md:text-4xl self-start">Some Selected Projects</h3>
+          <div className="flex flex-wrap justify-center my-12 transition ease-in-out">
             {
               data.length === 0 ? (
                 <div className="flex flex-col justify-center items-center">

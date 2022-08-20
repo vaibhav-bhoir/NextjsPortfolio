@@ -62,8 +62,8 @@ nav.fixed.navbar-shrink {
 
 @media only screen and (max-width: 767px) {
     nav.fixed {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
+      padding-top: 1.7rem;
+      padding-bottom: 1.7rem;
     }
 
     nav.fixed.navbar-shrink {
@@ -75,19 +75,19 @@ nav.fixed.navbar-shrink {
 .logo {
   display: flex;
   align-items: center;
-  width: 285px;
+  width: 200px;
   height: auto;
   margin-left: 45px;
   transition: width 0.3s ease-in-out;
 }
 
 nav.fixed.navbar-shrink .logo {
-  width: 200px;
+  width: 155px;
 }
 
 @media only screen and (max-width: 767px) {
   .logo {
-    width: 200px;
+    width: 160px;
     height: auto;
     margin-left: 0;
   }

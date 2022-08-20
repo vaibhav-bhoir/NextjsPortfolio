@@ -35,7 +35,7 @@ module.exports = {
         100: '40rem'
       },
       width: {
-        100: '35rem'
+        100: '30rem'
       },
       transitionProperty: {
         left: "left",
