@@ -35,7 +35,6 @@ const ContactForm = () => {
 
         try {
             const responce = await axios(config);
-            console.log(responce)
             if (responce.status == 201) {
                 console.log('successful');
                 // router.push('/');
@@ -158,16 +157,24 @@ const ContactForm = () => {
                                 Submit
                             </button>
                         }
-                        {isSubmitting && 
+                        {/* {isSubmitting && 
                             <div className="loader-wrapper">
                                 <Loader/>
                             </div>
-                        }
+                        } */}
                         {isSubmitSuccessful && <div className='text-success dark:text-darkblue'>Thank you! I will get in touch with you shortly. for quick responce connect me on whatsapp.</div>}
                         </form>
                     </div>
                 </div>
             </div>
+            {/* <div className="loader-wrapper">
+                <Loader/>
+            </div> */}
+            {isSubmitting && 
+                <div className="loader-wrapper">
+                    <Loader/>
+                </div>
+            }
         </>
     )
 }

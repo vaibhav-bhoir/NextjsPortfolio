@@ -29,7 +29,7 @@ const Navbar2 = () => {
     const toggleTheme = () => {setTheme(theme === 'dark' ? 'light' : 'dark')}
 
     return (
-        <nav className={` ${ scroll ? "navbar-shrink" : '' } fixed w-full md:flex justify-between items-center text-white text-center bg-frosted dark:bg-darkblue p-4 md:px-3 md:py-0 z-50`}>
+        <nav className={`${ scroll ? "navbar-shrink" : '' } fixed w-full md:flex justify-between items-center text-white text-center bg-frosted dark:bg-darkblue p-4 md:px-3 md:py-0 z-50`}>
             <div className="flex items-center justify-between">
                 <Link href='/'>
                     <a className='inline-flex items-center mr-4 '>
@@ -55,7 +55,7 @@ const Navbar2 = () => {
                     </button>
                 </div>
 
-                <div className="block md:hidden text-6xl"> 
+                <div className="block z-51 md:hidden text-6xl relative "> 
                     {showNav ? (
                     <AiOutlineClose
                         onClick={toggleSidebar}
@@ -71,20 +71,21 @@ const Navbar2 = () => {
             </div>
 
             <ul
-                style={{transition: "0.3s all"}} 
-                className={`${
-                showNav ? "left-0" : "-left-full" }
-                " md:static fixed bottom-0 top-0 flex flex-col md:flex-row justify-center md:space-x-7 m-0 items-center md:bg-transparent md:dark:bg-transparent bg-gray-500 dark:bg-darkblue bg-opacity-90 dark:bg-opacity-90 md:w-auto w-10/12 p-2"
+                style={{transition: "all 0.9s ease-out"}} 
+                className={`
+                " md:static fixed bottom-0 top-0 flex flex-col md:flex-row justify-center md:space-x-7 m-0 items-center md:bg-transparent md:dark:bg-transparent bg-frosted dark:bg-darkblue md:w-auto w-full p-2"
                 `}
             >
                 {
                     navLinks.map((link, index) => (
 
-                        <Link href={link.path} key={index}>
-                            <a onClick={toggleSidebar} className={`${router.pathname == link.path ? "border-b-2" : "" }  px-3 my-6 md:py-2 text-7xl md:text-3xl text-white font-bold items-center justify-center hover:border-b-2 hover:text-white text-transform: uppercase`}>
+                        <li key={index} onClick={toggleSidebar} className={`${router.pathname == link.path ? "border-b-2" : "" } ${showNav ? "fade" : ""} px-3 my-6 md:py-2 text-7xl md:text-3xl font-bold items-center justify-center hover:border-b-2  text-transform: uppercase`}>
+                            <Link href={link.path} > 
+                            <a className="text-white hover:text-white">
                                 {link.name}
                             </a>
                         </Link>
+                        </li>
                     ))
                 }
                 <div className="text-3xl"> 
@@ -98,9 +99,9 @@ const Navbar2 = () => {
                     </button>
                 </div>
             </ul>
-            <div className={`sidebar-overlay ${
+            {/* <div className={`sidebar-overlay ${
                 showNav ? "active" : '' }`} onClick={toggleSidebar}>
-            </div>
+            </div> */}
         </nav>
     );
 }

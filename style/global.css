@@ -70,6 +70,50 @@ nav.fixed.navbar-shrink {
       padding-top: 1.5rem;
       padding-bottom: 1.5rem;
     }
+
+    nav ul {
+      margin: 0;
+      position: fixed;
+      background: #fc8019;
+      height: 100vh;
+      left: 0;
+      clip-path: circle(50px at 107% -6%);
+      -webkit-clip-path: circle(50px at 107% -6%);
+      transition: all 1s ease-out;
+      pointer-events: none;
+    }
+
+    body.isOpen nav ul{
+        clip-path: circle(1000px at 90% -7%);
+        -webkit-clip-path: circle(1000px at 90% -7%);
+        pointer-events: all;
+    }
+
+    .block.relative {
+      z-index: 1;
+    }
+
+    nav ul li{
+      opacity: 0;
+    }
+
+    nav ul li.fade{
+      opacity: 1;
+    }
+
+    nav ul li:nth-child(1){
+      transition: all 0.5s ease 0.2s;
+    }
+    nav ul li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    nav ul li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    nav ul li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+
 }
 
 .logo {
