@@ -35,7 +35,6 @@ const ContactForm = () => {
 
         try {
             const responce = await axios(config);
-            console.log(responce)
             if (responce.status == 201) {
                 console.log('successful');
                 // router.push('/');

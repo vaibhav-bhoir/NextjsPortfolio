@@ -49,7 +49,9 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
             {
                 pdata.fields.liveUrl ? (
                     <Link href={pdata.fields.liveUrl} target="_blank" >
-                        <h1 className="text-secondary-100 text-4xl mx-4 my-4">{pdata.fields.title}</h1>
+                        <a>
+                            <h1 className="text-secondary-100 text-4xl mx-4 my-4">{pdata.fields.title}</h1>
+                        </a>
                     </Link>
                 ) : (
                     <h1 className="text-secondary-100 text-4xl mx-4 my-4">{pdata.fields.title}</h1>
@@ -62,14 +64,20 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
                     <p className="text-secondary-900 text-3xl mx-4 cursor-pointer">
                         {
                             pdata.fields.liveUrl && <Link href={pdata.fields.liveUrl} target="_blank">
+                                <a>
+
                                 <AiOutlineLink />
+                                </a>
                             </Link>
                         }
                     </p>
                     <p className="text-secondary-900 text-3xl mx-4 cursor-pointer">
                         {
                             pdata.fields.githubUrl && <Link href={pdata.fields.githubUrl} target="_blank">
+                                <a>
+
                                 <AiOutlineGithub />
+                                </a>
                             </Link>
                         }
                     </p>
