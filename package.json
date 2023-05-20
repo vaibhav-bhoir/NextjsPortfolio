@@ -5,7 +5,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.12.1",
@@ -33,6 +34,7 @@
     "eslint": "^8.20.0",
     "eslint-config-next": "12.2.2",
     "postcss": "^8.3.5",
+    "prettier": "^2.8.8",
     "tailwindcss": "^2.2.4",
     "typescript": "^4.7.4"
   }

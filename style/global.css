@@ -39,7 +39,7 @@ html {
 }
 
 html.dark body {
-  background-color: #D6E0F4;;
+  background-color: #d6e0f4;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -61,59 +61,58 @@ nav.fixed.navbar-shrink {
 }
 
 @media only screen and (max-width: 767px) {
-    nav.fixed {
-      padding-top: 1.7rem;
-      padding-bottom: 1.7rem;
-    }
+  nav.fixed {
+    padding-top: 1.7rem;
+    padding-bottom: 1.7rem;
+  }
 
-    nav.fixed.navbar-shrink {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
-    }
+  nav.fixed.navbar-shrink {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 
-    nav ul {
-      margin: 0;
-      position: fixed;
-      background: #fc8019;
-      height: 100vh;
-      left: 0;
-      clip-path: circle(50px at 107% -6%);
-      -webkit-clip-path: circle(50px at 107% -6%);
-      transition: all 1s ease-out;
-      pointer-events: none;
-    }
+  nav ul {
+    margin: 0;
+    position: fixed;
+    background: #fc8019;
+    height: 100vh;
+    left: 0;
+    clip-path: circle(50px at 107% -6%);
+    -webkit-clip-path: circle(50px at 107% -6%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+  }
 
-    body.isOpen nav ul{
-        clip-path: circle(1000px at 90% -7%);
-        -webkit-clip-path: circle(1000px at 90% -7%);
-        pointer-events: all;
-    }
+  body.isOpen nav ul {
+    clip-path: circle(1000px at 90% -7%);
+    -webkit-clip-path: circle(1000px at 90% -7%);
+    pointer-events: all;
+  }
 
-    .block.relative {
-      z-index: 1;
-    }
+  .block.relative {
+    z-index: 1;
+  }
 
-    nav ul li{
-      opacity: 0;
-    }
+  nav ul li {
+    opacity: 0;
+  }
 
-    nav ul li.fade{
-      opacity: 1;
-    }
+  nav ul li.fade {
+    opacity: 1;
+  }
 
-    nav ul li:nth-child(1){
-      transition: all 0.5s ease 0.2s;
-    }
-    nav ul li:nth-child(2){
-        transition: all 0.5s ease 0.4s;
-    }
-    nav ul li:nth-child(3){
-        transition: all 0.5s ease 0.6s;
-    }
-    nav ul li:nth-child(4){
-        transition: all 0.5s ease 0.7s;
-    }
-
+  nav ul li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+  nav ul li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+  nav ul li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+  nav ul li:nth-child(4) {
+    transition: all 0.5s ease 0.7s;
+  }
 }
 
 .logo {
@@ -170,14 +169,14 @@ li {
 }
 
 @media only screen and (min-width: 768px) {
-  .sidebar-overlay.active  {
+  .sidebar-overlay.active {
     opacity: 0;
     visibility: hidden;
   }
 }
 
 html.dark body .typed-cursor {
-  color: #282F66;
+  color: #282f66;
 }
 
 html.light body .typed-cursor {
@@ -185,7 +184,7 @@ html.light body .typed-cursor {
 }
 
 html.dark .text-transparent {
-  -webkit-text-stroke-color: #282F66;
+  -webkit-text-stroke-color: #282f66;
   -webkit-text-stroke-width: 0.5px;
   z-index: -1;
 }
@@ -196,21 +195,20 @@ html.light .text-transparent {
   z-index: -1;
 }
 
-
 .whatsapp {
   position: relative;
   width: 46px;
   height: 46px;
   background: #5dc354;
   border-radius: 50%;
-  box-shadow: 2px 2px 6pxrgba(0,0,0,.4);
+  box-shadow: 2px 2px 6pxrgba (0, 0, 0, 0.4);
   z-index: 100;
-  transition: all ease-out .2s 0s;
+  transition: all ease-out 0.2s 0s;
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
 
 .whatsapp:hover {
-  box-shadow: 2px 2px 11px rgba(0,0,0,.7);
+  box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.7);
 }
 
 .whatsapp a {
@@ -244,12 +242,11 @@ html.light .text-transparent {
   }
 }
 
-
 /* loader css  */
 .loader-wrapper {
   position: fixed;
   top: 0;
-  left:  0;
+  left: 0;
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
@@ -291,7 +288,7 @@ html.light .lds_ellipsis div {
 }
 
 html.dark .lds_ellipsis div {
-  background: #282F66;
+  background: #282f66;
 }
 .lds_ellipsis div:nth-child(1) {
   left: 8px;
