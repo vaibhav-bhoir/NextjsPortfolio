@@ -28,7 +28,7 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
   }, []);
 
   return (
-    <div className="px-3 overflow-hidden">
+    <div className="overflow-hidden">
       <Head>
         <title>Vaibhav Bhoir</title>
         <link rel="icon" href="/favicon.ico" />
@@ -45,7 +45,7 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
             Vaibhav Bhoir
           </h1>
         </div>
-        <main className="container px-10 md:px-36 lg:px-56 flex flex-row flex-wrap items-center justify-center">
+        <main className="container flex flex-row flex-wrap items-center justify-center">
           <div
             data-aos="fade-right"
             data-aos-duration="1000"
@@ -85,11 +85,11 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
             Experience
           </h1>
         </div>
-        <main className="container px-10 md:px-36 lg:px-56">
+        <main className="container">
           <h3 className="text-success dark:text-jaguar text-5xl md:text-4xl" data-aos="fade-in">
-            Projects on which I've worked
+            Projects on which I have worked
           </h3>
-          <div className="flex flex-wrap justify-center my-12 transition ease-in-out">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 my-12 transition ease-in-out">
             {EXP_DATA.map((expData) => (
               <ExCover expData={expData} key={expData.sys.id} />
             ))}
@@ -106,12 +106,18 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
             Featured Projects
           </h1>
         </div>
-        <main className="container px-10 md:px-36 lg:px-56 flex flex-wrap flex-col items-center justify-center">
+        <main className="container flex flex-wrap flex-col items-center justify-center">
           <h3 className="text-success dark:text-jaguar text-5xl md:text-4xl self-start">
             Some Selected Projects
           </h3>
-          <div className="flex flex-wrap justify-center my-12 transition ease-in-out">
-            {data.length === 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 my-12 transition ease-in-out">
+            {data.length > 0 &&
+              data.map((pdata) => (
+                <Cover pdata={pdata} key={pdata.sys.id} handleClose={handleClose} />
+              ))}
+          </div>
+          {data.length === 0 && (
+            <>
               <div className="flex flex-col justify-center items-center">
                 <div className="w-1/2 h-auto my-12">
                   <Image src="/noData.svg" alt="" height={250} width={250} />
@@ -120,19 +126,13 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
                   No Projects Opened
                 </h3>
               </div>
-            ) : (
-              data.map((pdata) => (
-                <Cover pdata={pdata} key={pdata.sys.id} handleClose={handleClose} />
-              ))
-            )}
-          </div>
-          {data.length === 0 && (
-            <button
-              className="rounded-lg border-2 px-8 py-4 my-4 dark:text-white dark:bg-darkblue dark:border-darkblue border-info text-info self-center"
-              onClick={() => setData(PROJECTS_DATA)}
-            >
-              Load All Again
-            </button>
+              <button
+                className="rounded-lg border-2 px-8 py-4 my-4 dark:text-white dark:bg-darkblue dark:border-darkblue border-info text-info self-center"
+                onClick={() => setData(PROJECTS_DATA)}
+              >
+                Load All Again
+              </button>
+            </>
           )}
           {data.length !== 0 && (
             <Link href="/work">

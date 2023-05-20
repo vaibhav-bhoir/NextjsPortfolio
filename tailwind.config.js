@@ -3,12 +3,13 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
-    // screens: {
-    //   'sm': '576px',
-    //   'md': '768px',
-    //   'lg': '992px',
-    //   'xl': '1200px',
-    // },
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1280px',
+      },
+    },
     extend: {
       colors: {
         primary: '#05182c',
@@ -29,12 +30,6 @@ module.exports = {
       fontSize: {
         '10xl': '10rem',
         '15xl': '15rem',
-      },
-      height: {
-        100: '40rem',
-      },
-      width: {
-        100: '30rem',
       },
       transitionProperty: {
         left: 'left',

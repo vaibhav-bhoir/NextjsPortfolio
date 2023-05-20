@@ -98,11 +98,12 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/ContactForm.js",
+    "components/ContactForm.ts",
     "pages/index.js",
     "pages/_app.js",
     "components/Navbar.tsx",
-    "components/Header.jsx"
+    "components/Header.jsx",
+    "pages/api/contact.js"
   ],
   "exclude": ["node_modules"]
 }

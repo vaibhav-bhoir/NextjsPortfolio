@@ -8,7 +8,7 @@ const Header = ({ heroProps }) => {
 
   return (
     <div className="flex flex-col items-center justify-center mt-64 md:mb-0">
-      <main className="container mb-36 md:mb-0 px-10 md:px-36 lg:px-56 flex flex-row flex-wrap items-center justify-center">
+      <main className="container mb-36 md:mb-0 flex flex-row flex-wrap items-center justify-center">
         <div className="w-full md:w-1/2">
           <h3 className="text-success dark:text-jaguar md:text-4xl" data-aos="fade-in">
             {smallCaption}

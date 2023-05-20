@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Image from 'next/image';
-import axios from 'axios';
+import axios, { Method } from 'axios';
 import Loader from './Loader';
 import getConfig from 'next/config';
 
@@ -21,11 +21,11 @@ const ContactForm = () => {
 
   const apiUrl = `${BASE_URL}/api/contact`;
 
-  async function onSubmit(values) {
+  async function onSubmit(values: any) {
     setLoader(true);
 
     let config = {
-      method: 'post',
+      method: 'post' as Method,
       url: apiUrl,
       headers: {
         'Content-Type': 'application/json',
@@ -37,7 +37,6 @@ const ContactForm = () => {
       const responce = await axios(config);
       if (responce.status == 201) {
         console.log('successful');
-        // router.push('/');
         setLoader(false);
         reset();
       }
@@ -49,7 +48,7 @@ const ContactForm = () => {
   return (
     <>
       <div className="min-h-screen flex items-center justify-center mb-40 md:mb-20">
-        <div className="h-1/4 container relative w-full flex flex-wrap justify-center items-center px-5 md:px-36 lg:px-56">
+        <div className="h-1/4 container relative w-full flex flex-wrap justify-center items-center">
           <div data-aos="fade-right" data-aos-duration="1000" className="w-full md:w-1/2">
             <Image
               alt="Illustration of man sitting on a block"
@@ -78,7 +77,6 @@ const ContactForm = () => {
                     errors.name ? 'ring-2 ring-red-500' : null
                   } outline-none py-2 px-4 bg-gray-700 dark:bg-white border-primary border-2 rounded-md placeholder-gray-400 dark:text-black`}
                   type="text"
-                  name="name"
                   placeholder="Tony Stark"
                   {...register('name', {
                     required: {
@@ -100,7 +98,6 @@ const ContactForm = () => {
                     errors.email ? 'ring-2 ring-red-500' : null
                   } outline-none py-2 px-4 bg-gray-700 dark:bg-white border-primary border-2 rounded-md placeholder-gray-400 dark:text-black`}
                   type="text"
-                  name="email"
                   placeholder="ironman@gmail.com"
                   {...register('email', {
                     required: {
@@ -133,10 +130,8 @@ const ContactForm = () => {
                   className={`${
                     errors.message ? 'ring-2 ring-red-500' : null
                   } outline-none h-28 max-h-56 py-2 px-4 bg-gray-700 dark:bg-white border-primary border-2 rounded-md dark:text-black`}
-                  rows="3"
+                  rows={3}
                   id="message"
-                  type="text"
-                  name="message"
                   placeholder="Hey, I would like to get in touch with you"
                   {...register('message', {
                     required: {
@@ -176,11 +171,6 @@ const ContactForm = () => {
                   Submit
                 </button>
               )}
-              {/* {isSubmitting && 
-                            <div className="loader-wrapper">
-                                <Loader/>
-                            </div>
-                        } */}
               {isSubmitSuccessful && (
                 <div className="text-success dark:text-darkblue">
                   Thank you! I will get in touch with you shortly. for quick responce connect me on
@@ -191,9 +181,7 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-      {/* <div className="loader-wrapper">
-                <Loader/>
-            </div> */}
+
       {isSubmitting && (
         <div className="loader-wrapper">
           <Loader />
