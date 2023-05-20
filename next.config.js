@@ -1,18 +1,18 @@
-const withPWA = require('next-pwa')
+const withPWA = require('next-pwa');
 
 module.exports = withPWA({
-    pwa: {
-        dest: "public",
-        register: true,
-        skipWaiting: true,
-    }
-})
+  pwa: {
+    dest: 'public',
+    register: true,
+    skipWaiting: true,
+  },
+});
 
 module.exports = {
-    publicRuntimeConfig: {
-        BASE_URL: process.env.BASE_URL
-    },
-    images: {
-        domains: ["images.ctfassets.net"]
-    }
-}
+  publicRuntimeConfig: {
+    BASE_URL: process.env.BASE_URL,
+  },
+  images: {
+    domains: ['images.ctfassets.net'],
+  },
+};
