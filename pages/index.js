@@ -89,7 +89,7 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
           <h3 className="text-success dark:text-jaguar text-5xl md:text-4xl" data-aos="fade-in">
             Projects on which I have worked
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 my-12 transition ease-in-out">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 my-12 transition ease-in-out">
             {EXP_DATA.map((expData) => (
               <ExCover expData={expData} key={expData.sys.id} />
             ))}
@@ -110,7 +110,7 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
           <h3 className="text-success dark:text-jaguar text-5xl md:text-4xl self-start">
             Some Selected Projects
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 my-12 transition ease-in-out">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 my-12 transition ease-in-out">
             {data.length > 0 &&
               data.map((pdata) => (
                 <Cover pdata={pdata} key={pdata.sys.id} handleClose={handleClose} />

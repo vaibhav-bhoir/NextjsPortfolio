@@ -118,7 +118,7 @@ nav.fixed.navbar-shrink {
 .logo {
   display: flex;
   align-items: center;
-  width: 200px;
+  width: 175px;
   height: auto;
   margin-left: 45px;
   transition: width 0.3s ease-in-out;
@@ -130,13 +130,13 @@ nav.fixed.navbar-shrink .logo {
 
 @media only screen and (max-width: 767px) {
   .logo {
-    width: 160px;
+    width: 130px;
     height: auto;
     margin-left: 0;
   }
 
   nav.fixed.navbar-shrink .logo {
-    width: 120px;
+    width: 110px;
   }
 }
 
