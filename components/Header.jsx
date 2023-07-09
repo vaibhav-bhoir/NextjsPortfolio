@@ -1,15 +1,18 @@
-import React from 'react';
-import Image from 'next/image';
+import React, { useRef } from 'react';
 import Typed from 'react-typed';
 import Link from 'next/link';
+import Lottie from 'lottie-react';
+import computerAnimation from '../public/animations/computer-work-animation-dark-data.json';
 
 const Header = ({ heroProps }) => {
   const { smallCaption, heading, description, subheadings, heroImage, resumeLink } = heroProps;
 
+  const computerAnimationRef = useRef();
+
   return (
     <div className="flex flex-col items-center justify-center mt-64 md:mb-0">
-      <main className="container mb-36 md:mb-0 flex flex-row flex-wrap items-center justify-center">
-        <div className="w-full md:w-1/2">
+      <main className="container mb-36 md:mb-0 grid grid-cols-1 lg:grid-cols-2 gap-28 lg:gap-10">
+        <div className="">
           <h3 className="text-success dark:text-jaguar md:text-4xl" data-aos="fade-in">
             {smallCaption}
           </h3>
@@ -34,39 +37,37 @@ const Header = ({ heroProps }) => {
           >
             {description}
           </p>
-          <Link href="/contact">
-            <a
-              className="rounded-lg border-2 px-8 py-4 md:px-8 md:py-4 mt-4 mb-24 border-success text-success dark:text-white dark:bg-darkblue dark:border-darkblue hover:bg-success hover:text-black"
-              data-aos="fade-in"
-              data-aos-delay={2000}
-            >
-              Hire Me
-            </a>
-          </Link>
-          <Link href={resumeLink}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg border-2 px-8 py-4 mt-4 mb-24  ml-6 md:ml-8 border-info text-info dark:text-white dark:bg-darkblue dark:border-darkblue hover:bg-info hover:text-black"
-              data-aos="fade-in"
-              data-aos-delay={2000}
-            >
-              Get Resume
-            </a>
-          </Link>
+          <div>
+            <Link href="/contact">
+              <a
+                className="rounded-lg border-2 px-8 py-4 md:px-8 md:py-4 mt-4 mb-24 border-success text-success dark:text-white dark:bg-darkblue dark:border-darkblue hover:bg-success hover:text-black"
+                data-aos="fade-in"
+                data-aos-delay={2000}
+              >
+                Hire Me
+              </a>
+            </Link>
+            <Link href={resumeLink}>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg border-2 px-8 py-4 mt-4 mb-24  ml-6 md:ml-8 border-info text-info dark:text-white dark:bg-darkblue dark:border-darkblue hover:bg-info hover:text-black"
+                data-aos="fade-in"
+                data-aos-delay={2000}
+              >
+                Get Resume
+              </a>
+            </Link>
+          </div>
         </div>
-        <div
-          data-aos="fade-in"
-          data-aos-delay={1000}
-          className=" hidden md:block w-full md:w-1/2 p-16"
-        >
-          <Image
-            alt=""
-            src={`https:${heroImage.fields.file.url}`}
-            width={heroImage.fields.file.details.image.width}
-            height={heroImage.fields.file.details.image.width}
-            layout="responsive"
-            objectFit="contain"
+        <div className="">
+          <Lottie
+            onComplete={() => {
+              computerAnimationRef?.current?.goToAndPlay(120, true);
+            }}
+            loop={false}
+            lottieRef={computerAnimationRef}
+            animationData={computerAnimation}
           />
         </div>
       </main>

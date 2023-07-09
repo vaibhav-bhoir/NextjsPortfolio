@@ -11,6 +11,9 @@ import Header from '../components/Header';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Lottie from 'lottie-react';
+import folderAnimation from '../public/animations/document-folder-animation-data.json';
+import webDevAnimation from '../public/animations/web-devoloper-animation-data.json';
 
 export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
   const [data, setData] = useState(PROJECTS_DATA);
@@ -46,19 +49,8 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
           </h1>
         </div>
         <main className="container flex flex-row flex-wrap items-center justify-center">
-          <div
-            data-aos="fade-right"
-            data-aos-duration="1000"
-            className="w-full lg:w-1/2 md:p-16 mb-24"
-          >
-            <Image
-              alt=""
-              src={`https:${heroProps.aboutImage.fields.file.url}`}
-              width={heroProps.aboutImage.fields.file.details.image.width}
-              height={heroProps.aboutImage.fields.file.details.image.height}
-              layout="responsive"
-              objectFit="contain"
-            />
+          <div className="w-full lg:w-1/2 md:p-16 mb-24">
+            <Lottie animationData={webDevAnimation} />
           </div>
           <div data-aos="fade-left" data-aos-duration="1000" className="w-full lg:w-1/2">
             <h3 className="text-success dark:text-jaguar text-5xl md:text-4xl">
@@ -89,7 +81,7 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
           <h3 className="text-success dark:text-jaguar text-5xl md:text-4xl" data-aos="fade-in">
             Projects on which I have worked
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 my-12 transition ease-in-out">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 my-12 transition ease-in-out">
             {EXP_DATA.map((expData) => (
               <ExCover expData={expData} key={expData.sys.id} />
             ))}
@@ -110,7 +102,7 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
           <h3 className="text-success dark:text-jaguar text-5xl md:text-4xl self-start">
             Some Selected Projects
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 my-12 transition ease-in-out">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 my-12 transition ease-in-out">
             {data.length > 0 &&
               data.map((pdata) => (
                 <Cover pdata={pdata} key={pdata.sys.id} handleClose={handleClose} />
@@ -119,8 +111,8 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
           {data.length === 0 && (
             <>
               <div className="flex flex-col justify-center items-center">
-                <div className="w-1/2 h-auto my-12">
-                  <Image src="/noData.svg" alt="" height={250} width={250} />
+                <div className="my-12">
+                  <Lottie animationData={folderAnimation} />
                 </div>
                 <h3 className="text-success dark:text-jaguar md:text-4xl" data-aos="fade-in">
                   No Projects Opened
