@@ -99,10 +99,10 @@
     "**/*.ts",
     "**/*.tsx",
     "components/ContactForm.ts",
-    "pages/index.js",
+    "pages/index.tsx",
     "pages/_app.js",
     "components/Navbar.tsx",
-    "components/Header.jsx",
+    "components/HeroBanner.jsx",
     "pages/api/contact.js"
   ],
   "exclude": ["node_modules"]

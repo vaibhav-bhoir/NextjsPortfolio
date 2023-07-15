@@ -2,9 +2,9 @@ import React, { useRef } from 'react';
 import Typed from 'react-typed';
 import Link from 'next/link';
 import Lottie from 'lottie-react';
-import computerAnimation from '../public/animations/computer-work-animation-dark-data.json';
+import computerAnimation from '../public/animations/computer-work-animation-data.json';
 
-const Header = ({ heroProps }) => {
+const HeroBanner = ({ heroProps }) => {
   const { smallCaption, heading, description, subheadings, heroImage, resumeLink } = heroProps;
 
   const computerAnimationRef = useRef();
@@ -75,4 +75,4 @@ const Header = ({ heroProps }) => {
   );
 };
 
-export default Header;
+export default HeroBanner;

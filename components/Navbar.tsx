@@ -34,7 +34,7 @@ const Navbar2 = () => {
     <nav
       className={`${
         scroll ? 'navbar-shrink' : ''
-      } fixed w-full md:flex justify-between items-center text-white text-center bg-frosted dark:bg-darkblue p-4 md:px-3 md:py-0 z-50`}
+      } fixed w-full md:flex justify-between items-center text-white text-center bg-frosted dark:bg-darkblue p-4 md:px-3 md:py-0 z-20`}
     >
       <div className="flex items-center justify-between">
         <Link href="/">

@@ -7,7 +7,7 @@ import ExCover from '../components/ExCover';
 import ContactForm from '../components/ContactForm';
 import Image from 'next/image';
 import GetInTouch from '../components/GetInTouch';
-import Header from '../components/Header';
+import HeroBanner from '../components/HeroBanner';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -37,7 +37,7 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header heroProps={heroProps} />
+      <HeroBanner heroProps={heroProps} />
 
       <div className="flex flex-col items-center justify-center my-64">
         <div className="container relative w-full flex justify-center items-center">
