@@ -49,12 +49,12 @@ const ContactForm = () => {
 
   return (
     <>
-      <div className="min-h-screen flex items-center justify-center mb-40 mt-28 md:mb-20 md:mt-0">
-        <div className="h-1/4 container relative w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-28 lg:gap-10">
+      <div className="flex items-center justify-center py-20">
+        <div className="container relative w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-28 lg:gap-10">
           <div className="lg:order-2">
             <Lottie animationData={manWorkingAnimation} />
           </div>
-          <div data-aos="fade-left" data-aos-duration="1000" className="lg:order-1">
+          <div data-aos="fade-right" data-aos-duration="1000" className="lg:order-1">
             <h3 className="text-success dark:text-darkblue text-5xl md:text-4xl mb-12">
               Drop me a message
             </h3>

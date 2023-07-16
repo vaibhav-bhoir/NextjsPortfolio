@@ -101,7 +101,7 @@
     "components/ContactForm.ts",
     "pages/index.tsx",
     "pages/_app.js",
-    "components/Navbar.tsx",
+    "components/Header.tsx",
     "components/HeroBanner.jsx",
     "pages/api/contact.js"
   ],

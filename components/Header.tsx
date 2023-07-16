@@ -8,7 +8,7 @@ import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
 import Lottie from 'lottie-react';
 import logoAnimation from '../public/animations/v-logo-animation-data.json';
 
-const Navbar2 = () => {
+const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const [scroll, setScroll] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -31,10 +31,10 @@ const Navbar2 = () => {
   };
 
   return (
-    <nav
+    <header
       className={`${
         scroll ? 'navbar-shrink' : ''
-      } fixed w-full md:flex justify-between items-center text-white text-center bg-frosted dark:bg-darkblue p-4 md:px-3 md:py-0 z-20`}
+      } fixed top-0 w-full md:flex justify-between items-center text-white text-center bg-frosted dark:bg-darkblue p-4 md:px-3 md:py-0 z-20`}
     >
       <div className="flex items-center justify-between">
         <Link href="/">
@@ -75,7 +75,7 @@ const Navbar2 = () => {
           <li
             key={index}
             onClick={toggleSidebar}
-            className={`${router.pathname == link.path ? 'after:w-full' : ''} ${
+            className={`${router.pathname == link.path ? 'after:w-[100%]' : ''} ${
               showNav ? 'fade' : ''
             } px-3 my-6 md:py-2 text-7xl md:text-3xl font-bold items-center justify-center text-transform: uppercase relative transition-all after:block after:bg-white after:absolute after:bottom-[-3px] after:content-[''] after:h-1 after:left-0 after:transition-all after:duration-500 after:w-0 hover:after:w-full`}
           >
@@ -95,8 +95,8 @@ const Navbar2 = () => {
           </button>
         </div>
       </ul>
-    </nav>
+    </header>
   );
 };
 
-export default Navbar2;
+export default Header;

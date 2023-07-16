@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import Typed from 'react-typed';
-import Link from 'next/link';
 import Lottie from 'lottie-react';
 import computerAnimation from '../public/animations/computer-work-animation-data.json';
+import CustomLink from './CustomLink';
 
 const HeroBanner = ({ heroProps }) => {
   const { smallCaption, heading, description, subheadings, heroImage, resumeLink } = heroProps;
@@ -10,8 +10,8 @@ const HeroBanner = ({ heroProps }) => {
   const computerAnimationRef = useRef();
 
   return (
-    <div className="flex flex-col items-center justify-center mt-64 md:mb-0">
-      <main className="container mb-36 md:mb-0 grid grid-cols-1 lg:grid-cols-2 gap-28 lg:gap-10">
+    <div className="flex flex-col items-center justify-center py-20">
+      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-28 lg:gap-10">
         <div className="">
           <h3 className="text-success dark:text-jaguar md:text-4xl" data-aos="fade-in">
             {smallCaption}
@@ -24,7 +24,7 @@ const HeroBanner = ({ heroProps }) => {
             {heading}
           </h1>
           <h1
-            className="text-secondary-900 dark:text-jaguar text-4xl md:text-6xl"
+            className="text-secondary-900 dark:text-jaguar text-4xl md:text-6xl mb-16"
             data-aos="fade-in"
             data-aos-delay={1000}
           >
@@ -37,27 +37,11 @@ const HeroBanner = ({ heroProps }) => {
           >
             {description}
           </p>
-          <div>
-            <Link href="/contact">
-              <a
-                className="rounded-lg border-2 px-8 py-4 md:px-8 md:py-4 mt-4 mb-24 border-success text-success dark:text-white dark:bg-darkblue dark:border-darkblue hover:bg-success hover:text-black"
-                data-aos="fade-in"
-                data-aos-delay={2000}
-              >
-                Hire Me
-              </a>
-            </Link>
-            <Link href={resumeLink}>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-lg border-2 px-8 py-4 mt-4 mb-24  ml-6 md:ml-8 border-info text-info dark:text-white dark:bg-darkblue dark:border-darkblue hover:bg-info hover:text-black"
-                data-aos="fade-in"
-                data-aos-delay={2000}
-              >
-                Get Resume
-              </a>
-            </Link>
+          <div className="flex gap-12">
+            <CustomLink url="/contact">Hire me</CustomLink>
+            <CustomLink url={resumeLink} color="info">
+              Get Resume
+            </CustomLink>
           </div>
         </div>
         <div className="">
@@ -70,7 +54,7 @@ const HeroBanner = ({ heroProps }) => {
             animationData={computerAnimation}
           />
         </div>
-      </main>
+      </div>
     </div>
   );
 };

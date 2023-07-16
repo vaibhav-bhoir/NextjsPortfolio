@@ -1,12 +1,10 @@
 import 'tailwindcss/tailwind.css';
 import '../style/global.css';
 import { ThemeProvider } from 'next-themes';
-import Footer from '../components/Footer';
-import LeftSidebar from '../components/LeftSidebar';
-import Navbar from '../components/Navbar';
 import { useRouter } from 'next/router';
 import PageLoader from '../components/PageLoader';
 import { useState, useEffect } from 'react';
+import Layout from '../components/Layout';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -35,10 +33,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class">
       {isLoading && <PageLoader />}
-      <Navbar />
-      <LeftSidebar />
-      <Component {...pageProps} />
-      <Footer />
+      <Layout Component={Component} pageProps={pageProps} />
     </ThemeProvider>
   );
 }
