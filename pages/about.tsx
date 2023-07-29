@@ -19,7 +19,7 @@ const About = () => {
           <CustomHeading headingSup="About" headingSub="Vaibhav Bhoir" />
 
           <h3
-            className="text-success dark:text-jaguar text-5xl md:text-4xl mb-16"
+            className="text-success dark:text-jaguar text-5xl md:text-6xl mb-16"
             data-aos="fade-in"
           >
             Let me tell you a few things....
@@ -52,7 +52,7 @@ const About = () => {
         <div className="flex flex-col items-center justify-center py-20">
           <CustomHeading headingSup="Toolbox" headingSub=" My Weapons ⚔" />
 
-          <h3 className="text-success dark:text-jaguar text-5xl md:text-4xl mb-16">
+          <h3 className="text-success dark:text-jaguar text-5xl md:text-6xl mb-16">
             Technologies that I use
           </h3>
           <div className="flex flex-wrap justify-center items-center">

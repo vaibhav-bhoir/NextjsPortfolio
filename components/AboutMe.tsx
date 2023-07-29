@@ -15,7 +15,7 @@ const AboutMe = (props: any) => {
           <Lottie animationData={webDevAnimation} />
         </div>
         <div data-aos="fade-right" data-aos-duration="1000" className="">
-          <h3 className="text-success dark:text-jaguar text-5xl md:text-4xl mb-16">
+          <h3 className="text-success dark:text-jaguar text-5xl md:text-6xl mb-16">
             {props.heroProps.aboutHeading}
           </h3>
           <div className="text-secondary-900 text-3xl md:text-4xl max-w-6xl mb-16">

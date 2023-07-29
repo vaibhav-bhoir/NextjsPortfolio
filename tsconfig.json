@@ -103,7 +103,8 @@
     "pages/_app.js",
     "components/Header.tsx",
     "components/HeroBanner.jsx",
-    "pages/api/contact.js"
+    "pages/api/contact.js",
+    "components/Carousel.tsx"
   ],
   "exclude": ["node_modules"]
 }

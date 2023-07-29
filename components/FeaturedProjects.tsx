@@ -11,7 +11,7 @@ const FeaturedProjects = (props: any) => {
       <CustomHeading headingSup="Work" headingSub="Featured Projects" />
 
       <div className="container flex flex-wrap flex-col items-center justify-center">
-        <h3 className="text-success dark:text-jaguar text-5xl md:text-4xl self-start mb-20">
+        <h3 className="text-success dark:text-jaguar text-5xl md:text-6xl self-start mb-20">
           Some Selected Projects
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-20 transition ease-in-out">

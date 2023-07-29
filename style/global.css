@@ -38,6 +38,10 @@ html {
   }
 }
 
+body {
+  overflow-x: hidden;
+}
+
 html.dark body {
   background-color: #d6e0f4;
   font-family: 'Poppins', sans-serif;
@@ -268,4 +272,19 @@ html.light .text-transparent {
     transform: translate(5px, 38px);
     opacity: 1;
   }
+}
+
+.swiper {
+  overflow: visible !important;
+}
+
+.swiper .swiper-wrapper {
+  padding-bottom: 65px;
+}
+.swiper-slide {
+  height: auto !important;
+}
+
+.swiper-slide > div {
+  height: 100%;
 }

@@ -25,7 +25,7 @@ const ExperienceProjects: React.FC<ExperienceProjectsProps> = ({ EXP_DATA }) => 
       <CustomHeading headingSup="Work" headingSub="Experience" />
 
       <div className="container">
-        <h3 className="text-success dark:text-jaguar text-5xl md:text-4xl mb-20" data-aos="fade-in">
+        <h3 className="text-success dark:text-jaguar text-5xl md:text-6xl mb-20" data-aos="fade-in">
           Projects on which I have worked
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 my-12 transition ease-in-out">
