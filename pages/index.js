@@ -37,7 +37,8 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
       <HeroBanner heroProps={heroProps} />
       <AboutMe heroProps={heroProps}></AboutMe>
       <CustomHeading headingSup="Work" headingSub="Experience" />
-      <Carousel EXP_DATA={EXP_DATA}></Carousel>
+      {/* <Carousel EXP_DATA={EXP_DATA}></Carousel> */}
+      <ExperienceProjects EXP_DATA={EXP_DATA}></ExperienceProjects>
       <FeaturedProjects
         PROJECTS_DATA={PROJECTS_DATA}
         data={data}
