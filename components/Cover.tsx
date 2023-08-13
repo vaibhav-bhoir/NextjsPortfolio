@@ -36,7 +36,7 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
     <div
       data-aos="fade-up"
       data-aos-duration="1000"
-      className="border-1 border-secondary-900 bg-frosted dark:bg-darkblue dark:border-white rounded-xl px-4 transform transition-transform hover:scale-[1.02]"
+      className="bg-light-gray  rounded-xl px-4 transform transition-transform hover:scale-[1.02]"
     >
       <div className="justify-between items-center mx-2 flex">
         <div className="flex my-6">
@@ -44,28 +44,28 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
             className="w-6 h-6 bg-red-500 rounded-full cursor-pointer"
             onClick={() => handleClose(pdata.sys.id)}
           ></span>
-          <span className="w-6 h-6 mx-2 bg-info rounded-full"></span>
-          <span className="w-6 h-6 bg-success rounded-full"></span>
+          <span className="w-6 h-6 mx-2 bg-primary rounded-full"></span>
+          <span className="w-6 h-6 bg-secondary rounded-full"></span>
         </div>
-        <h1 className="text-secondary-900 my-6">{pdata.fields.type}</h1>
+        <h1 className="text-white my-6">{pdata.fields.type}</h1>
       </div>
       <hr />
       {pdata.fields.liveUrl ? (
         <Link href={pdata.fields.liveUrl} target="_blank">
           <a>
-            <h1 className="text-secondary-100 text-4xl mx-4 my-4">{pdata.fields.title}</h1>
+            <h1 className="text-white text-4xl mx-4 my-4">{pdata.fields.title}</h1>
           </a>
         </Link>
       ) : (
-        <h1 className="text-secondary-100 text-4xl mx-4 my-4">{pdata.fields.title}</h1>
+        <h1 className="text-white text-4xl mx-4 my-4">{pdata.fields.title}</h1>
       )}
-      <h1 className="text-secondary-900 text-xl mx-4 my-2">
+      <h1 className="text-white text-xl mx-4 my-2">
         {pdata.fields.liveUrl ? 'Completed' : 'Currently Working on'}
       </h1>
-      <div className="flex items-center justify-between">
-        <p className="text-secondary-900 mx-4">--</p>
+      <div className="flex items-center justify-between m-4">
+        <p className="text-white mx-4">--</p>
         <div className="flex">
-          <p className="text-secondary-900 text-3xl mx-4 cursor-pointer">
+          <p className="text-secondary text-3xl mx-4 cursor-pointer">
             {pdata.fields.liveUrl && (
               <Link href={pdata.fields.liveUrl} target="_blank">
                 <a>
@@ -74,7 +74,7 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
               </Link>
             )}
           </p>
-          <p className="text-secondary-900 text-3xl mx-4 cursor-pointer">
+          <p className="text-secondary text-3xl mx-4 cursor-pointer">
             {pdata.fields.githubUrl && (
               <Link href={pdata.fields.githubUrl} target="_blank">
                 <a>
@@ -93,14 +93,14 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
         className="rounded-2xl"
       />
       <div className="flex flex-wrap justify-between items-center my-4 mx-4">
-        <p className="text-secondary-900 text-2xl mx-4 cursor-pointer font-semibold">
+        <p className="text-secondary text-2xl mx-4 cursor-pointer font-semibold">
           {pdata.fields.githubUrl && (
             <Link href={pdata.fields.githubUrl}>
               <a target="_blank">GitHub</a>
             </Link>
           )}
         </p>
-        <p className="text-secondary-900 text-2xl mx-4 cursor-pointer font-semibold">
+        <p className="text-secondary text-2xl mx-4 cursor-pointer font-semibold">
           {pdata.fields.liveUrl && (
             <Link href={pdata.fields.liveUrl}>
               <a target="_blank">Visit</a>

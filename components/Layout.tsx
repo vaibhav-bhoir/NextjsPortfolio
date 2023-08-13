@@ -12,7 +12,7 @@ const Layout: React.FC<LayoutProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Header />
-      <main className="flex-1 mt-56 lg:mt-64">
+      <main className="flex-1 pt-[57px] lg:pt-[98px]">
         <LeftSidebar />
         <Component {...pageProps} />
       </main>

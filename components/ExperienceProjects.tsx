@@ -21,11 +21,11 @@ interface ExperienceProjectsProps {
 
 const ExperienceProjects: React.FC<ExperienceProjectsProps> = ({ EXP_DATA }) => {
   return (
-    <div className="flex flex-col items-center justify-center py-20">
-      <CustomHeading headingSup="Work" headingSub="Experience" />
+    <div className="flex flex-col items-center justify-center py-20 bg-gradient-to-r from-primary to-secondary">
+      <CustomHeading headingSup="Work" headingSub="Experience" color="black" />
 
       <div className="container">
-        <h3 className="text-success dark:text-jaguar text-5xl md:text-6xl mb-20" data-aos="fade-in">
+        <h3 className="text-success  text-5xl md:text-6xl mb-20" data-aos="fade-in">
           Projects on which I have worked
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 my-12 transition ease-in-out">

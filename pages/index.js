@@ -36,7 +36,7 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
 
       <HeroBanner heroProps={heroProps} />
       <AboutMe heroProps={heroProps}></AboutMe>
-      <CustomHeading headingSup="Work" headingSub="Experience" />
+      {/* <CustomHeading headingSup="Work" headingSub="Experience" /> */}
       {/* <Carousel EXP_DATA={EXP_DATA}></Carousel> */}
       <ExperienceProjects EXP_DATA={EXP_DATA}></ExperienceProjects>
       <FeaturedProjects
@@ -45,12 +45,18 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
         setData={setData}
         handleClose={handleClose}
       ></FeaturedProjects>
-
-      <div className="flex flex-col items-center justify-center py-20">
-        <CustomHeading headingSup="Contact" headingSub="Say Hello" />
-        <GetInTouch />
+      <div className="bg-gradient-to-l from-primary to-secondary">
+        <div className="flex flex-col items-center justify-center py-20 ">
+          <CustomHeading
+            className="uppercase"
+            headingSup="Contact"
+            headingSub="Say Hello"
+            color="black"
+          />
+          <GetInTouch />
+        </div>
+        <ContactForm />
       </div>
-      <ContactForm />
     </>
   );
 }

@@ -1,7 +1,7 @@
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class',
+  darkMode: false,
   theme: {
     container: {
       center: true,
@@ -11,21 +11,36 @@ module.exports = {
       },
     },
     extend: {
-      colors: {
-        primary: '#05182c',
-        secondary: {
-          100: '#fffefe',
-          900: '#8892B0',
-        },
-        info: '#fccf0c',
-        success: '#02ef63',
-        danger: '#fe6ea8',
-        normal: '#07bcfc',
-        frosted: '#1d2f41',
-        darkblue: '#282F66',
-        jaguar: '#2A2A2C',
-        linkwater: '#CACCCE',
-        hawkesblue: '#D6E0F4',
+      textColor: {
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
+        black: 'var(--black)',
+        white: 'var(--white)',
+        gray: 'var(--gray)',
+        silver: 'var(--silver)',
+        'light-black': 'var(--light-black)',
+        'pearl-black': 'var(--pearl-black)',
+        'light-white': 'var(--light-white)',
+        'light-gray': 'var(--light-gray)',
+      },
+      backgroundColor: {
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
+        black: 'var(--black)',
+        white: 'var(--white)',
+        gray: 'var(--gray)',
+        silver: 'var(--silver)',
+        'light-black': 'var(--light-black)',
+        'pearl-black': 'var(--pearl-black)',
+        'light-white': 'var(--light-white)',
+        'light-gray': 'var(--light-gray)',
+      },
+      gradientColorStops: {
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
+      },
+      animation: {
+        'spin-slow': 'spin 2.5s linear infinite',
       },
       fontSize: {
         '10xl': '10rem',

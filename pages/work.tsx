@@ -16,9 +16,7 @@ const Work = () => {
         <CustomHeading headingSup="Work" headingSub="More Projects" />
 
         <div className="container flex flex-col items-center justify-center">
-          <h3 className="text-success dark:text-jaguar text-5xl md:text-6xl self-start">
-            All Projects
-          </h3>
+          <h3 className="text-success text-5xl md:text-6xl self-start">All Projects</h3>
           <div className="w-full min-h-screen my-12 transition ease-in-out">
             {LIST_DATA.map((e) => (
               <WorkCover data={e} key={e.id} />

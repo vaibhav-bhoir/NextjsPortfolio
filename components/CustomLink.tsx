@@ -11,7 +11,7 @@ export type CustomLinkProps = {
 
 const CustomLink: React.FC<CustomLinkProps> = ({
   url,
-  color = 'success',
+  color = 'black',
   className = '',
   target,
   children,
@@ -20,7 +20,8 @@ const CustomLink: React.FC<CustomLinkProps> = ({
     <Link href={url}>
       <a
         target={target}
-        className={`${className} rounded-lg border-2 px-4 py-2 md:px-8 md:py-4 flex items-center justify-between  border-${color} text-${color} hover:bg-${color} hover:text-black dark:text-white dark:bg-darkblue dark:border-darkblue`}
+        className={`${className} bg-gradient-to-r from-primary to-secondary rounded-lg px-4 py-2 md:px-8 md:py-4 uppercase tracking-wide
+        flex items-center justify-between text-${color} hover:text-black`}
         data-aos="fade-in"
         data-aos-delay={2000}
       >
