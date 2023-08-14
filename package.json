@@ -53,5 +53,8 @@
     "*.{js,jsx,ts,tsx}": [
       "npm run lint"
     ]
+  },
+  "engines": {
+    "node": "18.15.0"
   }
 }

@@ -53,9 +53,9 @@ const LeftSidebar = () => {
             </Link>
           </li>
         ))}
-        <div className="whatsapp flex justify-center items-center  w-10 h-10 relative rounded-full shadow-lg bg-green-500 animate-up-down transition-all">
+        <div className="whatsapp flex justify-center items-center w-8 h-8 relative rounded-full shadow-lg bg-green-500 animate-up-down transition-all">
           <Link href="https://wa.me/+918975588567?text=Hi%20Vaibhav.%20I%27d%20like%20to%20chat%20with%20you">
-            <a className="text-3xl text-white hover:text-white" target="_blank">
+            <a className="text-2xl text-white hover:text-white" target="_blank">
               <AiOutlineWhatsApp />
             </a>
           </Link>

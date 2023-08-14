@@ -20,7 +20,7 @@ const CustomLink: React.FC<CustomLinkProps> = ({
     <Link href={url}>
       <a
         target={target}
-        className={`${className} bg-gradient-to-r from-primary to-secondary text-base px-4 py-2 md:px-8 md:py-4 uppercase tracking-wide
+        className={`${className} bg-gradient-to-r from-primary to-secondary text-base px-3 py-2 md:px-7 md:py-4 uppercase lg:tracking-wide
         flex items-center justify-between font-medium text-${color} hover:text-black`}
         data-aos="fade-in"
         data-aos-delay={2000}
