@@ -27,7 +27,7 @@ interface ExperienceProjectsProps {
 
 const Carousel: React.FC<ExperienceProjectsProps> = ({ EXP_DATA }) => {
   return (
-    <div className="container py-20">
+    <section className="container py-20">
       <h3 className="text-success dark:text-jaguar text-5xl md:text-6xl mb-20" data-aos="fade-in">
         Projects on which I have worked
       </h3>
@@ -66,7 +66,7 @@ const Carousel: React.FC<ExperienceProjectsProps> = ({ EXP_DATA }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </section>
   );
 };
 

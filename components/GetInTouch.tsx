@@ -5,11 +5,11 @@ import CustomLink from './CustomLink';
 const GetInTouch = () => {
   return (
     <div data-aos="fade-in" data-aos-duration="1000" className="container">
-      <h3 className="text-black uppercase text-5xl md:text-6xl mb-16">Get in Touch</h3>
-      <h2 className="text-black text-3xl md:text-4xl max-w-6xl mb-16">
+      <h3 className="text-black uppercase text-2xl lg:text-4xl font-semibold mb-4">Get in Touch</h3>
+      <h2 className="text-black text-base lg:text-lg max-w-6xl mb-8">
         This is how you can reach me. Lets work together to create something worth sharing.
       </h2>
-      <div className="flex gap-12">
+      <div className="flex flex-wrap gap-4 lg:gap-8">
         <CustomLink url="mailto:bhoirvaibhav90@gmail.com" target="_blank">
           <AiOutlineMail />
           <span className="mx-2">Mail</span>

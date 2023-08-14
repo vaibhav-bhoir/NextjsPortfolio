@@ -2,14 +2,14 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div>
-      <footer className="flex flex-col justify-center items-center py-28 bg-pearl-black">
-        <h1 className="text-primary">
-          Designed and Developed with <span className="text-red-500">❤</span>{' '}
-        </h1>
-        <h1 className="text-primary font-extrabold">by Vaibhav Bhoir</h1>
-      </footer>
-    </div>
+    <footer className="flex flex-col justify-center items-center py-12 bg-pearl-black">
+      <h5 className="text-primary text-base lg:text-xl mb-2">
+        Designed and Developed with <span className="text-red-500">❤</span> by
+      </h5>
+      <h6 className="text-primary text-base lg:text-lg uppercase font-bold tracking-widest">
+        Vaibhav Bhoir
+      </h6>
+    </footer>
   );
 };
 

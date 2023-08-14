@@ -49,24 +49,24 @@ const ContactForm = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center py-20">
+      <section className="flex items-center justify-center py-20">
         <div className="container relative w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-28 lg:gap-10">
           <div className="lg:order-2">
             <Lottie animationData={manWorkingAnimation} />
           </div>
           <div data-aos="fade-right" data-aos-duration="1000" className="lg:order-1">
-            <h3 className="text-black uppercase tracking-wide text-5xl md:text-4xl mb-12">
+            <h3 className="text-black uppercase text-2xl lg:text-4xl font-semibold mb-7 lg:mb-12">
               Drop me a message
             </h3>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="flex flex-col relative mb-12">
-                <label className="mb-3" htmlFor="name">
+              <div className="flex flex-col relative mb-6">
+                <label className="text-base font-medium mb-3" htmlFor="name">
                   Your Full Name <span className="text-red-500">*</span>
                 </label>
                 <input
                   className={`${
                     errors.name ? 'ring-1 ring-red-500' : null
-                  } outline-none py-5 px-4 bg-light-white border-primary border-2 rounded-md placeholder-light-black `}
+                  } outline-none py-5 text-base px-4 bg-light-white border-primary border-2 rounded-md placeholder-light-black `}
                   type="text"
                   placeholder="Tony Stark"
                   {...register('name', {
@@ -80,14 +80,14 @@ const ContactForm = () => {
                   {errors?.name?.message}
                 </span>
               </div>
-              <div className="flex flex-col relative mb-12">
-                <label className="mb-3 " htmlFor="email">
+              <div className="flex flex-col relative mb-6">
+                <label className="text-base font-medium mb-3 " htmlFor="email">
                   Your E-mail <span className="text-red-500">*</span>
                 </label>
                 <input
                   className={`${
                     errors.email ? 'ring-1 ring-red-500' : null
-                  } outline-none py-5 px-4 bg-light-white  border-primary border-2 rounded-md placeholder-gray-400 `}
+                  } outline-none py-5 text-base px-4 bg-light-white  border-primary border-2 rounded-md placeholder-light-black `}
                   type="text"
                   placeholder="ironman@gmail.com"
                   {...register('email', {
@@ -113,14 +113,14 @@ const ContactForm = () => {
                   {errors?.email?.message}
                 </span>
               </div>
-              <div className="flex flex-col relative mb-12">
-                <label className="my-2 " htmlFor="message">
+              <div className="flex flex-col relative mb-6">
+                <label className="text-base font-medium my-2 " htmlFor="message">
                   Your message <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   className={`${
                     errors.message ? 'ring-1 ring-red-500' : null
-                  } outline-none h-36 max-h-56 py-2 px-4 bg-light-white  border-primary border-2 rounded-md `}
+                  } outline-none text-base h-36 max-h-56 py-2 px-4 bg-light-white border-primary border-2 rounded-md placeholder-light-black `}
                   rows={3}
                   id="message"
                   placeholder="Hey, I would like to get in touch with you"
@@ -147,7 +147,7 @@ const ContactForm = () => {
               <button
                 disabled={isSubmitting}
                 data-aos="fade-in"
-                className="rounded-lg uppercase border-2 px-4 py-2 my-20 md:px-8 md:py-4 flex items-center justify-between  border-info text-info hover:bg-info hover:text-black"
+                className="rounded-lg uppercase border-2 px-4 py-2 mt-8 md:px-8 md:py-4 flex items-center justify-between  border-info text-info hover:bg-info hover:text-black"
                 type="submit"
               >
                 {loader ? 'Submitting' : 'submit'}
@@ -162,7 +162,7 @@ const ContactForm = () => {
             </form>
           </div>
         </div>
-      </div>
+      </section>
 
       {isSubmitting && (
         <div className="fixed inset-0 bg-black opacity-60">

@@ -7,7 +7,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const AboutMe = (props: any) => {
   return (
-    <div className="flex flex-col justify-center py-20 bg-pearl-black">
+    <section className="flex flex-col justify-center py-20 bg-pearl-black">
       <CustomHeading headingSup="About" headingSub="Vaibhav Bhoir" color="primary" />
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -15,10 +15,10 @@ const AboutMe = (props: any) => {
             <Lottie animationData={webDevAnimation} />
           </div>
           <div data-aos="fade-right" data-aos-duration="1000" className="">
-            <h3 className="text-secondary uppercase  text-5xl md:text-6xl mb-16">
+            <h3 className="text-secondary uppercase font-semibold  text-2xl mb-6">
               {props.heroProps.aboutHeading}
             </h3>
-            <div className="text-white text-3xl md:text-4xl max-w-6xl mb-16">
+            <div className="text-white text-base max-w-6xl mb-8 flex flex-col gap-6">
               {documentToReactComponents(props.heroProps.aboutDescription)}
             </div>
             <div className="flex">
@@ -27,7 +27,7 @@ const AboutMe = (props: any) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
