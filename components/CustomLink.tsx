@@ -17,7 +17,7 @@ const CustomLink: React.FC<CustomLinkProps> = ({
   children,
 }) => {
   return (
-    <Link href={url}>
+    <Link href={url} legacyBehavior>
       <a
         target={target}
         className={`${className} bg-gradient-to-r from-primary to-secondary text-base px-3 py-2 md:px-7 md:py-4 uppercase lg:tracking-wide

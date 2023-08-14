@@ -76,9 +76,9 @@ const ContactForm = () => {
                     },
                   })}
                 />
-                <span className="text-red-500 text-lg py-2 absolute -bottom-11">
+                {/* <span className="text-red-500 text-lg py-2 absolute -bottom-11">
                   {errors?.name?.message}
-                </span>
+                </span> */}
               </div>
               <div className="flex flex-col relative mb-6">
                 <label className="text-base font-medium mb-3 " htmlFor="email">
@@ -109,9 +109,9 @@ const ContactForm = () => {
                     },
                   })}
                 />
-                <span className="text-red-500 text-lg py-2 absolute -bottom-11">
+                {/* <span className="text-red-500 text-lg py-2 absolute -bottom-11">
                   {errors?.email?.message}
-                </span>
+                </span> */}
               </div>
               <div className="flex flex-col relative mb-6">
                 <label className="text-base font-medium my-2 " htmlFor="message">
@@ -139,9 +139,9 @@ const ContactForm = () => {
                     },
                   })}
                 />
-                <span className="text-red-500 text-lg py-2 absolute -bottom-11">
+                {/* <span className="text-red-500 text-lg py-2 absolute -bottom-11">
                   {errors?.message?.message}
-                </span>
+                </span> */}
               </div>
 
               <button

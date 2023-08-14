@@ -40,10 +40,10 @@ const socialIcons: Array<socialIconsProps> = [
 const LeftSidebar = () => {
   return (
     <aside className="fixed bottom-24 right-4 z-10 bg-light-black px-1 pt-2.5 pb-3.5 rounded-xl">
-      <ul className=" flex gap-3 flex-col items-center ">
+      {/* <ul className=" flex gap-3 flex-col items-center ">
         {socialIcons.map((e) => (
           <li key={e.id}>
-            <Link href={e.link}>
+            <Link href={e.link} legacyBehavior>
               <a
                 target="_blank"
                 className="block text-primary text-2xl lg:text-3xl hover:-translate-y-2 transition ease-in-out hover:text-success "
@@ -54,13 +54,16 @@ const LeftSidebar = () => {
           </li>
         ))}
         <div className="whatsapp flex justify-center items-center w-8 h-8 relative rounded-full shadow-lg bg-green-500 animate-up-down transition-all">
-          <Link href="https://wa.me/+918975588567?text=Hi%20Vaibhav.%20I%27d%20like%20to%20chat%20with%20you">
+          <Link
+            href="https://wa.me/+918975588567?text=Hi%20Vaibhav.%20I%27d%20like%20to%20chat%20with%20you"
+            legacyBehavior
+          >
             <a className="text-2xl text-white hover:text-white" target="_blank">
               <AiOutlineWhatsApp />
             </a>
           </Link>
         </div>
-      </ul>
+      </ul> */}
     </aside>
   );
 };

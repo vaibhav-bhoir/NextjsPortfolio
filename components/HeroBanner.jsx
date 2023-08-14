@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import Typed from 'react-typed';
+// import Typed from 'react-typed';
 import Lottie from 'lottie-react';
 import computerAnimation from '../public/animations/computer-work-animation-data.json';
 import CustomLink from './CustomLink';
@@ -23,9 +23,9 @@ const HeroBanner = ({ heroProps }) => {
           >
             {heading}
           </h1>
-          <h1 className="text-black  text-2xl mb-8" data-aos="fade-in" data-aos-delay={1000}>
+          {/* <h1 className="text-black  text-2xl mb-8" data-aos="fade-in" data-aos-delay={1000}>
             <Typed strings={subheadings} typeSpeed={40} backSpeed={60} loop></Typed>
-          </h1>
+          </h1> */}
           <p
             className="text-black  text-base max-w-6xl mb-8"
             data-aos="fade-in"
