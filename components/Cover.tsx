@@ -50,7 +50,7 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
         <h1 className="text-white mb-4">{pdata.fields.type}</h1>
       </div>
       <hr />
-      {/* {pdata.fields.liveUrl ? (
+      {pdata.fields.liveUrl ? (
         <Link href={pdata.fields.liveUrl} target="_blank" legacyBehavior>
           <a>
             <h1 className="text-white font-semibold text-xl my-4">{pdata.fields.title}</h1>
@@ -61,8 +61,8 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
       )}
       <h1 className="text-white text-base mb-1">
         {pdata.fields.liveUrl ? 'Completed' : 'Currently Working on'}
-      </h1> */}
-      {/* <div className="flex items-center justify-between mb-4">
+      </h1>
+      <div className="flex items-center justify-between mb-4">
         <p className="text-white">--</p>
         <div className="flex gap-4">
           <p className="text-secondary text-base cursor-pointer">
@@ -76,7 +76,7 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
           </p>
           <p className="text-secondary text-base cursor-pointer">
             {pdata.fields.githubUrl && (
-              <Link href={pdata.fields.githubUrl} target="_blank">
+              <Link href={pdata.fields.githubUrl} target="_blank" legacyBehavior>
                 <a>
                   <AiOutlineGithub />
                 </a>
@@ -84,15 +84,15 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
             )}
           </p>
         </div>
-      </div> */}
+      </div>
       <Image
         src={`https:${pdata.fields.thumbnailImage.fields.file.url}`}
         alt=""
         height={pdata.fields.thumbnailImage.fields.file.details.image.height}
         width={pdata.fields.thumbnailImage.fields.file.details.image.width}
-        className="rounded-2xl"
+        className="rounded-xl"
       />
-      {/* <div className="flex flex-wrap justify-between items-center mt-4">
+      <div className="flex flex-wrap justify-between items-center mt-4">
         <p className="text-secondary text-base cursor-pointer font-semibold">
           {pdata.fields.githubUrl && (
             <Link href={pdata.fields.githubUrl} legacyBehavior>
@@ -107,7 +107,7 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
             </Link>
           )}
         </p>
-      </div> */}
+      </div>
     </div>
   );
 };

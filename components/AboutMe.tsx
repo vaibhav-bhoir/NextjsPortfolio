@@ -14,11 +14,11 @@ const AboutMe = (props: any) => {
           <div className="">
             <Lottie animationData={webDevAnimation} />
           </div>
-          <div data-aos="fade-right" data-aos-duration="1000" className="">
+          <div data-aos="fade-left" data-aos-duration="1000" className="">
             <h3 className="text-secondary uppercase font-semibold  text-2xl mb-6">
               {props.heroProps.aboutHeading}
             </h3>
-            <div className="text-white text-base max-w-6xl mb-8 flex flex-col gap-6">
+            <div className="text-white text-base max-w-6xl mb-8 flex flex-col gap-4">
               {documentToReactComponents(props.heroProps.aboutDescription)}
             </div>
             <div className="flex">

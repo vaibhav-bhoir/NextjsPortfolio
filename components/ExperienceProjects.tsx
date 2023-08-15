@@ -31,7 +31,7 @@ const ExperienceProjects: React.FC<ExperienceProjectsProps> = ({ EXP_DATA }) => 
         >
           Projects on which I have worked
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 transition ease-in-out">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12 transition ease-in-out">
           {EXP_DATA.map((expData) => (
             <ExCover expData={expData} key={expData.sys.id} />
           ))}

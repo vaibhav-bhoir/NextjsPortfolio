@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-// import ContactForm from '../components/ContactForm';
+import ContactForm from '../components/ContactForm';
 import GetInTouch from '../components/GetInTouch';
 import CustomHeading from '../components/CustomHeading';
 
@@ -14,15 +14,10 @@ const Contact = () => {
 
       <div className="bg-gradient-to-l from-primary to-secondary">
         <div className="flex flex-col items-center justify-center py-20 ">
-          <CustomHeading
-            className="uppercase"
-            headingSup="Contact"
-            headingSub="Say Hello"
-            color="black"
-          />
+          <CustomHeading headingSup="Contact" headingSub="Say Hello" color="black" />
           <GetInTouch />
         </div>
-        {/* <ContactForm /> */}
+        <ContactForm />
       </div>
     </>
   );

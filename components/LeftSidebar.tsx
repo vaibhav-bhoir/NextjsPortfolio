@@ -40,7 +40,7 @@ const socialIcons: Array<socialIconsProps> = [
 const LeftSidebar = () => {
   return (
     <aside className="fixed bottom-24 right-4 z-10 bg-light-black px-1 pt-2.5 pb-3.5 rounded-xl">
-      {/* <ul className=" flex gap-3 flex-col items-center ">
+      <ul className=" flex gap-3 flex-col items-center ">
         {socialIcons.map((e) => (
           <li key={e.id}>
             <Link href={e.link} legacyBehavior>
@@ -63,7 +63,7 @@ const LeftSidebar = () => {
             </a>
           </Link>
         </div>
-      </ul> */}
+      </ul>
     </aside>
   );
 };

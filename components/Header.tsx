@@ -38,7 +38,7 @@ const Header = () => {
           </a>
         </Link>
 
-        <div className="block z-51 md:hidden text-6xl relative ">
+        <div className="block z-51 md:hidden text-4xl relative ">
           {showNav ? (
             <AiOutlineClose onClick={toggleSidebar} className="cursor-pointer" />
           ) : (

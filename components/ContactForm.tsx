@@ -66,7 +66,7 @@ const ContactForm = () => {
                 <input
                   className={`${
                     errors.name ? 'ring-1 ring-red-500' : null
-                  } outline-none py-5 text-base px-4 bg-light-white border-primary border-2 rounded-md placeholder-light-black `}
+                  } outline-none text-base p-4 bg-light-white border-primary border-2 rounded-md placeholder-light-black `}
                   type="text"
                   placeholder="Tony Stark"
                   {...register('name', {
@@ -76,9 +76,9 @@ const ContactForm = () => {
                     },
                   })}
                 />
-                {/* <span className="text-red-500 text-lg py-2 absolute -bottom-11">
+                <span className="text-red-500 text-md py-2 absolute -bottom-7">
                   {errors?.name?.message}
-                </span> */}
+                </span>
               </div>
               <div className="flex flex-col relative mb-6">
                 <label className="text-base font-medium mb-3 " htmlFor="email">
@@ -87,7 +87,7 @@ const ContactForm = () => {
                 <input
                   className={`${
                     errors.email ? 'ring-1 ring-red-500' : null
-                  } outline-none py-5 text-base px-4 bg-light-white  border-primary border-2 rounded-md placeholder-light-black `}
+                  } outline-none text-base p-4 bg-light-white  border-primary border-2 rounded-md placeholder-light-black `}
                   type="text"
                   placeholder="ironman@gmail.com"
                   {...register('email', {
@@ -109,9 +109,9 @@ const ContactForm = () => {
                     },
                   })}
                 />
-                {/* <span className="text-red-500 text-lg py-2 absolute -bottom-11">
+                <span className="text-red-500 text-md py-2 absolute -bottom-7">
                   {errors?.email?.message}
-                </span> */}
+                </span>
               </div>
               <div className="flex flex-col relative mb-6">
                 <label className="text-base font-medium my-2 " htmlFor="message">
@@ -120,7 +120,7 @@ const ContactForm = () => {
                 <textarea
                   className={`${
                     errors.message ? 'ring-1 ring-red-500' : null
-                  } outline-none text-base h-36 max-h-56 py-2 px-4 bg-light-white border-primary border-2 rounded-md placeholder-light-black `}
+                  } outline-none text-base h-36 max-h-56 p-4 bg-light-white border-primary border-2 rounded-md placeholder-light-black `}
                   rows={3}
                   id="message"
                   placeholder="Hey, I would like to get in touch with you"
@@ -139,15 +139,16 @@ const ContactForm = () => {
                     },
                   })}
                 />
-                {/* <span className="text-red-500 text-lg py-2 absolute -bottom-11">
+                <span className="text-red-500 text-md py-2 absolute -bottom-7">
                   {errors?.message?.message}
-                </span> */}
+                </span>
               </div>
 
               <button
                 disabled={isSubmitting}
                 data-aos="fade-in"
-                className="rounded-lg uppercase border-2 px-4 py-2 mt-8 md:px-8 md:py-4 flex items-center justify-between  border-info text-info hover:bg-info hover:text-black"
+                className="bg-gradient-to-r from-primary to-secondary text-base px-3 py-2 md:px-7 md:py-4 uppercase lg:tracking-wide
+                flex items-center justify-between font-medium text-black hover:text-black"
                 type="submit"
               >
                 {loader ? 'Submitting' : 'submit'}

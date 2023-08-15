@@ -18,7 +18,7 @@ const FeaturedProjects = (props: any) => {
           Some Selected Projects
         </h3>
         {props.data.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-14 transition ease-in-out">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12 mb-14 transition ease-in-out">
             {props.data.map((pdata: any) => (
               <Cover pdata={pdata} key={pdata.sys.id} handleClose={props.handleClose} />
             ))}

@@ -44,12 +44,7 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
       ></FeaturedProjects>
       <div className="bg-gradient-to-l from-primary to-secondary">
         <div className="flex flex-col items-center justify-center py-20 ">
-          <CustomHeading
-            className="uppercase"
-            headingSup="Contact"
-            headingSub="Say Hello"
-            color="black"
-          />
+          <CustomHeading headingSup="Contact" headingSub="Say Hello" color="black" />
           <GetInTouch />
         </div>
         <ContactForm />
