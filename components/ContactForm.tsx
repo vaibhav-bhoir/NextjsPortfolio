@@ -77,7 +77,7 @@ const ContactForm = () => {
                   })}
                 />
                 <span className="text-red-500 text-md py-2 absolute -bottom-7">
-                  {errors?.name?.message}
+                  {errors?.name?.message as React.ReactNode}
                 </span>
               </div>
               <div className="flex flex-col relative mb-6">
@@ -110,7 +110,7 @@ const ContactForm = () => {
                   })}
                 />
                 <span className="text-red-500 text-md py-2 absolute -bottom-7">
-                  {errors?.email?.message}
+                  {errors?.email?.message as React.ReactNode}
                 </span>
               </div>
               <div className="flex flex-col relative mb-6">
@@ -140,7 +140,7 @@ const ContactForm = () => {
                   })}
                 />
                 <span className="text-red-500 text-md py-2 absolute -bottom-7">
-                  {errors?.message?.message}
+                  {errors?.message?.message as React.ReactNode}
                 </span>
               </div>
 
