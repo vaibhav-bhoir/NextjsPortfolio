@@ -12,7 +12,7 @@ const FeaturedProjects = (props: any) => {
 
       <div className="container">
         <h3
-          className="text-secondary text-2xl lg:text-4xl font-semibold mb-7 lg:mb-14"
+          className="text-primary text-2xl lg:text-4xl font-semibold mb-7 lg:mb-14"
           data-aos="fade-in"
         >
           Some Selected Projects
@@ -36,7 +36,7 @@ const FeaturedProjects = (props: any) => {
             </div>
             <div className="flex justify-center items-center mt-8">
               <button
-                className="bg-gradient-to-r from-primary to-secondary px-4 py-2 md:px-8 md:py-4 uppercase tracking-wide
+                className="bg-main-bg shadow-shadow text-base text-primary px-4 py-2 md:px-8 md:py-4 uppercase tracking-wide
                 flex items-center justify-between font-medium"
                 onClick={() => props.setData(props.PROJECTS_DATA)}
               >

@@ -20,17 +20,17 @@ const About = () => {
             <CustomHeading headingSup="About" headingSub="Vaibhav Bhoir" />
 
             <h3
-              className="text-success  text-2xl lg:text-4xl font-semibold mb-8"
+              className="text-primary  text-2xl lg:text-4xl font-semibold mb-8"
               data-aos="fade-in"
             >
               Let me tell you a few things....
             </h3>
             <div className="max-w-2xl mb-8 flex flex-col gap-4">
-              <p className="text-black text-base" data-aos="fade-in">
+              <p className="text-primary text-base" data-aos="fade-in">
                 I am creative Web developer based in Mumbai, India. I Have Done Bachelor of
                 engineering in Electronics and Telecommunications.
               </p>
-              <p className="text-black text-base" data-aos="fade-in">
+              <p className="text-primary text-base" data-aos="fade-in">
                 I have build several websites , looking at the design I can convert it into a HTML
                 CSS template with pixel perfect precision. I use bootstrap very often , so the turn
                 around of my project is very quick and I always use GIT to track my progress and
@@ -45,12 +45,12 @@ const About = () => {
           </div>
         </div>
 
-        <div className="bg-gradient-to-l from-primary to-secondary py-20">
+        <div className="py-20">
           <div className="container">
             <CustomHeading color="black" headingSup="Toolbox" headingSub=" My Weapons ⚔" />
 
             <h3
-              className="text-success  text-2xl lg:text-4xl font-semibold mb-7 lg:mb-14"
+              className="text-primary  text-2xl lg:text-4xl font-semibold mb-7 lg:mb-14"
               data-aos="fade-in"
             >
               Technologies that I use

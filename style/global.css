@@ -7,73 +7,60 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --primary: rgb(204, 255, 0);
-    --secondary: rgb(0, 204, 204);
-    --black: rgb(0, 0, 0);
-    --white: rgb(255, 255, 255);
-    --gray: rgb(51, 51, 51);
-    --light-black: rgb(51, 51, 51);
-    --pearl-black: rgba(2, 9, 17, 0.95);
-    --light-white: rgba(255, 255, 255, 0.35);
-    --silver: rgb(204, 204, 204);
-    --light-gray: rgba(204, 204, 204, 0.2);
+  [data-theme-mod='light'] {
+    --main-bg: #ffffff;
+    /* --primary: #455560; */
+    --primary: #000000;
+    --body-bg: #fafafb;
+    --box-shadow: hsla(210, 8%, 62%, 0.2) 0px 8px 24px;
   }
 
-  [data-theme='dark'] {
-    --primary: #05182c;
-    --secondary: #ffffff;
-    --info: '#fccf0c';
-    --success: '#02ef63';
-    --danger: '#fe6ea8';
-    --normal: '#07bcfc';
-    --frosted: '#1d2f41';
-    --darkblue: '#282F66';
-    --jaguar: '#2A2A2C';
-    --linkwater: '#CACCCE';
-    --hawkesblue: '#D6E0F4';
-    --main-primary: '#02ef63';
-    --fill: 'rgb(0, 0, 0)';
+  [data-theme-mod='dark'] {
+    --main-bg: #2d2d2d;
+    /* --main-bg: #3b3b3b; */
+    --primary: #ffffff;
+    --body-bg: #202020;
+    --box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px;
   }
 
-  [data-theme='neon'] {
-    --primary: rgb(204, 255, 0);
-    --secondary: rgb(0, 204, 204);
-    --black: rgb(0, 0, 0);
-    --white: rgb(255, 255, 255);
-    --gray: rgb(51, 51, 51);
-    --light-black: rgb(51, 51, 51);
-    --light-white: rgba(255, 255, 255, 0.35);
-    --silver: rgb(204, 204, 204);
-    --light-gray: rgba(204, 204, 204, 0.2);
+  [data-theme-mod='light'][data-theme-color='blue'] {
+    --primary-text: #349eff;
   }
 
-  [data-theme='magic'] {
-    --primary: rgb(0, 4, 40);
-    --secondary: rgb(0, 78, 146);
-    --black: rgb(0, 0, 0);
-    --white: rgb(255, 255, 255);
-    --gray: rgb(51, 51, 51);
-    --light-black: rgb(51, 51, 51);
-    --light-white: rgba(255, 255, 255, 0.35);
-    --silver: rgb(204, 204, 204);
-    --light-gray: rgba(204, 204, 204, 0.2);
+  [data-theme-mod='light'][data-theme-color='red'] {
+    --primary-text: #fb0b12;
   }
 
-  [data-theme='pink'] {
-    --primary: #dd1472;
-    --secondary: #dbf306;
-    --info: '#fccf0c';
-    --success: '#02ef63';
-    --danger: '#fe6ea8';
-    --normal: '#07bcfc';
-    --frosted: '#dd1472';
-    --darkblue: '#282f66';
-    --jaguar: '#2A2A2C';
-    --linkwater: '#CACCCE';
-    --hawkesblue: '#D6E0F4';
-    --main-primary: '#dd1472';
-    --fill: pink;
+  [data-theme-mod='light'][data-theme-color='cyan'] {
+    --primary-text: #10d4d2;
+  }
+
+  [data-theme-mod='light'][data-theme-color='green'] {
+    --primary-text: #019707;
+  }
+
+  [data-theme-mod='light'][data-theme-color='orange'] {
+    --primary-text: #d68102;
+  }
+
+  [data-theme-mod='dark'][data-theme-color='blue'] {
+    --primary-text: #349eff;
+  }
+
+  [data-theme-mod='dark'][data-theme-color='red'] {
+    --primary-text: #fb0b12;
+  }
+
+  [data-theme-mod='dark'][data-theme-color='cyan'] {
+    --primary-text: #10d4d2;
+  }
+
+  [data-theme-mod='dark'][data-theme-color='green'] {
+    --primary-text: #019707;
+  }
+
+  [data-theme-mod='dark'][data-theme-color='orange'] {
+    --primary-text: #d68102;
   }
 }
 
@@ -98,11 +85,11 @@
 } */
 
 ::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--main-primary);
+  background-color: var(--primary);
 }
 
 body {
@@ -110,6 +97,7 @@ body {
   /* background-color: var(--primary); */
   /* font-family: 'Poppins', sans-serif; */
   /* font-family: 'Montserrat', sans-serif; */
+  background-color: var(--body-bg);
 }
 
 header.fixed {
@@ -236,8 +224,8 @@ html.light body .typed-cursor {
 }
 
 .text-transparent {
-  -webkit-text-stroke-color: var(--white);
-  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: var(--primary);
+  -webkit-text-stroke-width: 1px;
 }
 
 .swiper {
@@ -253,4 +241,30 @@ html.light body .typed-cursor {
 
 .swiper-slide > div {
   height: 100%;
+}
+
+.hover-animation {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.5s ease 0s;
+  cursor: pointer;
+}
+
+.hover-animation::before {
+  content: '';
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-color: var(--primary-text);
+  position: absolute;
+  left: -50%;
+  top: 0;
+  transform: scale(0);
+  transition: transform 0.8s ease 0s;
+  z-index: -1;
+}
+
+.hover-animation:hover::before {
+  transform: scale(3);
 }

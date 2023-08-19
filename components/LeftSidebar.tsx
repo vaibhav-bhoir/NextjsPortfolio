@@ -39,7 +39,7 @@ const socialIcons: Array<socialIconsProps> = [
 
 const LeftSidebar = () => {
   return (
-    <aside className="fixed bottom-24 right-4 z-10 bg-light-black px-1 pt-2.5 pb-3.5 rounded-xl">
+    <aside className="fixed bottom-24 right-4 z-10 bg-main-bg shadow-shadow px-2 pt-2.5 pb-3.5 rounded-[24px]">
       <ul className=" flex gap-3 flex-col items-center ">
         {socialIcons.map((e) => (
           <li key={e.id}>

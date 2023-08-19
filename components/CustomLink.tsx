@@ -20,8 +20,8 @@ const CustomLink: React.FC<CustomLinkProps> = ({
     <Link href={url} legacyBehavior>
       <a
         target={target}
-        className={`${className} bg-gradient-to-r from-primary to-secondary text-base px-3 py-2 md:px-7 md:py-4 uppercase lg:tracking-wide
-        flex items-center justify-between font-medium text-${color} hover:text-black`}
+        className={`${className} bg-main-bg shadow-shadow text-base px-3 py-2 md:px-7 md:py-4 uppercase lg:tracking-wide
+        flex items-center justify-between font-medium text-primary hover:text-primary`}
         data-aos="fade-in"
         data-aos-delay={2000}
       >

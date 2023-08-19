@@ -10,14 +10,14 @@ const HeroBanner = ({ heroProps }) => {
   const computerAnimationRef = useRef();
 
   return (
-    <section className="flex flex-col items-center justify-center py-20 bg-white">
+    <section className="flex flex-col items-center justify-center py-20">
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div className="">
-          <h3 className="text-xl mb-2" data-aos="fade-in">
+          <h3 className="text-primary text-xl mb-2" data-aos="fade-in">
             {smallCaption}
           </h3>
           <h1
-            className="text-black  text-7xl md:text-7xl lg:text-8xl font-extrabold tracking-tight"
+            className="text-primary-text text-7xl md:text-7xl lg:text-9xl font-extrabold tracking-tight"
             data-aos="fade-in"
             data-aos-delay={500}
           >
@@ -27,7 +27,7 @@ const HeroBanner = ({ heroProps }) => {
             <Typed strings={subheadings} typeSpeed={40} backSpeed={60} loop></Typed>
           </h1> */}
           <p
-            className="text-black  text-base max-w-6xl mb-8"
+            className="text-primary text-base max-w-6xl mb-8"
             data-aos="fade-in"
             data-aos-delay={1500}
           >

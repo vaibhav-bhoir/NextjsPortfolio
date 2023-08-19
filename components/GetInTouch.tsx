@@ -5,8 +5,10 @@ import CustomLink from './CustomLink';
 const GetInTouch = () => {
   return (
     <div data-aos="fade-in" data-aos-duration="1000" className="container">
-      <h3 className="text-black uppercase text-2xl lg:text-4xl font-semibold mb-4">Get in Touch</h3>
-      <h2 className="text-black text-base lg:text-lg max-w-6xl mb-8">
+      <h3 className="text-primary uppercase text-2xl lg:text-4xl font-semibold mb-4">
+        Get in Touch
+      </h3>
+      <h2 className="text-primary text-base lg:text-lg max-w-6xl mb-8">
         This is how you can reach me. Lets work together to create something worth sharing.
       </h2>
       <div className="flex flex-wrap gap-4 lg:gap-8">

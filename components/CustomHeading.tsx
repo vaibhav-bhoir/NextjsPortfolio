@@ -19,7 +19,7 @@ const CustomHeading: React.FC<HeadingProps> = ({
         &lt;{headingSup} /&gt;
       </h1>
       <h1
-        className={`${className} flex font-poppins text-5xl md:text-8xl lg:text-10xl text-${color} font-extrabold m-0 relative z-10`}
+        className={`${className} flex font-poppins text-5xl md:text-8xl lg:text-10xl text-primary-text font-extrabold m-0 relative z-10`}
       >
         {headingSub}
       </h1>

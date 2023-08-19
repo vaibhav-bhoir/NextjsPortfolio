@@ -55,18 +55,18 @@ const ContactForm = () => {
             <Lottie animationData={manWorkingAnimation} />
           </div>
           <div data-aos="fade-right" data-aos-duration="1000" className="lg:order-1">
-            <h3 className="text-black uppercase text-2xl lg:text-4xl font-semibold mb-7 lg:mb-12">
+            <h3 className="text-primary uppercase text-2xl lg:text-4xl font-semibold mb-7 lg:mb-12">
               Drop me a message
             </h3>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="flex flex-col relative mb-6">
-                <label className="text-base font-medium mb-3" htmlFor="name">
+                <label className="text-primary text-base font-medium mb-3" htmlFor="name">
                   Your Full Name <span className="text-red-500">*</span>
                 </label>
                 <input
                   className={`${
                     errors.name ? 'ring-1 ring-red-500' : null
-                  } outline-none text-base p-4 bg-light-white border-primary border-2 rounded-md placeholder-light-black `}
+                  } outline-none text-base p-4 bg-main-bg shadow-shadow rounded-md placeholder-primary `}
                   type="text"
                   placeholder="Tony Stark"
                   {...register('name', {
@@ -81,13 +81,13 @@ const ContactForm = () => {
                 </span>
               </div>
               <div className="flex flex-col relative mb-6">
-                <label className="text-base font-medium mb-3 " htmlFor="email">
+                <label className="text-primary text-base font-medium mb-3 " htmlFor="email">
                   Your E-mail <span className="text-red-500">*</span>
                 </label>
                 <input
                   className={`${
                     errors.email ? 'ring-1 ring-red-500' : null
-                  } outline-none text-base p-4 bg-light-white  border-primary border-2 rounded-md placeholder-light-black `}
+                  } outline-none text-base p-4 bg-main-bg  shadow-shadow rounded-md placeholder-primary `}
                   type="text"
                   placeholder="ironman@gmail.com"
                   {...register('email', {
@@ -114,13 +114,13 @@ const ContactForm = () => {
                 </span>
               </div>
               <div className="flex flex-col relative mb-6">
-                <label className="text-base font-medium my-2 " htmlFor="message">
+                <label className="text-primary text-base font-medium my-2 " htmlFor="message">
                   Your message <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   className={`${
                     errors.message ? 'ring-1 ring-red-500' : null
-                  } outline-none text-base h-36 max-h-56 p-4 bg-light-white border-primary border-2 rounded-md placeholder-light-black `}
+                  } outline-none text-base h-36 max-h-56 p-4 bg-main-bg shadow-shadow rounded-md placeholder-primary `}
                   rows={3}
                   id="message"
                   placeholder="Hey, I would like to get in touch with you"
@@ -147,8 +147,8 @@ const ContactForm = () => {
               <button
                 disabled={isSubmitting}
                 data-aos="fade-in"
-                className="bg-gradient-to-r from-primary to-secondary text-base px-3 py-2 md:px-7 md:py-4 uppercase lg:tracking-wide
-                flex items-center justify-between font-medium text-black hover:text-black"
+                className="bg-main-bg text-base px-3 py-2 md:px-7 md:py-4 uppercase lg:tracking-wide
+                flex items-center justify-between font-medium text-primary hover:text-primary"
                 type="submit"
               >
                 {loader ? 'Submitting' : 'submit'}

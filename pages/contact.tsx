@@ -12,7 +12,7 @@ const Contact = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="bg-gradient-to-l from-primary to-secondary">
+      <div className="">
         <div className="flex flex-col items-center justify-center py-20 ">
           <CustomHeading headingSup="Contact" headingSub="Say Hello" color="black" />
           <GetInTouch />

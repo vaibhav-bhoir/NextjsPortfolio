@@ -17,25 +17,25 @@ const ExCover = ({ expData }: ExCoverProps) => {
   return (
     <div
       data-aos="zoom-in-up"
-      className="bg-white rounded-xl p-4 transform transition-transform hover:scale-[1.02]"
+      className="hover-animation relative overflow-hidden bg-main-bg rounded-xl p-4 shadow-shadow transform transition-transform hover:scale-[1.02]"
     >
       <div className="justify-between items-center flex">
         <div className="flex gap-2 mb-4">
-          <span className="w-5 h-5 bg-red-500 rounded-full cursor-pointer"></span>
-          <span className="w-5 h-5 bg-primary rounded-full"></span>
-          <span className="w-5 h-5 bg-secondary rounded-full"></span>
+          <span className="w-5 h-5 bg-red-300 rounded-full cursor-pointer"></span>
+          <span className="w-5 h-5 bg-red-500 rounded-full"></span>
+          <span className="w-5 h-5 bg-red-700 rounded-full"></span>
         </div>
-        <h1 className="text-black mb-4">{expData.fields.date}</h1>
+        <h1 className="text-primary mb-4">{expData.fields.date}</h1>
       </div>
       <hr />
-      <h1 className="text-black font-semibold text-xl my-4">{expData.fields.title}</h1>
-      <h2 className="text-black text-lg mb-1 flex items-center">
+      <h1 className="text-primary font-semibold text-xl my-4">{expData.fields.title}</h1>
+      <h2 className="text-primary text-lg mb-1 flex items-center">
         <MdLocationPin />
         &nbsp;{expData.fields.location}
       </h2>
       <div className="flex flex-col md:flex">
-        <p className="text-black mb-4">{expData.fields.jobPosition}</p>
-        <p className="text-gray text-base">{expData.fields.projectDescription}</p>
+        <p className="text-primary mb-4">{expData.fields.jobPosition}</p>
+        <p className="text-primary text-base">{expData.fields.projectDescription}</p>
       </div>
     </div>
   );
