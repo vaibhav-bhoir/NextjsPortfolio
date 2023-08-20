@@ -17,7 +17,7 @@ const HeroBanner = ({ heroProps }) => {
             {smallCaption}
           </h3>
           <h1
-            className="text-primary-text text-7xl md:text-7xl lg:text-9xl font-extrabold tracking-tight"
+            className="text-primary-text mb-6 text-7xl md:text-7xl lg:text-9xl font-extrabold tracking-tight"
             data-aos="fade-in"
             data-aos-delay={500}
           >

@@ -6,13 +6,11 @@ import useOutsideClick from './hooks/useOutsideClick';
 const mode_settings = [
   {
     id: 'light',
-    name: 'Light',
     class: 'light',
     bgColor: '#ffffff',
   },
   {
     id: 'dark',
-    name: 'Dark',
     class: 'dark',
     bgColor: '#000000',
   },
@@ -21,31 +19,26 @@ const mode_settings = [
 const color_settings = [
   {
     id: 'blue',
-    name: 'Blue',
     class: 'theme-color-blue',
     bgColor: '#349eff',
   },
   {
     id: 'red',
-    name: 'Red',
     class: 'theme-color-red',
     bgColor: '#fb0b12',
   },
   {
     id: 'cyan',
-    name: 'Cyan',
     class: 'theme-color-cyan',
     bgColor: '#10d4d2',
   },
   {
     id: 'green',
-    name: 'Green',
     class: 'theme-color-green',
     bgColor: '#019707',
   },
   {
     id: 'orange',
-    name: 'Orange',
     class: 'theme-color-orange',
     bgColor: '#d68102',
   },
@@ -55,7 +48,7 @@ const ThemeChanger: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const [panelVisible, setPanelVisible] = useState(false);
-  const [selectedColor, setSelectedColor] = useState('red');
+  const [selectedColor, setSelectedColor] = useState('cyan');
   const panelRef = useRef<HTMLDivElement | null>(null);
 
   useOutsideClick(panelRef, () => {
@@ -66,15 +59,35 @@ const ThemeChanger: React.FC = () => {
     setMounted(true);
   }, []);
 
+  // Load selected theme and color from local storage on component mount
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('selectedTheme');
+    const storedColor = localStorage.getItem('selectedColor');
+
+    if (storedTheme) {
+      setTheme(storedTheme);
+    } else {
+      // Set default theme to 'dark'
+      setTheme('dark');
+    }
+
+    if (storedColor) {
+      setSelectedColor(storedColor);
+    }
+  }, [setTheme]);
+
+  // Save selected theme and color to local storage whenever they change
   useEffect(() => {
     if (theme) {
       document.documentElement.dataset.themeMod = theme;
+      localStorage.setItem('selectedTheme', theme);
     }
   }, [theme]);
 
   useEffect(() => {
     if (selectedColor) {
       document.documentElement.dataset.themeColor = selectedColor;
+      localStorage.setItem('selectedColor', selectedColor);
     }
   }, [selectedColor]);
 

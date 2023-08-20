@@ -5,34 +5,72 @@ import navLinks from '../public/data/header_data';
 import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
 import Lottie from 'lottie-react';
 import logoAnimation from '../public/animations/v-logo-animation-data.json';
+// import useScrollDirection from '../hooks/useScrollDirection';
+
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
-  const [scroll, setScroll] = useState(false);
   const router = useRouter();
+
+  const [scrollDir, setScrollDir] = useState("scrolling down");
+
+  // useEffect(() => {
+  //   const threshold = 0;
+  //   let lastScrollY = window.scrollY;
+  //   let ticking = false;
+
+  //   const updateScrollDir = () => {
+  //     const scrollY = window.scrollY;
+
+  //     if (Math.abs(scrollY - lastScrollY) < threshold) {
+  //       ticking = false;
+  //       return;
+  //     }
+  //     setScrollDir(scrollY > lastScrollY ? "scrolling down" : "scrolling up");
+  //     lastScrollY = scrollY > 0 ? scrollY : 0;
+  //     ticking = false;
+  //   };
+
+  //   const onScroll = () => {
+  //     if (!ticking) {
+  //       window.requestAnimationFrame(updateScrollDir);
+  //       ticking = true;
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", onScroll);
+
+  //   console.log(scrollDir);
+
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // }, [scrollDir]);
+
+
 
   useEffect(() => {
     document.body.classList.toggle('isOpen', showNav);
 
-    window.addEventListener('scroll', () => {
-      setScroll(window.scrollY > 250);
-    });
+    // window.addEventListener('scroll', () => {
+    //   setScroll(window.scrollY > 250);
+    // });
   }, [showNav]);
-
   const toggleSidebar = () => {
     setShowNav(!showNav);
   };
 
   return (
     <header
-      className={`${
-        scroll ? 'navbar-shrink' : ''
-      } fixed top-0 w-full md:flex justify-between bg-main-bg shadow-shadow items-center text-primary text-center p-4 md:px-7 md:py-0 z-30`}
+      className=
+      {`${
+        scrollDir === "scrolling down" ? "down" : "up"
+      } fixed top-4 lg:top-9 w-full p-4 md:px-7 md:py-0 z-30`}
     >
+      <div className="container px-5 lg:px-10 rounded-[76px] md:flex justify-between bg-main-bg shadow-shadow items-center text-primary text-center">
+
       <div className="flex items-center justify-between">
         <Link href="/" legacyBehavior>
           <a className="inline-flex items-center mr-4 ">
-            <div className="logo">
+            <div className="logo w-[140px] lg:w-[180px] h-auto">
               <Lottie animationData={logoAnimation} />
             </div>
           </a>
@@ -67,6 +105,8 @@ const Header = () => {
           </li>
         ))}
       </ul>
+      </div>
+
     </header>
   );
 };

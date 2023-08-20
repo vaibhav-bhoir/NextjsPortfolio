@@ -17,7 +17,7 @@ const ExCover = ({ expData }: ExCoverProps) => {
   return (
     <div
       data-aos="zoom-in-up"
-      className="hover-animation relative overflow-hidden bg-main-bg rounded-xl p-4 shadow-shadow transform transition-transform hover:scale-[1.02]"
+      className="hover-animation relative overflow-hidden bg-main-bg rounded-xl p-4 shadow-shadow transform transition-transform"
     >
       <div className="justify-between items-center flex">
         <div className="flex gap-2 mb-4">

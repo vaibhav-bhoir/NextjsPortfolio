@@ -36,7 +36,7 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
     <div
       data-aos="fade-up"
       data-aos-duration="1000"
-      className="hover-animation bg-main-bg shadow-shadow rounded-xl p-4 transform transition-transform hover:scale-[1.02]"
+      className="hover-animation bg-main-bg shadow-shadow rounded-xl p-4 transform transition-transform"
     >
       <div className="justify-between items-center mx-2 flex">
         <div className="flex gap-2 mb-4">
