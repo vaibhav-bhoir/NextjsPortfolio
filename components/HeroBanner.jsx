@@ -35,9 +35,7 @@ const HeroBanner = ({ heroProps }) => {
           </p>
           <div className="flex gap-4 lg:gap-8">
             <CustomLink url="/contact">Hire me</CustomLink>
-            <CustomLink url={resumeLink} color="info">
-              Get Resume
-            </CustomLink>
+            <CustomLink url={resumeLink}>Get Resume</CustomLink>
           </div>
         </div>
         <div className="">

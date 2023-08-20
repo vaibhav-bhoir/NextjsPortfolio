@@ -18,13 +18,12 @@ const GetInTouch = () => {
         </CustomLink>
         <CustomLink
           url="https://www.linkedin.com/in/vaibhav-bhoir-b50a9a185"
-          color="info"
           target="_blank"
         >
           <AiOutlineLinkedin />
           <span className="mx-2">LinkedIn</span>
         </CustomLink>
-        <CustomLink url="https://github.com/vaibhav-bhoir" color="normal" target="_blank">
+        <CustomLink url="https://github.com/vaibhav-bhoir"  target="_blank">
           <AiOutlineGithub />
           <span className="mx-2">GitHub</span>
         </CustomLink>

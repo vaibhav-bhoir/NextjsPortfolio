@@ -68,7 +68,7 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
           <p className="text-primary text-base cursor-pointer">
             {pdata.fields.liveUrl && (
               <Link href={pdata.fields.liveUrl} target="_blank" legacyBehavior>
-                <a>
+                <a className='text-primary'>
                   <AiOutlineLink />
                 </a>
               </Link>
@@ -77,7 +77,7 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
           <p className="text-primary text-base cursor-pointer">
             {pdata.fields.githubUrl && (
               <Link href={pdata.fields.githubUrl} target="_blank" legacyBehavior>
-                <a>
+                <a className='text-primary'>
                   <AiOutlineGithub />
                 </a>
               </Link>
@@ -96,14 +96,14 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
         <p className="text-primary text-base cursor-pointer font-semibold">
           {pdata.fields.githubUrl && (
             <Link href={pdata.fields.githubUrl} legacyBehavior>
-              <a target="_blank">GitHub</a>
+              <a className='text-primary' target="_blank">GitHub</a>
             </Link>
           )}
         </p>
         <p className="text-primary text-base cursor-pointer font-semibold">
           {pdata.fields.liveUrl && (
             <Link href={pdata.fields.liveUrl} legacyBehavior>
-              <a target="_blank">Visit</a>
+              <a className='text-primary' target="_blank">Visit</a>
             </Link>
           )}
         </p>

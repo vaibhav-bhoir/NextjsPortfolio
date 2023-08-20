@@ -111,12 +111,12 @@ const ThemeChanger: React.FC = () => {
 
   return (
     <div
-      className={`p-4 bg-main-bg fixed top-80 right-0 z-10 rounded-bl-lg shadow-shadow transition-transform shadow-lg ${
+      className={`p-4 bg-main-bg fixed top-96 right-0 z-[2] rounded-bl-lg shadow-shadow transition-transform shadow-lg ${
         panelVisible ? 'transform translate-x-0' : 'transform translate-x-full'
       }`}
       ref={panelRef}
     >
-      <div className="text-2xl lg:text-5xl text-primary absolute -left-10 top-0 rounded-tl-lg rounded-bl-lg bg-main-bg shadow-lg">
+      <div className="text-2xl lg:text-5xl text-primary-text absolute -left-10 top-0 rounded-tl-lg rounded-bl-lg bg-main-bg shadow-shadow">
         <button
           aria-label="Toggle theme"
           type="button"

@@ -72,6 +72,7 @@ module.exports = {
       },
       colors: {
         'main-bg': 'var(--main-bg)',
+        'primary-bg': 'var(--primary-bg)',
         'body-bg': 'var(--body-bg)',
         'second-bg': 'var(--second-bg)',
 

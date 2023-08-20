@@ -147,7 +147,7 @@ const ContactForm = () => {
               <button
                 disabled={isSubmitting}
                 data-aos="fade-in"
-                className="bg-main-bg text-base px-3 py-2 md:px-7 md:py-4 uppercase lg:tracking-wide
+                className="bg-main-bg shadow-shadow text-base px-3 py-2 md:px-7 md:py-4 uppercase lg:tracking-wide
                 flex items-center justify-between font-medium text-primary hover:text-primary"
                 type="submit"
               >
