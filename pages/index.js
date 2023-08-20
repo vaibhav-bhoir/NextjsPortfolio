@@ -4,13 +4,12 @@ import { useEffect, useState } from 'react';
 import ContactForm from '../components/ContactForm';
 import GetInTouch from '../components/GetInTouch';
 import HeroBanner from '../components/HeroBanner';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+// import AOS from 'aos';
+// import 'aos/dist/aos.css';
 import CustomHeading from '../components/CustomHeading';
 import FeaturedProjects from '../components/FeaturedProjects';
 import ExperienceProjects from '../components/ExperienceProjects';
 import AboutMe from '../components/AboutMe';
-import Carousel from '../components/Carousel';
 
 export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
   const [data, setData] = useState(PROJECTS_DATA);
@@ -22,10 +21,10 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
     setData(newData);
   };
 
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-    AOS.refresh();
-  }, []);
+  // useEffect(() => {
+  //   AOS.init({ duration: 1000 });
+  //   AOS.refresh();
+  // }, []);
 
   return (
     <>
@@ -36,8 +35,6 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
 
       <HeroBanner heroProps={heroProps} />
       <AboutMe heroProps={heroProps}></AboutMe>
-      <CustomHeading headingSup="Work" headingSub="Experience" />
-      {/* <Carousel EXP_DATA={EXP_DATA}></Carousel> */}
       <ExperienceProjects EXP_DATA={EXP_DATA}></ExperienceProjects>
       <FeaturedProjects
         PROJECTS_DATA={PROJECTS_DATA}
@@ -45,12 +42,13 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
         setData={setData}
         handleClose={handleClose}
       ></FeaturedProjects>
-
-      <div className="flex flex-col items-center justify-center py-20">
-        <CustomHeading headingSup="Contact" headingSub="Say Hello" />
-        <GetInTouch />
+      <div className="">
+        <div className="flex flex-col items-center justify-center py-20 ">
+          <CustomHeading headingSup="Contact" headingSub="Say Hello" color="black" />
+          <GetInTouch />
+        </div>
+        <ContactForm />
       </div>
-      <ContactForm />
     </>
   );
 }

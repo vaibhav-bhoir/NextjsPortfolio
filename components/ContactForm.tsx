@@ -49,24 +49,24 @@ const ContactForm = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center py-20">
+      <section className="flex items-center justify-center py-20">
         <div className="container relative w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-28 lg:gap-10">
           <div className="lg:order-2">
             <Lottie animationData={manWorkingAnimation} />
           </div>
           <div data-aos="fade-right" data-aos-duration="1000" className="lg:order-1">
-            <h3 className="text-success dark:text-darkblue text-5xl md:text-4xl mb-12">
+            <h3 className="text-primary uppercase text-2xl lg:text-4xl font-semibold mb-7 lg:mb-12">
               Drop me a message
             </h3>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="flex flex-col relative mb-12">
-                <label className="mb-3 dark:text-black" htmlFor="name">
+              <div className="flex flex-col relative mb-6">
+                <label className="text-primary text-base font-medium mb-3" htmlFor="name">
                   Your Full Name <span className="text-red-500">*</span>
                 </label>
                 <input
                   className={`${
                     errors.name ? 'ring-1 ring-red-500' : null
-                  } outline-none py-5 px-4 bg-gray-700 dark:bg-white border-primary border-2 rounded-md placeholder-gray-400 dark:text-black`}
+                  } outline-none text-base p-4 bg-main-bg shadow-shadow rounded-md placeholder-primary `}
                   type="text"
                   placeholder="Tony Stark"
                   {...register('name', {
@@ -76,18 +76,18 @@ const ContactForm = () => {
                     },
                   })}
                 />
-                <span className="text-red-500 text-lg py-2 absolute -bottom-11">
-                  {errors?.name?.message}
+                <span className="text-red-500 text-md py-2 absolute -bottom-7">
+                  {errors?.name?.message as React.ReactNode}
                 </span>
               </div>
-              <div className="flex flex-col relative mb-12">
-                <label className="mb-3 dark:text-black" htmlFor="email">
+              <div className="flex flex-col relative mb-6">
+                <label className="text-primary text-base font-medium mb-3 " htmlFor="email">
                   Your E-mail <span className="text-red-500">*</span>
                 </label>
                 <input
                   className={`${
                     errors.email ? 'ring-1 ring-red-500' : null
-                  } outline-none py-5 px-4 bg-gray-700 dark:bg-white border-primary border-2 rounded-md placeholder-gray-400 dark:text-black`}
+                  } outline-none text-base p-4 bg-main-bg  shadow-shadow rounded-md placeholder-primary `}
                   type="text"
                   placeholder="ironman@gmail.com"
                   {...register('email', {
@@ -109,18 +109,18 @@ const ContactForm = () => {
                     },
                   })}
                 />
-                <span className="text-red-500 text-lg py-2 absolute -bottom-11">
-                  {errors?.email?.message}
+                <span className="text-red-500 text-md py-2 absolute -bottom-7">
+                  {errors?.email?.message as React.ReactNode}
                 </span>
               </div>
-              <div className="flex flex-col relative mb-12">
-                <label className="my-2 dark:text-black" htmlFor="message">
+              <div className="flex flex-col relative mb-6">
+                <label className="text-primary text-base font-medium my-2 " htmlFor="message">
                   Your message <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   className={`${
                     errors.message ? 'ring-1 ring-red-500' : null
-                  } outline-none h-36 max-h-56 py-2 px-4 bg-gray-700 dark:bg-white border-primary border-2 rounded-md dark:text-black`}
+                  } outline-none text-base h-36 max-h-56 p-4 bg-main-bg shadow-shadow rounded-md placeholder-primary `}
                   rows={3}
                   id="message"
                   placeholder="Hey, I would like to get in touch with you"
@@ -139,22 +139,23 @@ const ContactForm = () => {
                     },
                   })}
                 />
-                <span className="text-red-500 text-lg py-2 absolute -bottom-11">
-                  {errors?.message?.message}
+                <span className="text-red-500 text-md py-2 absolute -bottom-7">
+                  {errors?.message?.message as React.ReactNode}
                 </span>
               </div>
 
               <button
                 disabled={isSubmitting}
                 data-aos="fade-in"
-                className="rounded-lg border-2 px-4 py-2 my-20 md:px-8 md:py-4 flex items-center justify-between dark:text-white dark:bg-darkblue dark:border-darkblue  border-info text-info hover:bg-info hover:text-black"
+                className="bg-main-bg text-base px-3 py-2 md:px-7 md:py-4 uppercase lg:tracking-wide
+                flex items-center justify-between font-medium text-primary hover:text-primary"
                 type="submit"
               >
                 {loader ? 'Submitting' : 'submit'}
               </button>
 
               {isSubmitSuccessful && (
-                <div className="text-success dark:text-darkblue">
+                <div className="text-success">
                   Thank you! I will get in touch with you shortly. for quick responce connect me on
                   whatsapp.
                 </div>
@@ -162,7 +163,7 @@ const ContactForm = () => {
             </form>
           </div>
         </div>
-      </div>
+      </section>
 
       {isSubmitting && (
         <div className="fixed inset-0 bg-black opacity-60">

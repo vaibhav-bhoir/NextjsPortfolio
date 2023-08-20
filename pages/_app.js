@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }) {
   }, [router.events]);
 
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider>
       {isLoading && <PageLoader />}
       <Layout Component={Component} pageProps={pageProps} />
     </ThemeProvider>

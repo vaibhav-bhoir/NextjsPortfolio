@@ -23,17 +23,16 @@
     "next-pwa": "^5.4.0",
     "next-themes": "^0.0.15",
     "nodemailer": "^6.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-hook-form": "^7.22.5",
     "react-icons": "^4.3.1",
     "react-id-swiper": "^4.0.0",
-    "react-typed": "^1.2.0",
     "swiper": "^10.0.4"
   },
   "devDependencies": {
     "@types/node": "^18.0.3",
-    "@types/react": "^18.0.15",
+    "@types/react": "^18.2.20",
     "@types/react-dom": "^18.0.6",
     "autoprefixer": "^10.2.6",
     "eslint": "^8.20.0",
@@ -53,5 +52,8 @@
     "*.{js,jsx,ts,tsx}": [
       "npm run lint"
     ]
+  },
+  "engines": {
+    "node": "18.15.0"
   }
 }

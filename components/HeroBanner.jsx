@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import Typed from 'react-typed';
+// import Typed from 'react-typed';
 import Lottie from 'lottie-react';
 import computerAnimation from '../public/animations/computer-work-animation-data.json';
 import CustomLink from './CustomLink';
@@ -10,34 +10,30 @@ const HeroBanner = ({ heroProps }) => {
   const computerAnimationRef = useRef();
 
   return (
-    <div className="flex flex-col items-center justify-center py-20">
-      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-28 lg:gap-10">
+    <section className="flex flex-col items-center justify-center py-20">
+      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div className="">
-          <h3 className="text-success dark:text-jaguar md:text-4xl" data-aos="fade-in">
+          <h3 className="text-primary text-xl mb-2" data-aos="fade-in">
             {smallCaption}
           </h3>
           <h1
-            className="text-secondary-100 dark:text-darkblue text-9xl md:text-7xl lg:text-8xl font-bold"
+            className="text-primary-text mb-6 text-7xl md:text-7xl lg:text-9xl font-extrabold tracking-tight"
             data-aos="fade-in"
             data-aos-delay={500}
           >
             {heading}
           </h1>
-          <h1
-            className="text-secondary-900 dark:text-jaguar text-4xl md:text-6xl mb-16"
-            data-aos="fade-in"
-            data-aos-delay={1000}
-          >
+          {/* <h1 className="text-black  text-2xl mb-8" data-aos="fade-in" data-aos-delay={1000}>
             <Typed strings={subheadings} typeSpeed={40} backSpeed={60} loop></Typed>
-          </h1>
+          </h1> */}
           <p
-            className="text-secondary-900 dark:text-secondary-500 text-3xl md:text-4xl max-w-6xl mb-16"
+            className="text-primary text-base max-w-6xl mb-8"
             data-aos="fade-in"
             data-aos-delay={1500}
           >
             {description}
           </p>
-          <div className="flex gap-12">
+          <div className="flex gap-4 lg:gap-8">
             <CustomLink url="/contact">Hire me</CustomLink>
             <CustomLink url={resumeLink} color="info">
               Get Resume
@@ -55,7 +51,7 @@ const HeroBanner = ({ heroProps }) => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

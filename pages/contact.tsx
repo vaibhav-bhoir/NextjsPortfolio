@@ -12,11 +12,13 @@ const Contact = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex flex-col items-center justify-center pt-20">
-        <CustomHeading headingSup="Contact" headingSub="Say Hello" />
-        <GetInTouch />
+      <div className="">
+        <div className="flex flex-col items-center justify-center py-20 ">
+          <CustomHeading headingSup="Contact" headingSub="Say Hello" color="black" />
+          <GetInTouch />
+        </div>
+        <ContactForm />
       </div>
-      <ContactForm />
     </>
   );
 };

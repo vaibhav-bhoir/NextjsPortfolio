@@ -15,12 +15,12 @@ const Circle = ({ data }: CircleProps) => {
     <div
       data-aos="fade-down"
       data-aos-duration="1000"
-      className=" mx-4 md:mx-8 my-4 border-success dark:border-jaguar hover:border-white dark:hover:border-black border-2 hover:border-4 w-36 h-36 md:w-52 md:h-52 rounded-full flex flex-col justify-center items-center"
+      className="shadow-shadow bg-main-bg w-24 h-24 md:w-48 md:h-48 rounded-full flex flex-col justify-center items-center"
     >
-      <div className="w-12 md:w-20">
-        <Image src={imageSrc} alt="icon" width={50} height={50} />
+      <div className="mt-1">
+        <Image src={imageSrc} alt="icon" width={40} height={40} />
       </div>
-      <h1 className="text-2xl text-secondary-100 dark:text-black">{name}</h1>
+      <h1 className="text-base lg:text-xl font-medium text-primary">{name}</h1>
     </div>
   );
 };
