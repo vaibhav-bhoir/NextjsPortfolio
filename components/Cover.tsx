@@ -36,25 +36,23 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
     <div
       data-aos="fade-up"
       data-aos-duration="1000"
-      className="hover-animation bg-main-bg shadow-shadow rounded-xl p-4 transform transition-transform"
+      className="group hover-animation bg-main-bg shadow-shadow rounded-xl p-4 transform transition-transform"
     >
       <div className="justify-between items-center mx-2 flex">
         <div className="flex gap-2 mb-4">
           <span
-            className="w-5 h-5 bg-red-300 rounded-full cursor-pointer"
+            className="w-5 h-5 bg-primary-bg group-hover:bg-white rounded-full cursor-pointer"
             onClick={() => handleClose(pdata.sys.id)}
           ></span>
-          <span className="w-5 h-5 bg-red-500 rounded-full"></span>
-          <span className="w-5 h-5 bg-red-700 rounded-full"></span>
+          <span className="w-5 h-5 bg-primary-bg group-hover:bg-white rounded-full"></span>
+          <span className="w-5 h-5 bg-primary-bg group-hover:bg-white rounded-full"></span>
         </div>
         <h1 className="text-primary mb-4">{pdata.fields.type}</h1>
       </div>
       <hr />
       {pdata.fields.liveUrl ? (
-        <Link href={pdata.fields.liveUrl} target="_blank" legacyBehavior>
-          <a>
-            <h1 className="text-primary font-semibold text-xl my-4">{pdata.fields.title}</h1>
-          </a>
+        <Link href={pdata.fields.liveUrl} target="_blank">
+          <h1 className="text-primary font-semibold text-xl my-4">{pdata.fields.title}</h1>
         </Link>
       ) : (
         <h1 className="text-primary text-4xl my-4">{pdata.fields.title}</h1>
@@ -67,19 +65,15 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
         <div className="flex gap-4">
           <p className="text-primary text-base cursor-pointer">
             {pdata.fields.liveUrl && (
-              <Link href={pdata.fields.liveUrl} target="_blank" legacyBehavior>
-                <a className='text-primary'>
-                  <AiOutlineLink />
-                </a>
+              <Link href={pdata.fields.liveUrl} target="_blank" className="text-primary">
+                <AiOutlineLink />
               </Link>
             )}
           </p>
           <p className="text-primary text-base cursor-pointer">
             {pdata.fields.githubUrl && (
-              <Link href={pdata.fields.githubUrl} target="_blank" legacyBehavior>
-                <a className='text-primary'>
-                  <AiOutlineGithub />
-                </a>
+              <Link href={pdata.fields.githubUrl} target="_blank" className="text-primary">
+                <AiOutlineGithub />
               </Link>
             )}
           </p>
@@ -95,15 +89,15 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
       <div className="flex flex-wrap justify-between items-center mt-4">
         <p className="text-primary text-base cursor-pointer font-semibold">
           {pdata.fields.githubUrl && (
-            <Link href={pdata.fields.githubUrl} legacyBehavior>
-              <a className='text-primary' target="_blank">GitHub</a>
+            <Link href={pdata.fields.githubUrl} className="text-primary" target="_blank">
+              GitHub
             </Link>
           )}
         </p>
         <p className="text-primary text-base cursor-pointer font-semibold">
           {pdata.fields.liveUrl && (
-            <Link href={pdata.fields.liveUrl} legacyBehavior>
-              <a className='text-primary' target="_blank">Visit</a>
+            <Link href={pdata.fields.liveUrl} className="text-primary" target="_blank">
+              Visit
             </Link>
           )}
         </p>

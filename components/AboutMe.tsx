@@ -13,23 +13,29 @@ const AboutMe = (props: any) => {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="">
-            <Lottie animationData={resumeAnimation} />
+            <Lottie animationData={webDevAnimation} />
           </div>
-          <div data-aos="fade-left" data-aos-duration="1000" className="">
-            <h3 className="text-primary uppercase font-semibold  text-2xl mb-6">
+          <div className="">
+            <h3
+              className="text-primary uppercase font-semibold  text-2xl mb-6"
+              data-aos="fade-down"
+            >
               {props.heroProps.aboutHeading}
             </h3>
-            <div className="text-primary text-base max-w-6xl mb-8 flex flex-col gap-4">
+            <div
+              className="text-primary text-base max-w-6xl mb-8 flex flex-col gap-4"
+              data-aos="fade-down"
+            >
               {documentToReactComponents(props.heroProps.aboutDescription)}
             </div>
             <div className="flex">
-              {/* <CustomLink url="/about">Learn More</CustomLink> */}
-              <CustomLink
+              <CustomLink url="/about">More About Me</CustomLink>
+              {/* <CustomLink
                 url="https://drive.google.com/file/d/1SQBc9-Px8UvT6FeuOBZyCaugx4lPemx6/view?usp=drivesdk"
                 target="_blank"
               >
                 Get Resume
-              </CustomLink>
+              </CustomLink> */}
             </div>
           </div>
         </div>

@@ -51,7 +51,7 @@ const ContactForm = () => {
     <>
       <section className="flex items-center justify-center py-20">
         <div className="container relative w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-28 lg:gap-10">
-          <div className="lg:order-2">
+          <div className="lg:order-2" data-aos="fade-left" data-aos-duration="1000">
             <Lottie animationData={manWorkingAnimation} />
           </div>
           <div data-aos="fade-right" data-aos-duration="1000" className="lg:order-1">
@@ -87,7 +87,7 @@ const ContactForm = () => {
                 <input
                   className={`${
                     errors.email ? 'ring-1 ring-red-500' : null
-                  } outline-none text-base p-4 bg-main-bg  shadow-shadow rounded-md placeholder-primary `}
+                  } outline-none text-base p-4 bg-main-bg  shadow-shadow rounded-md placeholder-primary`}
                   type="text"
                   placeholder="ironman@gmail.com"
                   {...register('email', {
@@ -113,7 +113,7 @@ const ContactForm = () => {
                   {errors?.email?.message as React.ReactNode}
                 </span>
               </div>
-              <div className="flex flex-col relative mb-6">
+              <div className="flex flex-col relative mb-9">
                 <label className="text-primary text-base font-medium my-2 " htmlFor="message">
                   Your message <span className="text-red-500">*</span>
                 </label>
@@ -147,15 +147,19 @@ const ContactForm = () => {
               <button
                 disabled={isSubmitting}
                 data-aos="fade-in"
-                className="bg-main-bg shadow-shadow text-base px-3 py-2 md:px-7 md:py-4 uppercase lg:tracking-wide
-                flex items-center justify-between font-medium text-primary hover:text-primary"
+                className="relative inline-flex items-center justify-start px-5 py-3.5 md:px-7 md:py-4 uppercase shadow-shadow  lg:tracking-wide overflow-hidden font-medium transition-all bg-main-bg hover:bg-main-bg group"
                 type="submit"
               >
-                {loader ? 'Submitting' : 'submit'}
+                <span className="w-48 h-48 rounded rotate-[-40deg] bg-primary-bg absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                <span
+                  className={`relative flex items-center w-full text-left text-primary transition-colors duration-300 ease-in-out group-hover:text-white`}
+                >
+                  {loader ? 'Submitting' : 'submit'}
+                </span>
               </button>
 
               {isSubmitSuccessful && (
-                <div className="text-success">
+                <div className="text-base text-primary mt-6">
                   Thank you! I will get in touch with you shortly. for quick responce connect me on
                   whatsapp.
                 </div>

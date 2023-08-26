@@ -16,8 +16,6 @@
     "aos": "^2.3.4",
     "axios": "^0.24.0",
     "contentful": "^9.1.32",
-    "craco-less": "^1.20.0",
-    "framer-motion": "^10.16.0",
     "lottie-react": "^2.4.0",
     "mongodb": "^4.3.0",
     "next": "latest",
@@ -29,6 +27,7 @@
     "react-hook-form": "^7.22.5",
     "react-icons": "^4.3.1",
     "react-id-swiper": "^4.0.0",
+    "react-typed": "^1.2.0",
     "swiper": "^10.0.4"
   },
   "devDependencies": {

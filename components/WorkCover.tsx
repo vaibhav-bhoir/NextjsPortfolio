@@ -29,14 +29,14 @@ const WorkCover = ({ data }: WorkProps) => {
         <div className="flex gap-3 mb-4">
           <p className="text-primary text-2xl cursor-pointer">
             {link && (
-              <Link href={link} target="_blank" legacyBehavior>
+              <Link href={link} target="_blank">
                 <AiOutlineLink />
               </Link>
             )}
           </p>
           <p className="text-primary text-2xl cursor-pointer">
             {github && (
-              <Link href={github} target="_blank" legacyBehavior>
+              <Link href={github} target="_blank">
                 <AiOutlineGithub />
               </Link>
             )}
@@ -44,7 +44,7 @@ const WorkCover = ({ data }: WorkProps) => {
         </div>
       </div>
       <hr />
-      <Link href={link} target="_blank" legacyBehavior>
+      <Link href={link} target="_blank">
         <h1 className="text-primary font-semibold text-xl my-4">{name}</h1>
       </Link>
       <div className="flex flex-wrap gap-3">

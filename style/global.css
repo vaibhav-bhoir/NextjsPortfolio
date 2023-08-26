@@ -10,13 +10,16 @@
   [data-theme-mod='light'] {
     --main-bg: #ffffff;
     --primary: #000000;
+    --primary-placeholder: #000000;
     --body-bg: #fafafb;
-    --box-shadow: hsla(210, 8%, 62%, 0.2) 0px 8px 24px;
+
+    --box-shadow: hsla(210, 8%, 62%, 0.35) 0px 8px 24px;
   }
 
   [data-theme-mod='dark'] {
     --main-bg: #2d2d2d;
     --primary: #ffffff;
+    --primary-placeholder: #ffffff;
     --body-bg: #202020;
     --box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px;
   }
@@ -73,7 +76,7 @@
 }
 
 *:focus-visible {
-  outline: solid !important;
+  outline: solid var(--primary-text) !important;
 }
 
 ::-webkit-scrollbar {
@@ -188,4 +191,8 @@ html.light body .typed-cursor {
 
 .hover-animation:hover::before {
   transform: scale(3);
+}
+
+header li.active::after {
+  width: 100%;
 }

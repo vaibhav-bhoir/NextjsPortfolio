@@ -17,13 +17,13 @@ const ExCover = ({ expData }: ExCoverProps) => {
   return (
     <div
       data-aos="zoom-in-up"
-      className="hover-animation relative overflow-hidden bg-main-bg rounded-xl p-4 shadow-shadow transform transition-transform"
+      className="group hover-animation relative overflow-hidden bg-main-bg rounded-xl p-4 shadow-shadow transform transition-transform"
     >
       <div className="justify-between items-center flex">
         <div className="flex gap-2 mb-4">
-          <span className="w-5 h-5 bg-red-300 rounded-full cursor-pointer"></span>
-          <span className="w-5 h-5 bg-red-500 rounded-full"></span>
-          <span className="w-5 h-5 bg-red-700 rounded-full"></span>
+          <span className="w-5 h-5 bg-primary-bg group-hover:bg-white rounded-full cursor-pointer"></span>
+          <span className="w-5 h-5 bg-primary-bg group-hover:bg-white rounded-full"></span>
+          <span className="w-5 h-5 bg-primary-bg group-hover:bg-white rounded-full"></span>
         </div>
         <h1 className="text-primary mb-4">{expData.fields.date}</h1>
       </div>

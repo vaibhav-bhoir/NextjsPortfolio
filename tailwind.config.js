@@ -81,6 +81,9 @@ module.exports = {
         'txt-white': 'var(--txt-white)',
         'box-shadow': 'var(--box-shadow)',
       },
+      placeholderColor: {
+        primary: 'var(--primary-placeholder)',
+      },
       gradientColorStops: {
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',
@@ -97,6 +100,9 @@ module.exports = {
       },
       transitionProperty: {
         left: 'left',
+      },
+      transitionTimingFunction: {
+        'custom-ease-in-out': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
       },
       borderWidth: {
         1: '.5px',

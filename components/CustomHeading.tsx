@@ -14,7 +14,11 @@ const CustomHeading: React.FC<HeadingProps> = ({
   color = 'secondary',
 }) => {
   return (
-    <div className="container relative w-full flex justify-center items-center my-10 lg:my-20">
+    <div
+      className="container relative w-full flex justify-center items-center my-10 lg:my-20"
+      data-aos="fade-down"
+      data-aos-duration="1000"
+    >
       <h1 className="font-poppins text-6xl md:text-9xl lg:text-11xl tracking-tight absolute bottom-5 md:bottom-8 lg:bottom-10 text-transparent m-0">
         &lt;{headingSup} /&gt;
       </h1>

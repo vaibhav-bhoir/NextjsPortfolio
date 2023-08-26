@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useTheme } from 'next-themes';
 import { AiFillSetting } from 'react-icons/ai';
-import useOutsideClick from './hooks/useOutsideClick';
+import useOutsideClick from '../hooks/useOutsideClick';
 
 const mode_settings = [
   {
@@ -54,6 +54,13 @@ const ThemeChanger: React.FC = () => {
   useOutsideClick(panelRef, () => {
     setPanelVisible(false);
   });
+
+  // useOutsideClick({
+  //   ref: panelRef,
+  //   callback: () => {
+  //     setPanelVisible(false);
+  //   },
+  // });
 
   useEffect(() => {
     setMounted(true);
@@ -111,7 +118,7 @@ const ThemeChanger: React.FC = () => {
 
   return (
     <div
-      className={`p-4 bg-main-bg fixed top-96 right-0 z-[2] rounded-bl-lg shadow-shadow transition-transform shadow-lg ${
+      className={`p-4 bg-main-bg fixed top-56 right-0 z-[2] rounded-bl-lg shadow-shadow transition-transform shadow-lg ${
         panelVisible ? 'transform translate-x-0' : 'transform translate-x-full'
       }`}
       ref={panelRef}
@@ -126,7 +133,7 @@ const ThemeChanger: React.FC = () => {
           <AiFillSetting />
         </button>
       </div>
-      <h5 className="font-bold text-center text-base text-primary mb-2">Choose Mode</h5>
+      <h5 className="font-bold text-center text-base text-primary mb-2 uppercase">Choose Mode</h5>
       <ul className="flex justify-center gap-2 lg:gap-3 mb-4">
         {/* Theme options */}
         {mode_settings.map((t) => (
@@ -147,7 +154,7 @@ const ThemeChanger: React.FC = () => {
           </li>
         ))}
       </ul>
-      <h5 className="font-bold text-center text-base text-primary mb-2">Choose Color</h5>
+      <h5 className="font-bold text-center text-base text-primary mb-2 uppercase">Choose Color</h5>
       <ul className="flex justify-center gap-2 lg:gap-3 m-0">
         {/* Color options */}
         {color_settings.map((t) => (
