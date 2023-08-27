@@ -72,6 +72,7 @@ module.exports = {
       },
       colors: {
         'main-bg': 'var(--main-bg)',
+        'primary-bg': 'var(--primary-bg)',
         'body-bg': 'var(--body-bg)',
         'second-bg': 'var(--second-bg)',
 
@@ -79,6 +80,9 @@ module.exports = {
         primary: 'var(--primary)',
         'txt-white': 'var(--txt-white)',
         'box-shadow': 'var(--box-shadow)',
+      },
+      placeholderColor: {
+        primary: 'var(--primary-placeholder)',
       },
       gradientColorStops: {
         primary: 'var(--primary)',
@@ -96,6 +100,9 @@ module.exports = {
       },
       transitionProperty: {
         left: 'left',
+      },
+      transitionTimingFunction: {
+        'custom-ease-in-out': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
       },
       borderWidth: {
         1: '.5px',

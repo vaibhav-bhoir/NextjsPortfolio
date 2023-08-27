@@ -11,22 +11,25 @@ export type CustomLinkProps = {
 
 const CustomLink: React.FC<CustomLinkProps> = ({
   url,
-  color = 'black',
+  color = 'primary',
   className = '',
   target,
   children,
 }) => {
   return (
-    <Link href={url} legacyBehavior>
-      <a
-        target={target}
-        className={`${className} bg-main-bg shadow-shadow text-base px-3 py-2 md:px-7 md:py-4 uppercase lg:tracking-wide
-        flex items-center justify-between font-medium text-primary hover:text-primary`}
-        data-aos="fade-in"
-        data-aos-delay={2000}
+    <Link
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      href={url}
+      target={target}
+      className="relative inline-flex items-center justify-start px-5 py-3.5 md:px-7 md:py-4 uppercase shadow-shadow  lg:tracking-wide overflow-hidden font-medium transition-all bg-main-bg hover:bg-main-bg group"
+    >
+      <span className="w-48 h-48 rounded rotate-[-40deg] bg-primary-bg absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+      <span
+        className={`relative flex items-center w-full text-left text-${color} transition-colors duration-300 ease-in-out group-hover:text-white`}
       >
         {children}
-      </a>
+      </span>
     </Link>
   );
 };

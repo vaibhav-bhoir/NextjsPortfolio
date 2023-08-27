@@ -27,7 +27,8 @@ const ExperienceProjects: React.FC<ExperienceProjectsProps> = ({ EXP_DATA }) => 
       <div className="container">
         <h3
           className="text-primary  text-2xl lg:text-4xl font-semibold mb-7 lg:mb-14"
-          data-aos="fade-in"
+          data-aos="fade-down"
+          data-aos-duration="1000"
         >
           Projects on which I have worked
         </h3>

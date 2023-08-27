@@ -21,16 +21,17 @@ const About = () => {
 
             <h3
               className="text-primary  text-2xl lg:text-4xl font-semibold mb-8"
-              data-aos="fade-in"
+              data-aos="fade-down"
+              data-aos-duration="1000"
             >
               Let me tell you a few things....
             </h3>
             <div className="max-w-2xl mb-8 flex flex-col gap-4">
-              <p className="text-primary text-base" data-aos="fade-in">
+              <p className="text-primary text-base" data-aos="fade-down" data-aos-duration="1000">
                 I am creative Web developer based in Mumbai, India. I Have Done Bachelor of
                 engineering in Electronics and Telecommunications.
               </p>
-              <p className="text-primary text-base" data-aos="fade-in">
+              <p className="text-primary text-base" data-aos="fade-down" data-aos-duration="1000">
                 I have build several websites , looking at the design I can convert it into a HTML
                 CSS template with pixel perfect precision. I use bootstrap very often , so the turn
                 around of my project is very quick and I always use GIT to track my progress and
@@ -51,7 +52,8 @@ const About = () => {
 
             <h3
               className="text-primary  text-2xl lg:text-4xl font-semibold mb-7 lg:mb-14"
-              data-aos="fade-in"
+              data-aos="fade-down"
+              data-aos-duration="1000"
             >
               Technologies that I use
             </h3>

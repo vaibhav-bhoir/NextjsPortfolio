@@ -13,7 +13,7 @@ const Layout: React.FC<LayoutProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Header />
-      <main className="flex-1 pt-[57px] lg:pt-[98px]">
+      <main className="flex-1 overflow-hidden pt-[57px] lg:pt-[98px]">
         <LeftSidebar />
         <ThemeChanger />
         <Component {...pageProps} />
