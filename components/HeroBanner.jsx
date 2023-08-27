@@ -44,7 +44,7 @@ const HeroBanner = ({ heroProps }) => {
             {heading}
           </h1>
           <h1 className="text-primary text-3xl mb-8 h-10" data-aos="fade-down" data-aos-delay="300">
-            <TypingEffect strings={subheadings} typeSpeed={40} backSpeed={60} loop></TypingEffect>
+            <TypingEffect strings={subheadings}></TypingEffect>
           </h1>
           <p
             className="text-primary text-base max-w-6xl mb-8"

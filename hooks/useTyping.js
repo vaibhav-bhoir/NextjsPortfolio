@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Typed = ({ strings, typeSpeed, backSpeed, loop }) => {
+const Typed = ({ strings, typeSpeed = 40, backSpeed = 60, loop = true }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
