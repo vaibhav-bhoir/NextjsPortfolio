@@ -105,7 +105,8 @@
     "components/Header.tsx",
     "components/HeroBanner.jsx",
     "pages/api/contact.js",
-    "components/Carousel.tsx"
+    "components/Carousel.tsx",
+    "hooks/useTyping.js"
   ],
   "exclude": ["node_modules"]
 }

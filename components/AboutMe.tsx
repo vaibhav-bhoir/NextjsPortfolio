@@ -3,7 +3,6 @@ import CustomHeading from './CustomHeading';
 import CustomLink from './CustomLink';
 import Lottie from 'lottie-react';
 import webDevAnimation from '../public/animations/web-devoloper-animation-data.json';
-import resumeAnimation from '../public/animations/resume-animation-data .json';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const AboutMe = (props: any) => {
