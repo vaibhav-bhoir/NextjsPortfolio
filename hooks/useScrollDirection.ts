@@ -6,15 +6,14 @@ const useScrollDirection = (): ScrollDirection => {
   const [scrollDir, setScrollDir] = useState<ScrollDirection>(null);
 
   useEffect(() => {
-    let threshold = 120; 
+    let threshold = 120;
 
-    
     if (window.innerWidth < 768) {
-        threshold = 80;
+      threshold = 80;
     }
     let lastScrollY = window.scrollY;
     let ticking = false;
-    
+
     const updateScrollDir = () => {
       const scrollY = window.scrollY;
 

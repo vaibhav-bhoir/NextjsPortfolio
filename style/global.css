@@ -106,7 +106,7 @@ body {
 
   body.isOpen header ul {
     clip-path: circle(1000px at 90% -7%);
-    -webkit-clip-path: circle(1000px at 90% -7%);
+    -webkit-clip-path: circle(1000px at 174% 50%);
     pointer-events: all;
   }
 
@@ -136,6 +136,10 @@ body {
   .isOpen {
     overflow: hidden;
   }
+
+  .swiper {
+    overflow: visible !important;
+  }
 }
 
 html.dark body .typed-cursor {
@@ -151,10 +155,6 @@ html.light body .typed-cursor {
   -webkit-text-stroke-width: 1px;
 }
 
-.swiper {
-  overflow: visible !important;
-}
-
 .swiper .swiper-wrapper {
   padding-bottom: 65px;
 }
@@ -166,12 +166,21 @@ html.light body .typed-cursor {
   height: 100%;
 }
 
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--primary-bg) !important;
+}
+
 /* card hover animation  */
 .hover-animation {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: color 0.5s ease 0s;
+  transition: color 0.3s ease 0s;
   cursor: pointer;
 }
 
