@@ -1,17 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import navLinks from '../public/data/header_data';
 import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
 import Lottie from 'lottie-react';
 import logoAnimation from '../public/animations/v-logo-animation-data.json';
+import brandLogo from '../public/icons/brand-logo.svg';
 import useScrollDirection from '../hooks/useScrollDirection';
+import Image from 'next/image';
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const router = useRouter();
 
   const scrollDir = useScrollDirection();
+  const logoAnimationRef = useRef();
 
   useEffect(() => {
     document.body.classList.toggle('isOpen', showNav);
@@ -31,7 +34,10 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <Link href="/" className="inline-flex items-center mr-4 ">
             <div className="logo w-[125px] lg:w-[180px] h-auto">
-              <Lottie animationData={logoAnimation} />
+              {/* <Lottie
+                animationData={logoAnimation}
+              /> */}
+              <Image src={brandLogo} alt="logo" className="" />
             </div>
           </Link>
 

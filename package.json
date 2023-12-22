@@ -5,10 +5,10 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
+    "prepare": "husky install",
     "lint": "next lint",
     "prettier:staged": "pretty-quick --staged",
-    "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
-    "prepare": "husky install"
+    "prettier": "prettier --write \"**/*.+(js|jsx|css|md)\""
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.12.1",
@@ -46,7 +46,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,scss,css,json,md}": [
-      "npm run prettier:staged"
+      "npm run prettier"
     ],
     "*.{js,jsx,ts,tsx}": [
       "npm run lint"

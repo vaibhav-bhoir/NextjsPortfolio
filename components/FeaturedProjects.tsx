@@ -16,7 +16,7 @@ const FeaturedProjects = (props: any) => {
           data-aos="fade-down"
           data-aos-duration="1000"
         >
-          Some Selected Projects
+          Some Personal Projects
         </h3>
         {props.data.length > 0 && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12 mb-14 transition ease-in-out">

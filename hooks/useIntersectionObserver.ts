@@ -13,8 +13,6 @@ const useIntersectionObserver = ({
     threshold: 0.7,
   },
 }: IntersectionObserverHookProps) => {
-  console.log('🚀 ~ file: useIntersectionObserver.ts:17 ~ target:', target);
-
   const observer = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {

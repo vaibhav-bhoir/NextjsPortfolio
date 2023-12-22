@@ -9,6 +9,7 @@ import 'aos/dist/aos.css';
 import CustomHeading from '../components/CustomHeading';
 import FeaturedProjects from '../components/FeaturedProjects';
 import ExperienceProjects from '../components/ExperienceProjects';
+import Carousel from '../components/Carousel';
 import AboutMe from '../components/AboutMe';
 
 export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
@@ -30,12 +31,11 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
     <>
       <Head>
         <title>Vaibhav Bhoir</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <HeroBanner heroProps={heroProps} />
-      <AboutMe heroProps={heroProps}></AboutMe>
-      <ExperienceProjects EXP_DATA={EXP_DATA}></ExperienceProjects>
+      <AboutMe heroProps={heroProps} />
+      <Carousel EXP_DATA={EXP_DATA} />
       <FeaturedProjects
         PROJECTS_DATA={PROJECTS_DATA}
         data={data}
