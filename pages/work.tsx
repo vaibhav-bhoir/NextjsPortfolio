@@ -7,6 +7,10 @@ import { createClient } from 'contentful';
 interface WorkProps {
   EXP_DATA: {
     fields: {
+      title: string;
+      description: any;
+      keyResponsibilities: any;
+      techStack: string[];
       typeOfProjectInternationaldomestic: string;
     };
   }[];
@@ -23,11 +27,10 @@ const Work: React.FC<WorkProps> = ({ EXP_DATA }) => {
     filter === 'all'
       ? EXP_DATA
       : EXP_DATA.filter((item) => {
-          if (filter === 'International') {
-            return item.fields.typeOfProjectInternationaldomestic === true;
-          } else if (filter === 'Domestic') {
-            return item.fields.typeOfProjectInternationaldomestic === false;
-          }
+          const projectType = item.fields.typeOfProjectInternationaldomestic
+            ? 'International'
+            : 'Domestic';
+          return projectType === filter;
         });
 
   return (
