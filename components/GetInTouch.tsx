@@ -24,19 +24,19 @@ const GetInTouch = () => {
           <div className="text-2xl">
             <AiOutlineMail />
           </div>
-          <span className="mx-2">Mail</span>
+          <span className="ml-2">Mail</span>
         </CustomLink>
         <CustomLink url="https://www.linkedin.com/in/vaibhav-bhoir-b50a9a185" target="_blank">
           <div className="text-2xl">
             <AiOutlineLinkedin />
           </div>
-          <span className="mx-2">LinkedIn</span>
+          <span className="ml-2">LinkedIn</span>
         </CustomLink>
         <CustomLink url="https://github.com/vaibhav-bhoir" target="_blank">
           <div className="text-2xl">
             <AiOutlineGithub />
           </div>
-          <span className="mx-2">GitHub</span>
+          <span className="ml-2">GitHub</span>
         </CustomLink>
       </div>
     </div>

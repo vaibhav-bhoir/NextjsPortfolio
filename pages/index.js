@@ -8,7 +8,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import CustomHeading from '../components/CustomHeading';
 import FeaturedProjects from '../components/FeaturedProjects';
-import ExperienceProjects from '../components/ExperienceProjects';
 import Carousel from '../components/Carousel';
 import AboutMe from '../components/AboutMe';
 

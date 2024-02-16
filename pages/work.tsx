@@ -1,10 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
-import LIST_DATA from '../public/data/project.list';
 import WorkCover from '../components/WorkCover';
 import CustomHeading from '../components/CustomHeading';
+import { createClient } from 'contentful';
 
-const Work = () => {
+interface WorkProps {
+  EXP_DATA: {
+    fields: {
+      typeOfProjectInternationaldomestic: string;
+    };
+  }[];
+}
+
+const Work: React.FC<WorkProps> = ({ EXP_DATA }) => {
+  const [filter, setFilter] = useState<string>('all');
+
+  const handleFilter = (filter: string) => {
+    setFilter(filter);
+  };
+
+  const filteredData =
+    filter === 'all'
+      ? EXP_DATA
+      : EXP_DATA.filter((item) => {
+          if (filter === 'International') {
+            return item.fields.typeOfProjectInternationaldomestic === true;
+          } else if (filter === 'Domestic') {
+            return item.fields.typeOfProjectInternationaldomestic === false;
+          }
+        });
+
   return (
     <>
       <Head>
@@ -16,15 +41,41 @@ const Work = () => {
         <CustomHeading headingSup="Work" headingSub="More Projects" />
 
         <div className="container">
-          <h3
-            className="text-primary text-2xl lg:text-4xl font-semibold mb-7 lg:mb-14"
-            data-aos="fade-in"
-          >
-            All Projects
-          </h3>
+          <div className="flex flex-col md:flex-row gap-6 justify-between mb-7 lg:mb-14">
+            <h3 className="text-primary text-2xl lg:text-4xl font-semibold" data-aos="fade-in">
+              All Projects
+            </h3>
+            <div className="flex gap-3 mb-4">
+              <button
+                className={`text-base lg:text-lg font-medium px-3 py-1.5 rounded-lg ${
+                  filter === 'all' ? 'bg-primary-bg text-white' : 'bg-gray-200 text-black'
+                }`}
+                onClick={() => handleFilter('all')}
+              >
+                All
+              </button>
+              <button
+                className={`text-base lg:text-lg font-medium px-3 py-1.5 rounded-lg ${
+                  filter === 'International' ? 'bg-primary-bg text-white' : 'bg-gray-200 text-black'
+                }`}
+                onClick={() => handleFilter('International')}
+              >
+                International
+              </button>
+              <button
+                className={`text-base lg:text-lg font-medium px-3 py-1.5 rounded-lg ${
+                  filter === 'Domestic' ? 'bg-primary-bg text-white' : 'bg-gray-200 text-black'
+                }`}
+                onClick={() => handleFilter('Domestic')}
+              >
+                Domestic
+              </button>
+            </div>
+          </div>
+
           <div className="flex flex-col gap-6 lg:gap-10 transition ease-in-out">
-            {LIST_DATA.map((e) => (
-              <WorkCover data={e} key={e.id} />
+            {filteredData.map((data, index) => (
+              <WorkCover data={data} key={index} />
             ))}
           </div>
         </div>
@@ -34,3 +85,26 @@ const Work = () => {
 };
 
 export default Work;
+
+export async function getStaticProps() {
+  const spaceId = process.env.CONTENTFUL_SPACE_ID;
+  const accessToken = process.env.CONTENTFUL_MANAGEMENT_TOKEN;
+
+  if (!spaceId || !accessToken) {
+    throw new Error('Contentful environment variables are not defined');
+  }
+
+  const client = createClient({
+    space: spaceId,
+    accessToken: accessToken,
+  });
+
+  const workExperience = await client.getEntries({ content_type: 'workExperience' });
+
+  return {
+    props: {
+      EXP_DATA: workExperience.items,
+    },
+    revalidate: 10,
+  };
+}

@@ -2,11 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer
-      className="flex flex-col justify-center items-center py-12"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-    >
+    <footer className="flex flex-col justify-center items-center py-12">
       <h5 className="text-primary text-base lg:text-xl mb-2">
         Designed and Developed with <span className="text-red-500">❤</span> by
       </h5>
