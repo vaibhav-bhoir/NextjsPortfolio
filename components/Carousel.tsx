@@ -22,7 +22,7 @@ interface Experience {
 }
 
 interface ExperienceProjectsProps {
-  EXP_DATA: Array<Experience>;
+  EXP_DATA: Experience[];
 }
 
 const Carousel: React.FC<ExperienceProjectsProps> = ({ EXP_DATA }) => {
@@ -63,7 +63,7 @@ const Carousel: React.FC<ExperienceProjectsProps> = ({ EXP_DATA }) => {
         }}
         modules={[Pagination, Autoplay]}
       >
-        {EXP_DATA.map((expData) => (
+        {(EXP_DATA as any[]).map((expData: any) => (
           <SwiperSlide className="swiper-slide" key={expData.sys.id}>
             <ExCover expData={expData} />
           </SwiperSlide>
