@@ -51,9 +51,9 @@ const FeaturedProjects = (props: any) => {
             </div>
           </>
         )}
-        <div className="flex justify-center items-center">
+        {/* <div className="flex justify-center items-center">
           {props.data.length !== 0 && <CustomLink url="/work">View More</CustomLink>}
-        </div>
+        </div> */}
       </div>
     </section>
   );

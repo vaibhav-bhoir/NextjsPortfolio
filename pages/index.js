@@ -58,13 +58,13 @@ export async function getStaticProps() {
     accessToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN,
   });
 
-  const projectListRes = await client.getEntries({ content_type: 'projectsOnWhichIveWorked' });
   const hero = await client.getEntries({ content_type: 'heading' });
   const featuredProjects = await client.getEntries({ content_type: 'featuredProjects' });
+  const workExperience = await client.getEntries({ content_type: 'workExperience' });
 
   return {
     props: {
-      EXP_DATA: projectListRes.items,
+      EXP_DATA: workExperience.items,
       hero: hero.items,
       PROJECTS_DATA: featuredProjects.items,
     },

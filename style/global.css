@@ -87,6 +87,10 @@
   background-color: var(--main-bg);
 }
 
+html {
+  scroll-padding-top: 230px;
+}
+
 body {
   overflow-x: hidden;
   background-color: var(--body-bg) !important;
@@ -97,6 +101,9 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
+  html {
+    scroll-padding-top: 190px;
+  }
   header ul {
     margin: 0;
     position: fixed;
@@ -164,6 +171,20 @@ html.light body .typed-cursor {
 }
 .swiper-slide {
   height: auto !important;
+  max-height: 300px !important;
+  position: relative;
+}
+
+.swiper-slide:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 150px;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0), var(--main-bg));
+  z-index: 1;
+  border-radius: 12px;
 }
 
 .swiper-slide > div {
@@ -208,4 +229,17 @@ html.light body .typed-cursor {
 
 header li.active::after {
   width: 100%;
+}
+
+.workcover-card ul {
+  list-style: disc;
+  padding-left: 28px;
+}
+
+.workcover-card ul li {
+  padding-left: 8px;
+}
+.workcover-card p {
+  margin-bottom: 10px;
+  line-height: 1.3;
 }

@@ -50,24 +50,30 @@ const Work: React.FC<WorkProps> = ({ EXP_DATA }) => {
             </h3>
             <div className="flex gap-3 mb-4">
               <button
-                className={`text-base lg:text-lg font-medium px-3 py-1.5 rounded-lg ${
-                  filter === 'all' ? 'bg-primary-bg text-white' : 'bg-gray-200 text-black'
+                className={`text-base lg:text-lg font-medium px-3.5 py-2.5 rounded-lg ${
+                  filter === 'all'
+                    ? 'bg-primary-bg text-white'
+                    : 'bg-main-bg text-primary shadow-shadow '
                 }`}
                 onClick={() => handleFilter('all')}
               >
                 All
               </button>
               <button
-                className={`text-base lg:text-lg font-medium px-3 py-1.5 rounded-lg ${
-                  filter === 'International' ? 'bg-primary-bg text-white' : 'bg-gray-200 text-black'
+                className={`text-base lg:text-lg font-medium px-3.5 py-2.5 rounded-lg ${
+                  filter === 'International'
+                    ? 'bg-primary-bg text-white'
+                    : 'bg-main-bg text-primary shadow-shadow '
                 }`}
                 onClick={() => handleFilter('International')}
               >
                 International
               </button>
               <button
-                className={`text-base lg:text-lg font-medium px-3 py-1.5 rounded-lg ${
-                  filter === 'Domestic' ? 'bg-primary-bg text-white' : 'bg-gray-200 text-black'
+                className={`text-base lg:text-lg font-medium px-3.5 py-2.5 rounded-lg ${
+                  filter === 'Domestic'
+                    ? 'bg-primary-bg text-white'
+                    : 'bg-main-bg text-primary shadow-shadow '
                 }`}
                 onClick={() => handleFilter('Domestic')}
               >

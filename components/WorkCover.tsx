@@ -11,6 +11,9 @@ interface WorkProps {
       techStack: string[];
       typeOfProjectInternationaldomestic: string;
     };
+    sys: {
+      id: string;
+    };
   };
 }
 
@@ -18,11 +21,15 @@ const WorkCover = ({ data }: WorkProps) => {
   const { title, description, keyResponsibilities, techStack, typeOfProjectInternationaldomestic } =
     data?.fields;
 
+  const shouldRenderDescription = description && description !== '';
+  const shouldRenderKeyResponsibilities = keyResponsibilities && keyResponsibilities !== '';
+
   return (
     <div
       data-aos="fade-up"
       data-aos-duration="1000"
-      className="shadow-shadow bg-main-bg  rounded-xl p-4 transform transition-transform hover:scale-[1.02]"
+      className="workcover-card shadow-shadow bg-main-bg  rounded-xl p-4 transform transition-transform hover:scale-[1.02]"
+      id={`${data.sys.id}`}
     >
       <div className="justify-between items-center mx-2 flex">
         <div className="flex gap-2 mb-4">
@@ -32,24 +39,28 @@ const WorkCover = ({ data }: WorkProps) => {
         </div>
       </div>
       <hr />
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between gap-3 items-start">
         <h1 className="text-primary font-semibold text-xl my-4">{title}</h1>
         {typeOfProjectInternationaldomestic ? (
-          <span className="text-white text-sm lg:text-base font-medium my-4 px-3.5 py-1.5 rounded-full bg-[#3B5998]">
+          <span className="text-white text-xs lg:text-base font-medium my-4 px-3.5 py-1.5 rounded-full bg-[#3B5998]">
             International
           </span>
         ) : (
-          <span className="text-white text-sm lg:text-base font-medium my-4 px-3.5 py-1.5 rounded-full bg-[#7FB069]">
+          <span className="text-white text-xs lg:text-base font-medium my-4 px-3.5 py-1.5 rounded-full bg-[#7FB069]">
             Domestic
           </span>
         )}
       </div>
-      <div className="prose text-primary text-base max-w-6xl mb-6" data-aos="fade-down">
-        {documentToReactComponents(description)}
-      </div>
-      <div className="prose text-primary text-base max-w-6xl mb-6" data-aos="fade-down">
-        {documentToReactComponents(keyResponsibilities)}
-      </div>
+      {shouldRenderDescription && (
+        <div className="prose text-primary text-base max-w-6xl mb-6" data-aos="fade-down">
+          {documentToReactComponents(description)}
+        </div>
+      )}
+      {shouldRenderKeyResponsibilities && (
+        <div className="prose text-primary text-base max-w-6xl mb-6" data-aos="fade-down">
+          {documentToReactComponents(keyResponsibilities)}
+        </div>
+      )}
       <div className="flex flex-wrap gap-3">
         {techStack.map((tech, index) => (
           <div
