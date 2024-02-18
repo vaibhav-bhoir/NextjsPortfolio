@@ -83,7 +83,7 @@ const Work: React.FC<WorkProps> = ({ EXP_DATA }) => {
           </div>
 
           <div className="flex flex-col gap-6 lg:gap-10 transition ease-in-out">
-            {filteredData.map((data, index) => (
+            {(filteredData as any).map((data: any, index: number) => (
               <WorkCover data={data} key={index} />
             ))}
           </div>
