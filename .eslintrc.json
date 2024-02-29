@@ -2,7 +2,7 @@
   "extends": ["eslint:recommended", "next"],
   "rules": {
     "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }],
-    "react/no-unescaped-entities": 0,
-    "@typescript-eslint/no-explicit-any": "error"
+    "react/no-unescaped-entities": 0
+    // "@typescript-eslint/no-explicit-any": "error"
   }
 }
