@@ -35,8 +35,8 @@ interface Hero {
     subheadings: [string];
     description: string;
     resume: any;
-    aboutHeading: string;
-    aboutDescription: any;
+    // aboutHeading: string;
+    // aboutDescription: any;
     aboutImage: any;
   };
 }
