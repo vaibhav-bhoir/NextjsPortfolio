@@ -31,7 +31,11 @@ interface CoverProps {
   handleClose: any;
 }
 
-const Cover = ({ pdata, handleClose }: CoverProps) => {
+const Cover: React.FC<CoverProps> = ({ pdata, handleClose }) => {
+  const { fields, sys } = pdata || {};
+  const { title, githubUrl, liveUrl, type, thumbnailImage } = fields || {};
+  const { file } = thumbnailImage?.fields || {};
+
   return (
     <div
       data-aos="fade-up"
@@ -42,37 +46,33 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
         <div className="flex gap-2 mb-4">
           <span
             className="w-5 h-5 bg-primary-bg group-hover:bg-white rounded-full cursor-pointer"
-            onClick={() => handleClose(pdata.sys.id)}
+            onClick={() => handleClose(sys.id)}
           ></span>
           <span className="w-5 h-5 bg-primary-bg group-hover:bg-white rounded-full"></span>
           <span className="w-5 h-5 bg-primary-bg group-hover:bg-white rounded-full"></span>
         </div>
-        <h1 className="text-primary mb-4">{pdata.fields.type}</h1>
+        <h1 className="text-primary mb-4">{type}</h1>
       </div>
       <hr />
-      {pdata.fields.liveUrl ? (
-        <Link href={pdata.fields.liveUrl} target="_blank">
-          <h1 className="text-primary font-semibold text-xl my-4">{pdata.fields.title}</h1>
-        </Link>
-      ) : (
-        <h1 className="text-primary text-4xl my-4">{pdata.fields.title}</h1>
-      )}
+
+      <h1 className="text-primary text-xl font-medium my-4">{title}</h1>
+
       <h1 className="text-primary text-base mb-1">
-        {pdata.fields.liveUrl ? 'Completed' : 'Currently Working on'}
+        {liveUrl ? 'Completed' : 'Currently Working on'}
       </h1>
       <div className="flex items-center justify-between mb-4">
         <p className="text-primary">--</p>
         <div className="flex gap-4">
           <p className="text-primary text-base cursor-pointer">
-            {pdata.fields.liveUrl && (
-              <Link href={pdata.fields.liveUrl} target="_blank" className="text-primary">
+            {liveUrl && (
+              <Link href={liveUrl} target="_blank" className="text-primary inline-block">
                 <AiOutlineLink />
               </Link>
             )}
           </p>
           <p className="text-primary text-base cursor-pointer">
-            {pdata.fields.githubUrl && (
-              <Link href={pdata.fields.githubUrl} target="_blank" className="text-primary">
+            {githubUrl && (
+              <Link href={githubUrl} target="_blank" className="text-primary inline-block">
                 <AiOutlineGithub />
               </Link>
             )}
@@ -80,23 +80,23 @@ const Cover = ({ pdata, handleClose }: CoverProps) => {
         </div>
       </div>
       <Image
-        src={`https:${pdata.fields.thumbnailImage.fields.file.url}`}
+        src={`https:${file.url}`}
         alt=""
-        height={pdata.fields.thumbnailImage.fields.file.details.image.height}
-        width={pdata.fields.thumbnailImage.fields.file.details.image.width}
+        height={file.details.image.height}
+        width={file.details.image.width}
         className="rounded-xl"
       />
       <div className="flex flex-wrap justify-between items-center mt-4">
         <p className="text-primary text-base cursor-pointer font-semibold">
-          {pdata.fields.githubUrl && (
-            <Link href={pdata.fields.githubUrl} className="text-primary" target="_blank">
+          {githubUrl && (
+            <Link href={githubUrl} className="text-primary inline-block" target="_blank">
               GitHub
             </Link>
           )}
         </p>
         <p className="text-primary text-base cursor-pointer font-semibold">
-          {pdata.fields.liveUrl && (
-            <Link href={pdata.fields.liveUrl} className="text-primary" target="_blank">
+          {liveUrl && (
+            <Link href={liveUrl} className="text-primary inline-block" target="_blank">
               Visit
             </Link>
           )}

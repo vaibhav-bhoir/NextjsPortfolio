@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import Image from 'next/image';
 import axios, { Method } from 'axios';
 import Loader from './Loader';
 import getConfig from 'next/config';
@@ -51,10 +50,10 @@ const ContactForm = () => {
     <>
       <section className="flex items-center justify-center py-20">
         <div className="container relative w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-28 lg:gap-10">
-          <div className="lg:order-2" data-aos="fade-left" data-aos-duration="1000">
+          <div className="lg:order-2" data-aos="zoom-in-up" data-aos-duration="1000">
             <Lottie animationData={manWorkingAnimation} />
           </div>
-          <div data-aos="fade-right" data-aos-duration="1000" className="lg:order-1">
+          <div data-aos="zoom-in-up" data-aos-duration="1000" className="lg:order-1">
             <h3 className="text-primary uppercase text-2xl lg:text-4xl font-semibold mb-7 lg:mb-12">
               Drop me a message
             </h3>
@@ -146,7 +145,6 @@ const ContactForm = () => {
 
               <button
                 disabled={isSubmitting}
-                data-aos="fade-in"
                 className="relative inline-flex items-center justify-start px-5 py-3.5 md:px-7 md:py-4 uppercase shadow-shadow  lg:tracking-wide overflow-hidden font-medium transition-all bg-main-bg hover:bg-main-bg group"
                 type="submit"
               >

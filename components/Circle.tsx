@@ -8,7 +8,7 @@ interface CircleProps {
   };
 }
 
-const Circle = ({ data }: CircleProps) => {
+const Circle: React.FC<CircleProps> = ({ data }) => {
   const { name, imageSrc } = data;
 
   return (

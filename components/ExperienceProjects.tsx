@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import CustomHeading from './CustomHeading';
 import ExCover from './ExCover';
 
@@ -9,6 +9,9 @@ interface Experience {
     jobPosition: string;
     projectDescription: string;
     location: string;
+    description: string;
+    projectPeriod: string;
+    keyResponsibilities: string;
   };
   sys: {
     id: string;
@@ -16,7 +19,7 @@ interface Experience {
 }
 
 interface ExperienceProjectsProps {
-  EXP_DATA: Array<Experience>;
+  EXP_DATA: Experience[];
 }
 
 const ExperienceProjects: React.FC<ExperienceProjectsProps> = ({ EXP_DATA }) => {
@@ -52,7 +55,7 @@ const ExperienceProjects: React.FC<ExperienceProjectsProps> = ({ EXP_DATA }) => 
           Projects on which I have worked
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12 transition ease-in-out">
-          {(EXP_DATA as any).slice(0, itemsToShow).map((expData: any) => (
+          {EXP_DATA.slice(0, itemsToShow).map((expData) => (
             <ExCover expData={expData} key={expData.sys.id} />
           ))}
         </div>

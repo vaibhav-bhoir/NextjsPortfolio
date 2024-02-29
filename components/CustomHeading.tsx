@@ -3,15 +3,15 @@ import React from 'react';
 export type HeadingProps = {
   headingSup: string;
   headingSub: string;
-  color?: string;
   className?: string;
+  color?: string;
 };
 
 const CustomHeading: React.FC<HeadingProps> = ({
   className = '',
   headingSup,
   headingSub,
-  color = 'secondary',
+  color = '',
 }) => {
   return (
     <div className="container relative w-full flex justify-center items-center my-10 lg:my-20">
@@ -23,7 +23,7 @@ const CustomHeading: React.FC<HeadingProps> = ({
         &lt;{headingSup} /&gt;
       </h1>
       <h1
-        className={`${className} flex font-poppins text-5xl md:text-8xl lg:text-10xl text-primary-text font-extrabold m-0 relative z-[1]`}
+        className={`${className} ${color} flex font-poppins text-5xl md:text-8xl lg:text-10xl text-primary-text font-extrabold m-0 relative z-[1]`}
         data-aos="fade-up"
         data-aos-duration="1000"
       >

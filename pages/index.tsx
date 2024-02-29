@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 import { createClient } from 'contentful';
 import { useEffect, useState } from 'react';
@@ -11,13 +12,61 @@ import FeaturedProjects from '../components/FeaturedProjects';
 import Carousel from '../components/Carousel';
 import AboutMe from '../components/AboutMe';
 
-export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
+interface Experience {
+  fields: {
+    title: string;
+    date: string;
+    jobPosition: string;
+    projectDescription: string;
+    location: string;
+    keyResponsibilities: string;
+    description: string;
+    projectPeriod: string;
+  };
+  sys: {
+    id: string;
+  };
+}
+
+interface Hero {
+  fields: {
+    smallCaption: string;
+    heading: string;
+    subheadings: [string];
+    description: string;
+    resume: any;
+    aboutHeading: string;
+    aboutDescription: any;
+    aboutImage: any;
+  };
+}
+
+interface Project {
+  fields: {
+    title: string;
+    description: any;
+    liveUrl: string;
+    githubUrl: string;
+    thumbnailImage: string;
+    type: string;
+  };
+  sys: {
+    id: string;
+  };
+}
+interface HomeProps {
+  EXP_DATA: Experience[];
+  PROJECTS_DATA: Project[];
+  hero: Hero[];
+}
+
+const Home: React.FC<HomeProps> = ({ EXP_DATA, PROJECTS_DATA, hero }) => {
   const [data, setData] = useState(PROJECTS_DATA);
 
   const heroProps = hero[0].fields;
 
-  const handleClose = (id) => {
-    const newData = data.filter((e) => e.sys.id !== id);
+  const handleClose = (id?: any) => {
+    const newData = data.filter((e: any) => e.sys.id !== id);
     setData(newData);
   };
 
@@ -50,12 +99,21 @@ export default function Home({ EXP_DATA, PROJECTS_DATA, hero }) {
       </div>
     </>
   );
-}
+};
+
+export default Home;
 
 export async function getStaticProps() {
+  const spaceId = process.env.CONTENTFUL_SPACE_ID;
+  const accessToken = process.env.CONTENTFUL_MANAGEMENT_TOKEN;
+
+  if (!spaceId || !accessToken) {
+    throw new Error('Contentful environment variables are not defined');
+  }
+
   const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN,
+    space: spaceId,
+    accessToken: accessToken,
   });
 
   const hero = await client.getEntries({ content_type: 'heading' });

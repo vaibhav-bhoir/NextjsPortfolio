@@ -103,7 +103,7 @@
     "pages/index.tsx",
     "pages/_app.js",
     "components/Header.tsx",
-    "components/HeroBanner.jsx",
+    "components/HeroBanner.tsx",
     "pages/api/contact.js",
     "components/Carousel.tsx",
     "hooks/useTyping.js"

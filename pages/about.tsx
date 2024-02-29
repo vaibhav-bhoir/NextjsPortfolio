@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import Circle from '../components/Circle';
 import SKILL_DATA from '../public/data/skill.data';
 import CustomHeading from '../components/CustomHeading';
@@ -39,7 +38,11 @@ const About = () => {
               </p>
             </div>
             <div className="flex">
-              <CustomLink url="https://drive.google.com/file/d/1SQBc9-Px8UvT6FeuOBZyCaugx4lPemx6/view?usp=drivesdk">
+              <CustomLink
+                url="https://assets.ctfassets.net/qj2xf4iz1a0x/6VbeSJSe0WJTk448CNpvkW/813f3c03e3daf74ed7cf678d5644bb1c/Vaibhav_Bhoir_Resume.pdf"
+                target="_blank"
+                download={true}
+              >
                 Get Resume
               </CustomLink>
             </div>

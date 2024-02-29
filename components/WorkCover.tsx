@@ -1,4 +1,3 @@
-// WorkCover.tsx
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
@@ -17,9 +16,10 @@ interface WorkProps {
   };
 }
 
-const WorkCover = ({ data }: WorkProps) => {
+const WorkCover: React.FC<WorkProps> = ({ data }) => {
+  const { fields } = data || {};
   const { title, description, keyResponsibilities, techStack, typeOfProjectInternationaldomestic } =
-    data?.fields;
+    fields || {};
 
   const shouldRenderDescription = description && description !== '';
   const shouldRenderKeyResponsibilities = keyResponsibilities && keyResponsibilities !== '';

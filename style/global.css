@@ -171,20 +171,7 @@ html.light body .typed-cursor {
 }
 .swiper-slide {
   height: auto !important;
-  max-height: 300px !important;
   position: relative;
-}
-
-.swiper-slide:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  height: 150px;
-  width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0), var(--main-bg));
-  z-index: 1;
-  border-radius: 12px;
 }
 
 .swiper-slide > div {
@@ -229,6 +216,18 @@ html.light body .typed-cursor {
 
 header li.active::after {
   width: 100%;
+}
+
+.workcover-card--half:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 180px;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0), var(--main-bg));
+  z-index: 1;
+  border-radius: 12px;
 }
 
 .workcover-card ul {

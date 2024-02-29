@@ -1,12 +1,8 @@
-// {
-//   "extends": "next/core-web-vitals",
-//   "rules": {
-//     "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }],
-//     "import/no-unresolved": [2, { "caseSensitive": false }],
-//     "react/no-unescaped-entities": 0
-//   }
-// }
-
 {
-  "extends": "next"
+  "extends": ["eslint:recommended", "next"],
+  "rules": {
+    "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }],
+    "react/no-unescaped-entities": 0
+    // "@typescript-eslint/no-explicit-any": "error"
+  }
 }

@@ -2,29 +2,42 @@ import React, { useRef } from 'react';
 import Lottie from 'lottie-react';
 import computerAnimation from '../public/animations/computer-work-animation-data.json';
 import CustomLink from './CustomLink';
-import useIntersectionObserver from '../hooks/useIntersectionObserver';
+// import useIntersectionObserver from '../hooks/useIntersectionObserver';
 import TypingEffect from '../hooks/useTyping';
 
-const HeroBanner = ({ heroProps }) => {
-  const { smallCaption, heading, description, subheadings, heroImage, resumeLink } = heroProps;
+interface HeroBannerProps {
+  heroProps: {
+    smallCaption: string;
+    heading: string;
+    subheadings: [string];
+    description: string;
+    resume: any;
+    aboutHeading: string;
+    aboutDescription: any;
+    aboutImage: any;
+  };
+}
 
-  const computerAnimationRef = useRef();
+const HeroBanner: React.FC<HeroBannerProps> = ({ heroProps }) => {
+  const { smallCaption, heading, description, subheadings, resume } = heroProps || {};
+  const pdfUrl = `https:${resume.fields.file.url}`;
+  // const computerAnimationRef = useRef();
   const animationContainerRef = useRef(null);
 
-  const handleIntersection = (entry) => {
-    if (entry.isIntersecting) {
-      console.log('Intersecting');
-      computerAnimationRef.current?.play();
-    } else {
-      computerAnimationRef.current?.pause();
-      console.log('not Intersecting');
-    }
-  };
+  // const handleIntersection = (entry: any) => {
+  //   if (entry.isIntersecting) {
+  //     console.log('Intersecting');
+  //     computerAnimationRef.current?.play();
+  //   } else {
+  //     computerAnimationRef.current?.pause();
+  //     console.log('not Intersecting');
+  //   }
+  // };
 
-  useIntersectionObserver({
-    target: animationContainerRef?.current,
-    callback: handleIntersection,
-  });
+  // useIntersectionObserver({
+  //   target: animationContainerRef?.current,
+  //   callback: handleIntersection,
+  // });
 
   return (
     <section
@@ -55,7 +68,9 @@ const HeroBanner = ({ heroProps }) => {
           </p>
           <div className="flex gap-4 lg:gap-8">
             <CustomLink url="/contact">Hire me</CustomLink>
-            <CustomLink url={resumeLink}>Get Resume</CustomLink>
+            <CustomLink url={pdfUrl} target="_blank" download={true}>
+              Get Resume
+            </CustomLink>
           </div>
         </div>
         <div className="">
@@ -64,7 +79,7 @@ const HeroBanner = ({ heroProps }) => {
             //   computerAnimationRef?.current?.goToAndPlay(120, true);
             // }}
             // loop={false}
-            lottieRef={computerAnimationRef}
+            // lottieRef={computerAnimationRef}
             animationData={computerAnimation}
           />
         </div>

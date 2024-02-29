@@ -15,6 +15,9 @@ interface Experience {
     jobPosition: string;
     projectDescription: string;
     location: string;
+    keyResponsibilities: string;
+    description: string;
+    projectPeriod: string;
   };
   sys: {
     id: string;
@@ -63,7 +66,7 @@ const Carousel: React.FC<ExperienceProjectsProps> = ({ EXP_DATA }) => {
         }}
         modules={[Pagination, Autoplay]}
       >
-        {(EXP_DATA as any[]).map((expData: any) => (
+        {EXP_DATA.map((expData: Experience) => (
           <SwiperSlide className="swiper-slide" key={expData.sys.id}>
             <ExCover expData={expData} />
           </SwiperSlide>
