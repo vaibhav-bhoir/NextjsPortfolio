@@ -6,7 +6,7 @@
     "start": "next start",
     "export": "next export",
     "prepare": "husky install",
-    "lint": "next lint",
+    "lint": "tsc --noEmit && next lint",
     "prettier:staged": "pretty-quick --staged",
     "prettier": "prettier --write \"**/*.+(js|jsx|ts|tsx|css|md)\""
   },
