@@ -21,7 +21,7 @@ interface Experience {
     location: string;
     keyResponsibilities: string;
     description: string;
-    // projectPeriod: string;
+    projectPeriod: string;
   };
   sys: {
     id: string;
