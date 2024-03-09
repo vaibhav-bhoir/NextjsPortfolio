@@ -1,11 +1,4 @@
 import React from 'react';
-import {
-  AiOutlineGithub,
-  AiOutlineLinkedin,
-  AiOutlineMail,
-  AiOutlineGlobal,
-  AiOutlineWhatsApp,
-} from 'react-icons/ai';
 import Link from 'next/link';
 
 interface socialIconsProps {
@@ -17,22 +10,38 @@ interface socialIconsProps {
 const socialIcons: Array<socialIconsProps> = [
   {
     id: 1,
-    icon: <AiOutlineGlobal />,
+    icon: (
+      <svg height="1em" width="1em">
+        <use xlinkHref="#globe" />
+      </svg>
+    ),
     link: 'https://vaibhav-bhoir.github.io/myportfolio/',
   },
   {
     id: 2,
-    icon: <AiOutlineGithub />,
+    icon: (
+      <svg height="1em" width="1em">
+        <use xlinkHref="#github" />
+      </svg>
+    ),
     link: 'https://github.com/vaibhav-bhoir',
   },
   {
     id: 3,
-    icon: <AiOutlineLinkedin />,
+    icon: (
+      <svg height="1em" width="1em">
+        <use xlinkHref="#linkedin" />
+      </svg>
+    ),
     link: 'https://www.linkedin.com/in/vaibhav-bhoir-b50a9a185',
   },
   {
     id: 4,
-    icon: <AiOutlineMail />,
+    icon: (
+      <svg height="1em" width="1em">
+        <use xlinkHref="#email" />
+      </svg>
+    ),
     link: 'mailto:bhoirvaibhav90@gmail.com',
   },
 ];
@@ -58,7 +67,9 @@ const LeftSidebar = () => {
             className="text-2xl text-white hover:text-white"
             target="_blank"
           >
-            <AiOutlineWhatsApp />
+            <svg height="1em" width="1em">
+              <use xlinkHref="#whatsapp" />
+            </svg>
           </Link>
         </div>
       </ul>

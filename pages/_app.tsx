@@ -3,12 +3,14 @@ import '../style/global.css';
 import { ThemeProvider } from 'next-themes';
 import { useRouter } from 'next/router';
 import PageLoader from '../components/PageLoader';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
+import { AppProps } from 'next/app';
+import Icons from '../components/Icons';
 
-function MyApp({ Component, pageProps }) {
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const handleStart = () => {
@@ -31,11 +33,13 @@ function MyApp({ Component, pageProps }) {
   }, [router.events]);
 
   return (
+    // @ts-ignore:next-line
     <ThemeProvider>
       {isLoading && <PageLoader />}
+      <Icons />
       <Layout Component={Component} pageProps={pageProps} />
     </ThemeProvider>
   );
-}
+};
 
 export default MyApp;

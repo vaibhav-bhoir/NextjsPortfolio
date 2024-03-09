@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import navLinks from '../public/data/header_data';
-import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
 import brandLogo from '../public/icons/brand-logo.svg';
 import useScrollDirection from '../hooks/useScrollDirection';
 import Image from 'next/image';
@@ -35,11 +34,19 @@ const Header = () => {
             </div>
           </Link>
 
-          <div className="block z-[6] md:hidden text-4xl relative ">
+          <div className="block z-[6] md:hidden text-4xl relative h-[30px]">
             {showNav ? (
-              <AiOutlineClose onClick={toggleSidebar} className="cursor-pointer" />
+              <button type="button" onClick={toggleSidebar} className="cursor-pointer">
+                <svg height="1em" width="1em">
+                  <use xlinkHref="#close-menu" />
+                </svg>
+              </button>
             ) : (
-              <AiOutlineBars onClick={toggleSidebar} className="cursor-pointer" />
+              <button type="button" onClick={toggleSidebar} className="cursor-pointer">
+                <svg height="1em" width="1em">
+                  <use xlinkHref="#hamburger" />
+                </svg>
+              </button>
             )}
           </div>
         </div>
@@ -47,7 +54,7 @@ const Header = () => {
         <ul
           style={{ transition: 'all 0.5s ease-out' }}
           className={`
-                " md:static fixed bottom-0 -top-4 flex flex-col md:flex-row justify-center gap-7 items-center md:bg-transparent  bg-main-bg   md:w-auto w-full p-2"
+                " md:static fixed bottom-0 flex flex-col md:flex-row justify-center gap-7 items-center md:bg-transparent  bg-main-bg   md:w-auto w-full p-2"
                 `}
         >
           {navLinks.map((link, index) => (

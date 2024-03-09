@@ -1,5 +1,4 @@
 import React from 'react';
-import { AiOutlineGithub, AiOutlineLink } from 'react-icons/ai';
 import Image from 'next/image';
 import Link from 'next/link';
 interface CoverProps {
@@ -62,22 +61,6 @@ const Cover: React.FC<CoverProps> = ({ pdata, handleClose }) => {
       </h1>
       <div className="flex items-center justify-between mb-4">
         <p className="text-primary">--</p>
-        <div className="flex gap-4">
-          <p className="text-primary text-base cursor-pointer">
-            {liveUrl && (
-              <Link href={liveUrl} target="_blank" className="text-primary inline-block">
-                <AiOutlineLink />
-              </Link>
-            )}
-          </p>
-          <p className="text-primary text-base cursor-pointer">
-            {githubUrl && (
-              <Link href={githubUrl} target="_blank" className="text-primary inline-block">
-                <AiOutlineGithub />
-              </Link>
-            )}
-          </p>
-        </div>
       </div>
       <Image
         src={`https:${file.url}`}

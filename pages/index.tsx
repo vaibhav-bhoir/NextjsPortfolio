@@ -92,7 +92,7 @@ const Home: React.FC<HomeProps> = ({ EXP_DATA, PROJECTS_DATA, hero }) => {
       ></FeaturedProjects>
       <div className="">
         <div className="flex flex-col items-center justify-center py-20 ">
-          <CustomHeading headingSup="Contact" headingSub="Say Hello" color="black" />
+          <CustomHeading headingSup="Contact" headingSub="Say Hello to me" color="black" />
           <GetInTouch />
         </div>
         <ContactForm />

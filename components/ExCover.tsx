@@ -1,5 +1,4 @@
 import React from 'react';
-import { MdLocationPin } from 'react-icons/md';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Link from 'next/link';
 
@@ -46,7 +45,9 @@ const ExCover = ({ expData }: ExCoverProps) => {
       <h1 className="text-primary font-semibold text-xl my-6">{title}</h1>
       {shouldRenderLocation && (
         <h2 className="text-primary text-lg mb-1 flex items-center">
-          <MdLocationPin />
+          <svg height="1em" width="1em">
+            <use xlinkHref="#location" />
+          </svg>
           &nbsp;{location}
         </h2>
       )}

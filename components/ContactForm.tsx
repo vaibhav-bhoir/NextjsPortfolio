@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios, { Method } from 'axios';
@@ -6,6 +6,7 @@ import Loader from './Loader';
 import getConfig from 'next/config';
 import Lottie from 'lottie-react';
 import manWorkingAnimation from '../public/animations/man-working-mobile-tablet-animation-data.json';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const ContactForm = () => {
   const {
@@ -21,6 +22,22 @@ const ContactForm = () => {
   const { BASE_URL } = publicRuntimeConfig;
 
   const apiUrl = `${BASE_URL}/api/contact`;
+
+  const manWorkingAnimationRef = useRef<any>(null);
+  const animationContainerRef = useRef<HTMLDivElement>(null);
+
+  const handleIntersection = (entry: IntersectionObserverEntry) => {
+    if (entry.isIntersecting) {
+      manWorkingAnimationRef.current?.play();
+    } else {
+      manWorkingAnimationRef.current?.pause();
+    }
+  };
+
+  useIntersectionObserver({
+    target: animationContainerRef?.current,
+    callback: handleIntersection,
+  });
 
   async function onSubmit(values: any) {
     setLoader(true);
@@ -48,10 +65,10 @@ const ContactForm = () => {
 
   return (
     <>
-      <section className="flex items-center justify-center py-20">
+      <section ref={animationContainerRef} className="flex items-center justify-center py-20">
         <div className="container relative w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-28 lg:gap-10">
           <div className="lg:order-2" data-aos="zoom-in-up" data-aos-duration="1000">
-            <Lottie animationData={manWorkingAnimation} />
+            <Lottie lottieRef={manWorkingAnimationRef} animationData={manWorkingAnimation} />
           </div>
           <div data-aos="zoom-in-up" data-aos-duration="1000" className="lg:order-1">
             <h3 className="text-primary uppercase text-2xl lg:text-4xl font-semibold mb-7 lg:mb-12">
@@ -59,7 +76,7 @@ const ContactForm = () => {
             </h3>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="flex flex-col relative mb-6">
-                <label className="text-primary text-base font-medium mb-3" htmlFor="name">
+                <label className="text-primary text-base font-medium mt-2 mb-3" htmlFor="name">
                   Your Full Name <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -80,7 +97,7 @@ const ContactForm = () => {
                 </span>
               </div>
               <div className="flex flex-col relative mb-6">
-                <label className="text-primary text-base font-medium mb-3 " htmlFor="email">
+                <label className="text-primary text-base font-medium mt-2 mb-3 " htmlFor="email">
                   Your E-mail <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -113,7 +130,7 @@ const ContactForm = () => {
                 </span>
               </div>
               <div className="flex flex-col relative mb-9">
-                <label className="text-primary text-base font-medium my-2 " htmlFor="message">
+                <label className="text-primary text-base font-medium- mt-2 mb-3 " htmlFor="message">
                   Your message <span className="text-red-500">*</span>
                 </label>
                 <textarea

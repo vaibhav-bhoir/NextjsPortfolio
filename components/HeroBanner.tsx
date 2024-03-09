@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import Lottie from 'lottie-react';
 import computerAnimation from '../public/animations/computer-work-animation-data.json';
 import CustomLink from './CustomLink';
-// import useIntersectionObserver from '../hooks/useIntersectionObserver';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 import TypingEffect from '../hooks/useTyping';
 
 interface HeroBannerProps {
@@ -21,23 +21,21 @@ interface HeroBannerProps {
 const HeroBanner: React.FC<HeroBannerProps> = ({ heroProps }) => {
   const { smallCaption, heading, description, subheadings, resume } = heroProps || {};
   const pdfUrl = `https:${resume.fields.file.url}`;
-  // const computerAnimationRef = useRef();
-  const animationContainerRef = useRef(null);
+  const computerAnimationRef = useRef<any>(null);
+  const animationContainerRef = useRef<HTMLDivElement>(null);
 
-  // const handleIntersection = (entry: any) => {
-  //   if (entry.isIntersecting) {
-  //     console.log('Intersecting');
-  //     computerAnimationRef.current?.play();
-  //   } else {
-  //     computerAnimationRef.current?.pause();
-  //     console.log('not Intersecting');
-  //   }
-  // };
+  const handleIntersection = (entry: IntersectionObserverEntry) => {
+    if (entry.isIntersecting) {
+      computerAnimationRef.current?.play();
+    } else {
+      computerAnimationRef.current?.pause();
+    }
+  };
 
-  // useIntersectionObserver({
-  //   target: animationContainerRef?.current,
-  //   callback: handleIntersection,
-  // });
+  useIntersectionObserver({
+    target: animationContainerRef?.current,
+    callback: handleIntersection,
+  });
 
   return (
     <section
@@ -67,21 +65,26 @@ const HeroBanner: React.FC<HeroBannerProps> = ({ heroProps }) => {
             {description}
           </p>
           <div className="flex gap-4 lg:gap-8">
-            <CustomLink url="/contact">Hire me</CustomLink>
+            <CustomLink url="/contact">
+              <div className="flex items-center">
+                <svg height="1.6em" width="1.6em">
+                  <use xlinkHref="#hire-me" />
+                </svg>
+                <span className="ml-2">Hire me</span>
+              </div>
+            </CustomLink>
             <CustomLink url={pdfUrl} target="_blank" download={true}>
-              Get Resume
+              <div className="flex items-center">
+                <svg height="1.2em" width="1.2em">
+                  <use xlinkHref="#file" />
+                </svg>
+              </div>
+              <span className="ml-2">Get Resume</span>
             </CustomLink>
           </div>
         </div>
         <div className="">
-          <Lottie
-            // onComplete={() => {
-            //   computerAnimationRef?.current?.goToAndPlay(120, true);
-            // }}
-            // loop={false}
-            // lottieRef={computerAnimationRef}
-            animationData={computerAnimation}
-          />
+          <Lottie lottieRef={computerAnimationRef} animationData={computerAnimation} />
         </div>
       </div>
     </section>

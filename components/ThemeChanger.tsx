@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useTheme } from 'next-themes';
-import { AiFillSetting } from 'react-icons/ai';
 import useOutsideClick from '../hooks/useOutsideClick';
 
 const mode_settings = [
@@ -54,13 +53,6 @@ const ThemeChanger: React.FC = () => {
   useOutsideClick(panelRef, () => {
     setPanelVisible(false);
   });
-
-  // useOutsideClick({
-  //   ref: panelRef,
-  //   callback: () => {
-  //     setPanelVisible(false);
-  //   },
-  // });
 
   useEffect(() => {
     setMounted(true);
@@ -130,7 +122,9 @@ const ThemeChanger: React.FC = () => {
           className="flex justify-center items-center h-10 w-10 cursor-pointer animate-spin-slow"
           onClick={togglePanel}
         >
-          <AiFillSetting />
+          <svg height="1em" width="1em">
+            <use xlinkHref="#gear" />
+          </svg>
         </button>
       </div>
       <h5 className="font-bold text-center text-base text-primary mb-2 uppercase">Choose Mode</h5>

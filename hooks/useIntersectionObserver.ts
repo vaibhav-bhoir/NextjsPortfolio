@@ -2,15 +2,15 @@ import { useEffect, useRef } from 'react';
 
 type IntersectionObserverHookProps = {
   target: Element | null;
-  callback: (entry: IntersectionObserverEntry) => void;
-  options?: IntersectionObserverInit;
+  callback: any;
+  options?: Record<string, any>;
 };
 
 const useIntersectionObserver = ({
   target,
   callback,
   options = {
-    threshold: 0.7,
+    threshold: 0.5,
   },
 }: IntersectionObserverHookProps) => {
   const observer = useRef<IntersectionObserver | null>(null);

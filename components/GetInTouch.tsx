@@ -1,5 +1,4 @@
 import React from 'react';
-import { AiOutlineGithub, AiOutlineLinkedin, AiOutlineMail } from 'react-icons/ai';
 import CustomLink from './CustomLink';
 
 const GetInTouch = () => {
@@ -22,19 +21,25 @@ const GetInTouch = () => {
       <div className="flex flex-wrap gap-4 lg:gap-8">
         <CustomLink url="mailto:bhoirvaibhav90@gmail.com" target="_blank">
           <div className="text-2xl">
-            <AiOutlineMail />
+            <svg height="1em" width="1em">
+              <use xlinkHref="#email" />
+            </svg>
           </div>
           <span className="ml-2">Mail</span>
         </CustomLink>
         <CustomLink url="https://www.linkedin.com/in/vaibhav-bhoir-b50a9a185" target="_blank">
           <div className="text-2xl">
-            <AiOutlineLinkedin />
+            <svg height="1em" width="1em">
+              <use xlinkHref="#linkedin" />
+            </svg>
           </div>
           <span className="ml-2">LinkedIn</span>
         </CustomLink>
         <CustomLink url="https://github.com/vaibhav-bhoir" target="_blank">
           <div className="text-2xl">
-            <AiOutlineGithub />
+            <svg height="1em" width="1em">
+              <use xlinkHref="#github" />
+            </svg>
           </div>
           <span className="ml-2">GitHub</span>
         </CustomLink>
