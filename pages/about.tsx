@@ -60,7 +60,7 @@ const About = () => {
             >
               Technologies that I use
             </h3>
-            <div className="flex gap-5 lg:gap-10 flex-wrap justify-center items-center">
+            <div className="flex gap-5 lg:gap-7 flex-wrap justify-center items-center">
               {SKILL_DATA.map((e) => (
                 <Circle data={e} key={e.id} />
               ))}

@@ -82,7 +82,7 @@ const ContactForm = () => {
                 <input
                   className={`${
                     errors.name ? 'ring-1 ring-red-500' : null
-                  } outline-none text-base p-4 bg-main-bg shadow-shadow rounded-md placeholder-primary `}
+                  } outline-none text-base p-4 py-3.5 bg-main-bg shadow-shadow rounded-md placeholder-primary `}
                   type="text"
                   placeholder="Tony Stark"
                   {...register('name', {
@@ -103,7 +103,7 @@ const ContactForm = () => {
                 <input
                   className={`${
                     errors.email ? 'ring-1 ring-red-500' : null
-                  } outline-none text-base p-4 bg-main-bg  shadow-shadow rounded-md placeholder-primary`}
+                  } outline-none text-base p-4 py-3.5 bg-main-bg  shadow-shadow rounded-md placeholder-primary`}
                   type="text"
                   placeholder="ironman@gmail.com"
                   {...register('email', {
@@ -136,7 +136,7 @@ const ContactForm = () => {
                 <textarea
                   className={`${
                     errors.message ? 'ring-1 ring-red-500' : null
-                  } outline-none text-base h-36 max-h-56 p-4 bg-main-bg shadow-shadow rounded-md placeholder-primary `}
+                  } outline-none text-base h-36 max-h-56 p-4 py-3.5 bg-main-bg shadow-shadow rounded-md placeholder-primary `}
                   rows={3}
                   id="message"
                   placeholder="Hey, I would like to get in touch with you"
@@ -162,7 +162,7 @@ const ContactForm = () => {
 
               <button
                 disabled={isSubmitting}
-                className="relative inline-flex items-center justify-start px-5 py-3.5 md:px-7 md:py-4 uppercase shadow-shadow  lg:tracking-wide overflow-hidden font-medium transition-all bg-main-bg hover:bg-main-bg group"
+                className="relative inline-flex items-center justify-start px-4 py-2 md:px-5 md:py-2.5 uppercase shadow-shadow  lg:tracking-wide overflow-hidden font-medium transition-all bg-main-bg hover:bg-main-bg group"
                 type="submit"
               >
                 <span className="w-48 h-48 rounded rotate-[-40deg] bg-primary-bg absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>

@@ -54,7 +54,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({ heroProps }) => {
           >
             {heading}
           </h1>
-          <h1 className="text-primary text-3xl mb-8 h-10" data-aos="fade-down" data-aos-delay="300">
+          <h1 className="text-primary text-3xl mb-4 h-10" data-aos="fade-down" data-aos-delay="300">
             <TypingEffect strings={subheadings}></TypingEffect>
           </h1>
           <p

@@ -53,9 +53,7 @@ const Header = () => {
 
         <ul
           style={{ transition: 'all 0.5s ease-out' }}
-          className={`
-                " md:static fixed bottom-0 flex flex-col md:flex-row justify-center gap-7 items-center md:bg-transparent  bg-main-bg   md:w-auto w-full p-2"
-                `}
+          className="md:static fixed bottom-0 flex flex-col md:flex-row justify-center gap-7 items-center md:bg-transparent bg-main-bg md:w-auto w-full p-2"
         >
           {navLinks.map((link, index) => (
             <li

@@ -18,7 +18,7 @@ const GetInTouch = () => {
       >
         This is how you can reach me. Lets work together to create something worth sharing.
       </h2>
-      <div className="flex flex-wrap gap-4 lg:gap-8">
+      <div className="flex flex-wrap gap-4 lg:gap-5">
         <CustomLink url="mailto:bhoirvaibhav90@gmail.com" target="_blank">
           <div className="text-2xl">
             <svg height="1em" width="1em">

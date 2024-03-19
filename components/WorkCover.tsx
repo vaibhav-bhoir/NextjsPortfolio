@@ -40,7 +40,7 @@ const WorkCover: React.FC<WorkProps> = ({ data }) => {
       </div>
       <hr />
       <div className="flex justify-between gap-3 items-start">
-        <h1 className="text-primary font-semibold text-xl my-4">{title}</h1>
+        <h1 className="text-primary font-semibold text-lg my-4">{title}</h1>
         {typeOfProjectInternationaldomestic ? (
           <span className="text-white text-xs lg:text-base font-medium my-4 px-3.5 py-1.5 rounded-full bg-[#3B5998]">
             International
@@ -61,11 +61,11 @@ const WorkCover: React.FC<WorkProps> = ({ data }) => {
           {documentToReactComponents(keyResponsibilities)}
         </div>
       )}
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-2">
         {techStack.map((tech, index) => (
           <div
             key={index}
-            className="px-4 py-1.5 bg-body-bg shadow-shadow  text-primary rounded-full"
+            className="px-3 text-sm py-2 bg-body-bg shadow-shadow  text-primary rounded-full"
           >
             {tech}
           </div>
