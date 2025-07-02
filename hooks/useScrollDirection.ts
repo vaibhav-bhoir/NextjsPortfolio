@@ -1,16 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 type ScrollDirection = 'up' | 'down' | null;
 
-const useScrollDirection = (): ScrollDirection => {
+const useScrollDirection = (): { scrollDir: ScrollDirection; isScrolled: boolean } => {
   const [scrollDir, setScrollDir] = useState<ScrollDirection>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    let threshold = 120;
-
-    if (window.innerWidth < 768) {
-      threshold = 80;
-    }
+    let threshold = window.innerWidth < 768 ? 80 : 250;
     let lastScrollY = window.scrollY;
     let ticking = false;
 
@@ -19,12 +16,14 @@ const useScrollDirection = (): ScrollDirection => {
 
       if (Math.abs(scrollY - lastScrollY) < threshold) {
         ticking = false;
-        return;
+      } else {
+        setScrollDir(scrollY > lastScrollY ? 'down' : 'up');
+        lastScrollY = scrollY > 0 ? scrollY : 0;
+        ticking = false;
       }
 
-      setScrollDir(scrollY > lastScrollY ? 'down' : 'up');
-      lastScrollY = scrollY > 0 ? scrollY : 0;
-      ticking = false;
+      // Update scroll status
+      setIsScrolled(scrollY > 0);
     };
 
     const onScroll = () => {
@@ -38,7 +37,7 @@ const useScrollDirection = (): ScrollDirection => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  return scrollDir;
+  return { scrollDir, isScrolled };
 };
 
 export default useScrollDirection;
