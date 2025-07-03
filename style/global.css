@@ -12,6 +12,8 @@
     --primary-placeholder: #000000;
     --body-bg: #fafafb;
     --box-shadow: hsla(210, 8%, 62%, 0.35) 0px 8px 24px;
+    --black: #000000;
+    --white: #ffffff;
   }
 
   [data-theme-mod='dark'] {
@@ -20,6 +22,8 @@
     --primary-placeholder: #ffffff;
     --body-bg: #202020;
     --box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px;
+    --black: #ffffff;
+    --white: #000000;
   }
 
   [data-theme-mod='light'][data-theme-color='blue'] {

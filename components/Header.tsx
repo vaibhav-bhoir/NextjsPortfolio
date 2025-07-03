@@ -77,6 +77,14 @@ const Header = () => {
             </li>
           ))}
         </ul>
+
+        <Link
+          href="/contact"
+          className="hidden xl:block text-7xl md:text-lg font-semibold  bg-primary-bg px-8 py-4 rounded-[76px] transition-all duration-500 ease-in-out hover:scale-105"
+          style={{ color: 'var(--white)' }}
+        >
+          Let's Talk
+        </Link>
       </div>
     </header>
   );
