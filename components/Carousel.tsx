@@ -1,14 +1,15 @@
 import React from 'react';
 import 'swiper/css';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-import { Pagination, Autoplay } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import ExCover from './ExCover';
 
-interface Experience {
+export interface Experience {
+  title?: string;
   fields: {
     title: string;
     date: string;
@@ -18,6 +19,8 @@ interface Experience {
     keyResponsibilities: string;
     description: string;
     projectPeriod: string;
+    techStack: string[];
+    typeOfProjectInternationaldomestic: string;
   };
   sys: {
     id: string;
@@ -25,17 +28,21 @@ interface Experience {
 }
 
 interface ExperienceProjectsProps {
+  title?: string;
   EXP_DATA: Experience[];
 }
 
-const Carousel: React.FC<ExperienceProjectsProps> = ({ EXP_DATA }) => {
+const Carousel: React.FC<ExperienceProjectsProps> = ({
+  title = 'Projects on which I have worked',
+  EXP_DATA,
+}) => {
   return (
     <section className="container py-20">
       <h3
         className="text-primary text-2xl lg:text-4xl font-semibold mb-7 lg:mb-14"
         data-aos="fade-in"
       >
-        Projects on which I have worked
+        {title}
       </h3>
       <Swiper
         className="swiper"

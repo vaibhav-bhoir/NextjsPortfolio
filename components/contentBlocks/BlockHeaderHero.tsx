@@ -1,22 +1,30 @@
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
-import Lottie from 'lottie-react';
+// import TypingEffect from '@/hooks/useTyping';
 import React, { useRef } from 'react';
 import CustomLink from '../CustomLink';
 
 interface BlockHeaderHeroProps {
-  heroProps: {
-    smallCaption: string;
-    heading: string;
-    subheadings: [string];
-    description: string;
-    resume: any;
-  };
+  smallCaption: string;
+  heading: string;
+  subheadings: [string];
+  description: string;
+  resume: any;
 }
 
-const BlockHeaderHero: React.FC<BlockHeaderHeroProps> = ({ heroProps }) => {
-  const { smallCaption, heading, description, subheadings, resume } = heroProps || {};
-  const pdfUrl = `https:${resume?.fields.file.url}`;
-  const shouldRenderPdf = resume?.fields?.file?.url;
+const BlockHeaderHero: React.FC<BlockHeaderHeroProps> = ({
+  smallCaption,
+  heading,
+  description,
+  subheadings,
+  resume,
+}) => {
+  const shouldRenderHeading = !!heading;
+  const shouldRenderSmallCaption = !!smallCaption;
+  const shouldRenderResume = !!resume?.fields?.file?.url;
+  const shoudlRenderSubheadings = subheadings && subheadings.length > 0;
+  const shouldRenderDescription = !!description;
+
+  const pdfUrl = `https:${resume?.fields?.file?.url}`;
   const computerAnimationRef = useRef<any>(null);
   const animationContainerRef = useRef<HTMLDivElement>(null);
 
@@ -40,26 +48,38 @@ const BlockHeaderHero: React.FC<BlockHeaderHeroProps> = ({ heroProps }) => {
     >
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div className="">
-          <h3 className="text-primary text-xl mb-2" data-aos="fade-down" data-aos-delay="100">
-            {smallCaption}
-          </h3>
-          <h1
-            className="text-primary-text mb-6 text-7xl md:text-7xl lg:text-9xl font-extrabold tracking-tight"
-            data-aos="fade-down"
-            data-aos-delay="200"
-          >
-            {heading}
-          </h1>
-          {/* <h1 className="text-primary text-3xl mb-4 h-10" data-aos="fade-down" data-aos-delay="300">
-            <TypingEffect strings={subheadings}></TypingEffect>
-          </h1> */}
-          <p
-            className="text-primary text-base max-w-6xl mb-8"
-            data-aos="fade-down"
-            data-aos-delay="400"
-          >
-            {description}
-          </p>
+          {shouldRenderSmallCaption && (
+            <h3 className="text-primary text-xl mb-2" data-aos="fade-down" data-aos-delay="100">
+              {smallCaption}
+            </h3>
+          )}
+          {shouldRenderHeading && (
+            <h1
+              className="text-primary-text mb-6 text-7xl md:text-7xl lg:text-9xl font-extrabold tracking-tight"
+              data-aos="fade-down"
+              data-aos-delay="200"
+            >
+              {heading}
+            </h1>
+          )}
+          {shoudlRenderSubheadings && (
+            <h1
+              className="text-primary text-3xl mb-4 h-10"
+              data-aos="fade-down"
+              data-aos-delay="300"
+            >
+              {/* <TypingEffect strings={subheadings}></TypingEffect> */}
+            </h1>
+          )}
+          {shouldRenderDescription && (
+            <p
+              className="text-primary text-base max-w-6xl mb-8"
+              data-aos="fade-down"
+              data-aos-delay="400"
+            >
+              {description}
+            </p>
+          )}
           <div className="flex gap-4 lg:gap-8">
             <CustomLink url="/contact">
               <div className="flex items-center">
@@ -69,7 +89,7 @@ const BlockHeaderHero: React.FC<BlockHeaderHeroProps> = ({ heroProps }) => {
                 <span className="ml-2">Hire me</span>
               </div>
             </CustomLink>
-            {shouldRenderPdf && (
+            {shouldRenderResume && (
               <CustomLink url={pdfUrl} target="_blank" download={true}>
                 <div className="flex items-center">
                   <svg height="1.2em" width="1.2em">
@@ -82,7 +102,7 @@ const BlockHeaderHero: React.FC<BlockHeaderHeroProps> = ({ heroProps }) => {
           </div>
         </div>
         <div className="">
-          <Lottie lottieRef={computerAnimationRef} animationData={computerAnimationRef} />
+          {/* <Lottie lottieRef={computerAnimationRef} animationData={computerAnimationRef} /> */}
         </div>
       </div>
     </section>

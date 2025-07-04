@@ -4,8 +4,6 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 
 export default function DynamicPage({ page }: any) {
-  console.log('🚀 ~ DynamicPage ~ page:', page);
-
   const router = useRouter();
 
   if (router.isFallback) {
@@ -21,6 +19,8 @@ export default function DynamicPage({ page }: any) {
   return (
     <div>
       {blocks.map((block: any, idx: number) => {
+        console.log('🚀 ~ {blocks.map ~ block:', block);
+
         const blockType = block.sys.contentType.sys.id;
 
         console.log('🚀 ~ {blocks.map ~ blockType:', blockType);
@@ -32,6 +32,7 @@ export default function DynamicPage({ page }: any) {
         }
 
         return <Component key={block.sys.id} {...block.fields} />;
+        // return <h1 key={idx}>test</h1>;
       })}
     </div>
   );
@@ -46,7 +47,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     .map((entry: any) => {
       const slug = entry.fields.slug;
       const slugArray = slug.split('/');
-      console.log('Generating path for:', slugArray);
 
       return {
         params: { slug: slugArray },
@@ -61,15 +61,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = Array.isArray(params?.slug) ? params.slug.join('/') : params?.slug;
-  const page = await getPageBySlug(slug);
+  const page = await getPageBySlug(slug ?? '');
 
   if (!page) {
     return {
       notFound: true, // triggers 404 page
     };
   }
-
-  console.log('🚀 ~ constgetStaticProps:GetStaticProps= ~ page:', page);
 
   return {
     props: { page },
