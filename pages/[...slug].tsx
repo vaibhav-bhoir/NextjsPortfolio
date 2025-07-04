@@ -19,8 +19,6 @@ export default function DynamicPage({ page }: any) {
   return (
     <div>
       {blocks.map((block: any, idx: number) => {
-        console.log('🚀 ~ {blocks.map ~ block:', block);
-
         const blockType = block.sys.contentType.sys.id;
 
         console.log('🚀 ~ {blocks.map ~ blockType:', blockType);

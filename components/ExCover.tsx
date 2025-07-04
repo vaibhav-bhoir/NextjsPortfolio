@@ -1,4 +1,3 @@
-import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Link from 'next/link';
 
@@ -31,7 +30,7 @@ const ExCover = ({ expData }: ExCoverProps) => {
     <Link
       href={`/work#${expData.sys.id}`}
       data-aos="zoom-in-up"
-      className="workcover-card workcover-card--half group hover-animation relative overflow-hidden bg-main-bg rounded-xl p-4 shadow-shadow transform transition-transform inline-block m-1 max-h-80"
+      className="workcover-card w-full workcover-card--half group hover-animation relative overflow-hidden bg-main-bg rounded-xl p-4 shadow-shadow transform transition-transform inline-block m-1 max-h-80"
     >
       <div className="justify-between items-center flex">
         <div className="flex gap-2 mb-4">
