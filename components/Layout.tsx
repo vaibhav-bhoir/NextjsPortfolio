@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Header';
 import Footer from './Footer';
+import Header from './Header';
 import LeftSidebar from './LeftSidebar';
 import ThemeChanger from './ThemeChanger';
 
@@ -10,6 +10,10 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ Component, pageProps }) => {
+  const { globalSettings } = pageProps;
+
+  console.log('🚀 ~ globalSettings:', globalSettings);
+
   return (
     <>
       <Header />

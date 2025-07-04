@@ -14,3 +14,13 @@ export async function getPageBySlug(slug: string) {
 
   return entries.items[0]; // assume 1 page per slug
 }
+
+export async function getGlobalSettings() {
+  const entries = await client.getEntries({
+    content_type: 'globalSiteSettings',
+    limit: 1,
+    include: 3, // 3 levels of nested content
+  });
+
+  return entries.items[0];
+}

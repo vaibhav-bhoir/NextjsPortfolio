@@ -1,5 +1,5 @@
 import { BLOCK_COMPONENTS } from '@/utils/blockMapper';
-import { client, getPageBySlug } from '@/utils/contentful';
+import { client, getGlobalSettings, getPageBySlug } from '@/utils/contentful';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 
@@ -62,6 +62,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = Array.isArray(params?.slug) ? params.slug.join('/') : params?.slug;
   const page = await getPageBySlug(slug ?? '');
+  const globalSettings = await getGlobalSettings();
 
   if (!page) {
     return {
@@ -70,7 +71,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   return {
-    props: { page },
+    props: {
+      page,
+      globalSettings,
+    },
     revalidate: 10,
   };
 };

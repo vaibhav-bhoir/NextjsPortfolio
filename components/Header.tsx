@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import useScrollDirection from '../hooks/useScrollDirection';
 import navLinks from '../public/data/header_data';
 import brandLogo from '../public/icons/brand-logo.svg';
-import useScrollDirection from '../hooks/useScrollDirection';
-import Image from 'next/image';
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const router = useRouter();
 
-  const scrollDir = useScrollDirection();
+  const { scrollDir, isScrolled } = useScrollDirection();
 
   useEffect(() => {
     document.body.classList.toggle('isOpen', showNav);
@@ -23,10 +23,18 @@ const Header = () => {
     <header
       className={`${scrollDir === 'up' ? 'translate-y-0	' : ''} ${
         scrollDir === 'down' ? '-translate-y-36	' : ''
-      } fixed top-4 lg:top-9 w-full p-4 md:px-7 md:py-0 z-[5]`}
+      }
+      fixed top-4 lg:top-9 w-full p-4 md:px-7 md:py-0 z-[5]`}
       style={{ transition: 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}
     >
-      <div className="container px-5 lg:px-10 rounded-[76px] md:flex justify-between bg-main-bg shadow-shadow items-center text-primary text-center">
+      <div
+        className={`
+    px-5 lg:px-10 rounded-[76px] md:flex justify-between bg-main-bg shadow-shadow items-center text-primary text-center
+    transition-[background-color,width] ease-in-out duration-[0.45s]
+    ${isScrolled ? 'xl:w-[1000px]' : 'w-full'}
+    mx-auto
+  `}
+      >
         <div className="flex items-center justify-between">
           <Link href="/" className="inline-flex items-center mr-4 ">
             <div className="logo w-[125px] lg:w-[180px] h-auto">
@@ -69,6 +77,14 @@ const Header = () => {
             </li>
           ))}
         </ul>
+
+        <Link
+          href="/contact"
+          className="hidden xl:block text-7xl md:text-lg font-semibold  bg-primary-bg px-8 py-4 rounded-[76px] transition-all duration-500 ease-in-out hover:scale-105"
+          style={{ color: 'var(--white)' }}
+        >
+          Let's Talk
+        </Link>
       </div>
     </header>
   );
