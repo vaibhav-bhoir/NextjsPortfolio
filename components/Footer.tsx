@@ -1,13 +1,13 @@
 import React from 'react';
 
 interface FooterProps {
-  data: {
-    footerSignature?: string;
-  } | null;
+  footerSignature: string;
 }
 
-const Footer: React.FC<FooterProps> = ({ data }) => {
-  const { footerSignature } = data || {};
+const Footer: React.FC<FooterProps> = ({ footerSignature }) => {
+  if (!footerSignature) {
+    return null;
+  }
 
   return (
     <footer className="flex flex-col justify-center items-center py-12">

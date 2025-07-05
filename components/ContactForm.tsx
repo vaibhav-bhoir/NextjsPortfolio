@@ -1,14 +1,18 @@
-import React, { useRef } from 'react';
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
 import axios, { Method } from 'axios';
-import Loader from './Loader';
-import getConfig from 'next/config';
 import Lottie from 'lottie-react';
-import manWorkingAnimation from '../public/animations/man-working-mobile-tablet-animation-data.json';
+import getConfig from 'next/config';
+import React, { useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
+import manWorkingAnimation from '../public/animations/man-working-mobile-tablet-animation-data.json';
+import Loader from './Loader';
 
-const ContactForm = () => {
+interface ContactFormProps {
+  heading?: string;
+  subheading?: string;
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({ heading, subheading }) => {
   const {
     register,
     handleSubmit,
@@ -71,9 +75,20 @@ const ContactForm = () => {
             <Lottie lottieRef={manWorkingAnimationRef} animationData={manWorkingAnimation} />
           </div>
           <div data-aos="zoom-in-up" data-aos-duration="1000" className="lg:order-1">
-            <h3 className="text-primary uppercase text-2xl lg:text-4xl font-semibold mb-7 lg:mb-12">
-              Drop me a message
+            <h3
+              className="text-primary uppercase text-2xl lg:text-4xl font-semibold mb-4"
+              data-aos="fade-down"
+              data-aos-duration="1000"
+            >
+              {heading}
             </h3>
+            <h2
+              className="text-primary text-base lg:text-lg max-w-6xl mb-8"
+              data-aos="fade-down"
+              data-aos-duration="1000"
+            >
+              {subheading}
+            </h2>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="flex flex-col relative mb-6">
                 <label className="text-primary text-base font-medium mt-2 mb-3" htmlFor="name">

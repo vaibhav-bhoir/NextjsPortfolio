@@ -15,6 +15,7 @@ export default function DynamicPage({ page }: any) {
   }
 
   const blocks = page.fields.pageBlocks || [];
+  console.log('🚀 ~ blocks:', blocks);
 
   return (
     <div>
@@ -29,7 +30,11 @@ export default function DynamicPage({ page }: any) {
           return <div key={idx}>Unknown block type: {blockType}</div>;
         }
 
-        return <Component key={block.sys.id} {...block.fields} />;
+        return (
+          <div key={block.sys.id} className={`cc-${idx} cc-${blockType}`}>
+            <Component {...block.fields} />
+          </div>
+        );
         // return <h1 key={idx}>test</h1>;
       })}
     </div>
@@ -46,6 +51,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
       const slug = entry.fields.slug;
       const slugArray = slug.split('/');
 
+      // If the slug is 'home', map it to root '/'
+      // const slugArray = slug === 'home' ? [] : slug.split('/');
+
+      // console.log('🚀 ~ .map ~ slugArray:', slugArray);
+
       return {
         params: { slug: slugArray },
       };
@@ -58,8 +68,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  // let slug: string;
+
+  // if (!params?.slug || (Array.isArray(params.slug) && params.slug.length === 0)) {
+  //   slug = 'home'; // root path → homepage
+  // } else {
+  //   slug = Array.isArray(params.slug) ? params.slug.join('/') : params.slug;
+  // }
   const slug = Array.isArray(params?.slug) ? params.slug.join('/') : params?.slug;
   const page = await getPageBySlug(slug ?? '');
+  // console.log('📦 Slug:', slug);
+  // console.log('📄 Page:', JSON.stringify(page, null, 2));
+
   const globalSettings = await getGlobalSettings();
 
   if (!page) {

@@ -12,8 +12,15 @@ interface GlobalSettings {
         link: string;
       };
     }[];
+    socialNavigation: {
+      fields: {
+        iconName: string;
+        label?: string;
+        link: string;
+      };
+    }[];
     footerCopyright?: string;
-    footerSignature?: string;
+    footerSignature: string;
   };
 }
 
@@ -21,24 +28,23 @@ interface LayoutProps {
   Component: React.ElementType;
   pageProps: {
     globalSettings: GlobalSettings;
-    [key: string]: unknown;
   };
 }
 
 const Layout: React.FC<LayoutProps> = ({ Component, pageProps }) => {
   const { globalSettings } = pageProps;
-
-  console.log('🚀 ~ globalSettings:', globalSettings);
+  const { fields: { mainNavigation, socialNavigation, footerSignature } = {} } =
+    globalSettings || {};
 
   return (
     <>
-      <Header data={globalSettings?.fields || {}} />
+      <Header mainNavigation={mainNavigation || []} />
       <main className="flex-1 overflow-hidden pt-[57px] lg:pt-[98px]">
-        <LeftSidebar />
+        <LeftSidebar socialNavigation={socialNavigation || []} />
         <ThemeChanger />
         <Component {...pageProps} />
       </main>
-      <Footer data={globalSettings?.fields || {}} />
+      <Footer footerSignature={footerSignature || ''} />
     </>
   );
 };

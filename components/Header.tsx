@@ -6,19 +6,15 @@ import useScrollDirection from '../hooks/useScrollDirection';
 import brandLogo from '../public/icons/brand-logo.svg';
 
 interface HeaderProps {
-  data: {
-    mainNavigation: {
-      fields: {
-        label: string;
-        link: string;
-      };
-    }[];
-  };
+  mainNavigation: {
+    fields: {
+      label: string;
+      link: string;
+    };
+  }[];
 }
 
-const Header: React.FC<HeaderProps> = ({ data }) => {
-  const { mainNavigation } = data || [];
-
+const Header: React.FC<HeaderProps> = ({ mainNavigation }) => {
   const [showNav, setShowNav] = useState(false);
   const router = useRouter();
 
@@ -31,6 +27,10 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
   const toggleSidebar = () => {
     setShowNav(!showNav);
   };
+
+  if (!mainNavigation || mainNavigation.length === 0) {
+    return null; // Return null if mainNavigation is not provided or empty
+  }
 
   return (
     <header
@@ -76,23 +76,22 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
           style={{ transition: 'all 0.5s ease-out' }}
           className="md:static fixed bottom-0 flex flex-col md:flex-row justify-center gap-7 items-center md:bg-transparent bg-main-bg md:w-auto w-full p-2"
         >
-          {mainNavigation &&
-            mainNavigation.map((data, index) => {
-              const field = data.fields;
-              return (
-                <li
-                  key={index}
-                  onClick={toggleSidebar}
-                  className={`${router.pathname === field.link ? 'active' : ''} ${
-                    showNav ? 'fade' : ''
-                  } text-7xl md:text-lg font-semibold items-center justify-center text-transform: uppercase relative transition-all after:block after:bg-primary-bg after:absolute after:bottom-[-8px] after:content-[''] after:h-1 after:left-0 after:transition-all after:duration-500 after:w-0 hover:after:w-full`}
-                >
-                  <Link href={field.link} className="text-primary hover:text-primary">
-                    {field.label}
-                  </Link>
-                </li>
-              );
-            })}
+          {mainNavigation.map((data, index) => {
+            const field = data.fields;
+            return (
+              <li
+                key={index}
+                onClick={toggleSidebar}
+                className={`${router.pathname === field.link ? 'active' : ''} ${
+                  showNav ? 'fade' : ''
+                } text-7xl md:text-lg font-semibold items-center justify-center text-transform: uppercase relative transition-all after:block after:bg-primary-bg after:absolute after:bottom-[-8px] after:content-[''] after:h-1 after:left-0 after:transition-all after:duration-500 after:w-0 hover:after:w-full`}
+              >
+                <Link href={field.link} className="text-primary hover:text-primary">
+                  {field.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         <Link

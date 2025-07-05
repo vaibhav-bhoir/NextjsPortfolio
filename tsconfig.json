@@ -23,7 +23,7 @@
     "**/*.ts",
     "**/*.tsx",
     "components/ContactForm.ts",
-    "pages/index.tsx",
+    "pages/indexx.tsx",
     "pages/_app.tsx",
     "components/Header.tsx",
     "components/HeroBanner.tsx",
