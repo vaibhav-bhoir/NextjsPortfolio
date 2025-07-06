@@ -35,7 +35,6 @@ export default function DynamicPage({ page }: any) {
             <Component {...block.fields} />
           </div>
         );
-        // return <h1 key={idx}>test</h1>;
       })}
     </div>
   );
@@ -49,12 +48,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
     .filter((entry: any) => entry.fields?.slug)
     .map((entry: any) => {
       const slug = entry.fields.slug;
-      const slugArray = slug.split('/');
 
+      // console.log('🚀 ~ .map ~ slug:', slug);
+
+      const slugArray = slug.split('/');
       // If the slug is 'home', map it to root '/'
       // const slugArray = slug === 'home' ? [] : slug.split('/');
 
-      // console.log('🚀 ~ .map ~ slugArray:', slugArray);
+      console.log('🚀 ~ .map ~ slugArray:', slugArray);
 
       return {
         params: { slug: slugArray },

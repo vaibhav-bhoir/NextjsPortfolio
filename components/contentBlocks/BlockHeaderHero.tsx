@@ -2,6 +2,7 @@ import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 // import TypingEffect from '@/hooks/useTyping';
 import React, { useRef } from 'react';
 import CustomLink from '../CustomLink';
+import LottieFromCms from '../LottieFromCms';
 
 interface BlockHeaderHeroProps {
   smallCaption: string;
@@ -9,6 +10,7 @@ interface BlockHeaderHeroProps {
   subheadings: [string];
   description: string;
   resume: any;
+  animation?: any; // Assuming this is a Lottie animation or similar
 }
 
 const BlockHeaderHero: React.FC<BlockHeaderHeroProps> = ({
@@ -17,12 +19,15 @@ const BlockHeaderHero: React.FC<BlockHeaderHeroProps> = ({
   description,
   subheadings,
   resume,
+  animation,
 }) => {
   const shouldRenderHeading = !!heading;
   const shouldRenderSmallCaption = !!smallCaption;
   const shouldRenderResume = !!resume?.fields?.file?.url;
   const shoudlRenderSubheadings = subheadings && subheadings.length > 0;
   const shouldRenderDescription = !!description;
+
+  const animationUrl = animation?.fields?.file?.url;
 
   const pdfUrl = `https:${resume?.fields?.file?.url}`;
   const computerAnimationRef = useRef<any>(null);
@@ -102,7 +107,7 @@ const BlockHeaderHero: React.FC<BlockHeaderHeroProps> = ({
           </div>
         </div>
         <div className="">
-          {/* <Lottie lottieRef={computerAnimationRef} animationData={computerAnimationRef} /> */}
+          {animationUrl && <LottieFromCms animationUrl={`https:${animationUrl}`} />}
         </div>
       </div>
     </section>
