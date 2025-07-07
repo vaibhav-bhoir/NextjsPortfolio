@@ -1,8 +1,7 @@
-import React from 'react';
-import CustomHeading from './CustomHeading';
-import Cover from './Cover';
 import Lottie from 'lottie-react';
+import React from 'react';
 import folderAnimation from '../public/animations/document-folder-animation-data.json';
+import Cover from './Cover';
 
 interface Projects {
   fields: {
@@ -33,8 +32,6 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
 }) => {
   return (
     <section className="py-20 bg-pearl-black">
-      <CustomHeading headingSup="Work" headingSub="Featured Projects" color="primary" />
-
       <div className="container">
         <h3
           className="text-primary text-2xl lg:text-4xl font-semibold mb-7 lg:mb-14"

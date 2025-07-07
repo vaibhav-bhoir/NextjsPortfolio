@@ -37,7 +37,7 @@ const Carousel: React.FC<ExperienceProjectsProps> = ({
   EXP_DATA,
 }) => {
   return (
-    <section className="container py-20">
+    <div className="container">
       <h3
         className="text-primary text-2xl lg:text-4xl font-semibold mb-7 lg:mb-14"
         data-aos="fade-in"
@@ -79,7 +79,7 @@ const Carousel: React.FC<ExperienceProjectsProps> = ({
           </SwiperSlide>
         ))}
       </Swiper>
-    </section>
+    </div>
   );
 };
 

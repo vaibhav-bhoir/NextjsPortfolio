@@ -1,21 +1,28 @@
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import React, { useRef } from 'react';
+import CustomLink from '../CustomLink';
 import LottieFromCms from '../LottieFromCms';
 
 interface BlockTwoColumnProps {
   title: string;
   description: any;
+  ctaText?: string;
+  ctaLink?: string;
   imagePosition?: 'Left' | 'Right';
-  animation?: any; // Assuming this is a Lottie animation or similar
+  animation?: any;
 }
 const BlockTwoColumn: React.FC<BlockTwoColumnProps> = ({
   title,
   description,
+  ctaText,
+  ctaLink,
   imagePosition = 'left',
   animation,
 }) => {
   const shouldRenderTitle = !!title;
+  const shouldRenderCta = !!ctaText && !!ctaLink;
+
   const webDevAnimationRef = useRef<any>(null);
   const animationContainerRef = useRef<HTMLDivElement>(null);
 
@@ -35,10 +42,7 @@ const BlockTwoColumn: React.FC<BlockTwoColumnProps> = ({
   });
 
   return (
-    <section
-      ref={animationContainerRef}
-      className="flex flex-col justify-center py-20 bg-pearl-black"
-    >
+    <div ref={animationContainerRef} className="flex flex-col justify-center bg-pearl-black">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className={`${imagePosition === 'left' ? '' : 'order-2'}`}>
@@ -59,13 +63,15 @@ const BlockTwoColumn: React.FC<BlockTwoColumnProps> = ({
             >
               {documentToReactComponents(description)}
             </div>
-            {/* <div className="flex">
-              <CustomLink url="/about">More About Me</CustomLink>
-            </div> */}
+            {shouldRenderCta && (
+              <div className="flex">
+                <CustomLink url={ctaLink}>{ctaText}</CustomLink>
+              </div>
+            )}
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -4,7 +4,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
     "prepare": "husky install",
     "lint": "next lint",
     "prettier:staged": "pretty-quick --staged",

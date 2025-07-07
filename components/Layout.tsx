@@ -33,13 +33,12 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ Component, pageProps }) => {
   const { globalSettings } = pageProps;
-  const { fields: { mainNavigation, socialNavigation, footerSignature } = {} } =
-    globalSettings || {};
+  const { mainNavigation, socialNavigation, footerSignature } = globalSettings?.fields ?? {};
 
   return (
     <>
       <Header mainNavigation={mainNavigation || []} />
-      <main className="flex-1 overflow-hidden pt-[57px] lg:pt-[98px]">
+      <main className="flex-1 overflow-hidden pt-[57px] lg:pt-[150px]">
         <LeftSidebar socialNavigation={socialNavigation || []} />
         <ThemeChanger />
         <Component {...pageProps} />

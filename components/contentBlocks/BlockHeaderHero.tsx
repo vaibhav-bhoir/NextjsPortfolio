@@ -47,10 +47,7 @@ const BlockHeaderHero: React.FC<BlockHeaderHeroProps> = ({
   });
 
   return (
-    <section
-      ref={animationContainerRef}
-      className="flex flex-col items-center justify-center py-20"
-    >
+    <div ref={animationContainerRef} className="flex flex-col items-center justify-center">
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div className="">
           {shouldRenderSmallCaption && (
@@ -110,7 +107,7 @@ const BlockHeaderHero: React.FC<BlockHeaderHeroProps> = ({
           {animationUrl && <LottieFromCms animationUrl={`https:${animationUrl}`} />}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -10,10 +10,8 @@ interface BlockContactProps {
 
 const BlockContact: React.FC<BlockContactProps> = ({ heading, subheading }) => {
   return (
-    <div>
-      <div className="flex flex-col items-center justify-center py-20 ">
-        <ContactForm heading={heading} subheading={subheading} />
-      </div>
+    <div className="flex flex-col items-center justify-center">
+      <ContactForm heading={heading} subheading={subheading} />
     </div>
   );
 };

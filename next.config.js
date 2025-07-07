@@ -1,18 +1,13 @@
-const withPWA = require('next-pwa');
-
-module.exports = withPWA({
-  pwa: {
-    dest: 'public',
-    register: true,
-    skipWaiting: true,
-  },
-});
-
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   publicRuntimeConfig: {
     BASE_URL: process.env.BASE_URL,
   },
   images: {
     domains: ['images.ctfassets.net'],
   },
+  // 🔒 Ensures dynamic routes like [...slug] are allowed (not static-export mode)
+  output: undefined,
 };
+
+module.exports = nextConfig;

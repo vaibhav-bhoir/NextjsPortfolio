@@ -69,7 +69,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ heading, subheading }) => {
 
   return (
     <>
-      <section ref={animationContainerRef} className="flex items-center justify-center py-20">
+      <div ref={animationContainerRef} className="flex justify-center">
         <div className="container relative w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-28 lg:gap-10">
           <div className="lg:order-2" data-aos="zoom-in-up" data-aos-duration="1000">
             <Lottie lottieRef={manWorkingAnimationRef} animationData={manWorkingAnimation} />
@@ -197,7 +197,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ heading, subheading }) => {
             </form>
           </div>
         </div>
-      </section>
+      </div>
 
       {isSubmitting && (
         <div className="fixed inset-0 bg-black opacity-60">
