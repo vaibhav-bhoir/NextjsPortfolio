@@ -15,19 +15,19 @@ export default function DynamicPage({ page }: any) {
   }
 
   const blocks = page.fields.pageBlocks || [];
-  console.log('🚀 ~ blocks:', blocks);
 
   return (
     <div>
       {blocks.map((block: any, idx: number) => {
         const blockType = block.sys.contentType.sys.id;
-
-        console.log('🚀 ~ {blocks.map ~ blockType:', blockType);
-
         const Component = BLOCK_COMPONENTS[blockType];
 
         if (!Component) {
-          return <div key={idx}>Unknown block type: {blockType}</div>;
+          return (
+            <div className="container" key={idx}>
+              Unknown block type: {blockType}
+            </div>
+          );
         }
 
         return (
@@ -48,7 +48,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     .filter((entry: any) => entry.fields?.slug)
     .map((entry: any) => {
       const slug = entry.fields.slug;
-      const slugArray = slug.split('/');
+      const slugArray = slug === '/' ? [] : slug.split('/');
 
       return {
         params: { slug: slugArray },
@@ -62,7 +62,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const slug = Array.isArray(params?.slug) ? params?.slug.join('/') : params?.slug;
+  const slug = Array.isArray(params?.slug)
+    ? params?.slug.length === 0
+      ? '/' // handle homepage
+      : params?.slug.join('/')
+    : params?.slug;
+
   const page = await getPageBySlug(slug ?? '');
   const globalSettings = await getGlobalSettings();
 
