@@ -1,9 +1,10 @@
 import { BLOCK_COMPONENTS } from '@/utils/blockMapper';
-import { client, getGlobalSettings, getPageBySlug } from '@/utils/contentful';
+import { client, getClient, getGlobalSettings, getPageBySlug } from '@/utils/contentful';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-export default function DynamicPage({ page }: any) {
+export default function DynamicPage({ page, preview }: any) {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -18,6 +19,14 @@ export default function DynamicPage({ page }: any) {
 
   return (
     <div>
+      {preview && (
+        <div className="bg-yellow-300 text-black text-center p-1.5 fixed z-50 top-0 left-0 w-full">
+          Preview Mode is ON -{' '}
+          <Link href="/api/exit-preview" className="underline">
+            Exit
+          </Link>
+        </div>
+      )}
       {blocks.map((block: any, idx: number) => {
         const blockType = block.sys.contentType.sys.id;
         const Component = BLOCK_COMPONENTS[blockType];
@@ -61,15 +70,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params, preview = false }) => {
   const slug = Array.isArray(params?.slug)
     ? params?.slug.length === 0
       ? '/' // handle homepage
       : params?.slug.join('/')
     : params?.slug;
 
-  const page = await getPageBySlug(slug ?? '');
-  const globalSettings = await getGlobalSettings();
+  const client = getClient(preview);
+  const page = await getPageBySlug(slug ?? '', client);
+  const globalSettings = await getGlobalSettings(client);
 
   if (!page) {
     return {
@@ -81,6 +91,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       page,
       globalSettings,
+      preview,
     },
     revalidate: 10,
   };

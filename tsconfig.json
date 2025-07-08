@@ -29,7 +29,8 @@
     "components/HeroBanner.tsx",
     "pages/api/contact.js",
     "components/Carousel.tsx",
-    "hooks/useTyping.js"
+    "hooks/useTyping.js",
+    "pages/api/preview.ts"
   ],
   "exclude": ["node_modules"]
 }
