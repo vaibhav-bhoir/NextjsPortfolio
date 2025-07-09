@@ -1,23 +1,53 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import useScrollDirection from '../hooks/useScrollDirection';
-import navLinks from '../public/data/header_data';
-import brandLogo from '../public/icons/brand-logo.svg';
+import React, { useEffect, useState } from 'react';
+import useScrollDirection from '../../hooks/useScrollDirection';
 
-const Header = () => {
+export interface SiteLogo {
+  fields?: {
+    file: {
+      url: string;
+      details: {
+        image: {
+          width: number;
+          height: number;
+        };
+      };
+    };
+    title: string;
+  };
+}
+
+interface HeaderProps {
+  siteLogo?: SiteLogo;
+  mainNavigation: {
+    fields: {
+      label: string;
+      link: string;
+    };
+  }[];
+}
+
+const Header: React.FC<HeaderProps> = ({ siteLogo, mainNavigation }) => {
   const [showNav, setShowNav] = useState(false);
   const router = useRouter();
+
+  console.log('🚀 ~ router:', router);
 
   const { scrollDir, isScrolled } = useScrollDirection();
 
   useEffect(() => {
     document.body.classList.toggle('isOpen', showNav);
   }, [showNav]);
+
   const toggleSidebar = () => {
     setShowNav(!showNav);
   };
+
+  if (!mainNavigation || mainNavigation.length === 0 || !siteLogo) {
+    return null; // Return null if mainNavigation is not provided or empty
+  }
 
   return (
     <header
@@ -38,7 +68,14 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <Link href="/" className="inline-flex items-center mr-4 ">
             <div className="logo w-[125px] lg:w-[180px] h-auto">
-              <Image src={brandLogo} alt="logo" className="" />
+              {siteLogo?.fields?.file?.url && (
+                <Image
+                  src={siteLogo.fields.file.url}
+                  alt={siteLogo.fields.title || 'Site Logo'}
+                  width={siteLogo.fields.file.details.image.width}
+                  height={siteLogo.fields.file.details.image.height}
+                />
+              )}
             </div>
           </Link>
 
@@ -63,19 +100,25 @@ const Header = () => {
           style={{ transition: 'all 0.5s ease-out' }}
           className="md:static fixed bottom-0 flex flex-col md:flex-row justify-center gap-7 items-center md:bg-transparent bg-main-bg md:w-auto w-full p-2"
         >
-          {navLinks.map((link, index) => (
-            <li
-              key={index}
-              onClick={toggleSidebar}
-              className={`${router.pathname == link.path ? 'active' : ''} ${
-                showNav ? 'fade' : ''
-              } text-7xl md:text-lg font-semibold items-center justify-center text-transform: uppercase relative transition-all after:block after:bg-primary-bg after:absolute after:bottom-[-8px] after:content-[''] after:h-1 after:left-0 after:transition-all after:duration-500 after:w-0 hover:after:w-full`}
-            >
-              <Link href={link.path} className="text-primary hover:text-primary">
-                {link.name}
-              </Link>
-            </li>
-          ))}
+          {mainNavigation.map((data, index) => {
+            const field = data.fields;
+            const formatedAsPath = router.asPath.split('#')[0];
+            const isActive = formatedAsPath === field?.link;
+
+            return (
+              <li
+                key={index}
+                onClick={toggleSidebar}
+                className={`${isActive && 'active'} ${
+                  showNav ? 'fade' : ''
+                } text-7xl md:text-lg font-semibold items-center justify-center text-transform: uppercase relative transition-all after:block after:bg-primary-bg after:absolute after:bottom-[-8px] after:content-[''] after:h-1 after:left-0 after:transition-all after:duration-500 after:w-0 hover:after:w-full`}
+              >
+                <Link href={field?.link} className="text-primary hover:text-primary">
+                  {field?.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         <Link
