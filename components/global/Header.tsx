@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import useScrollDirection from '../../hooks/useScrollDirection';
-// import brandLogo from '../../public/images/brand-logo.svg'; // Adjust the path as necessary
 
 export interface SiteLogo {
   fields?: {
@@ -33,6 +32,8 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ siteLogo, mainNavigation }) => {
   const [showNav, setShowNav] = useState(false);
   const router = useRouter();
+
+  console.log('🚀 ~ router:', router);
 
   const { scrollDir, isScrolled } = useScrollDirection();
 
@@ -101,12 +102,14 @@ const Header: React.FC<HeaderProps> = ({ siteLogo, mainNavigation }) => {
         >
           {mainNavigation.map((data, index) => {
             const field = data.fields;
+            const formatedAsPath = router.asPath.split('#')[0];
+            const isActive = formatedAsPath === field?.link;
 
             return (
               <li
                 key={index}
                 onClick={toggleSidebar}
-                className={`${router?.asPath === field?.link ? 'active' : ''} ${
+                className={`${isActive && 'active'} ${
                   showNav ? 'fade' : ''
                 } text-7xl md:text-lg font-semibold items-center justify-center text-transform: uppercase relative transition-all after:block after:bg-primary-bg after:absolute after:bottom-[-8px] after:content-[''] after:h-1 after:left-0 after:transition-all after:duration-500 after:w-0 hover:after:w-full`}
               >
