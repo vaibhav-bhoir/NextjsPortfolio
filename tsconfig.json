@@ -25,7 +25,7 @@
     "components/ContactForm.ts",
     "pages/indexx.tsx",
     "pages/_app.tsx",
-    "components/Header.tsx",
+    "components/global/Header.tsx",
     "components/HeroBanner.tsx",
     "pages/api/contact.js",
     "components/Carousel.tsx",

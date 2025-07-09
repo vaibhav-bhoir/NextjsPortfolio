@@ -1,12 +1,12 @@
-import 'tailwindcss/tailwind.css';
-import '../style/global.css';
 import { ThemeProvider } from 'next-themes';
-import { useRouter } from 'next/router';
-import PageLoader from '../components/PageLoader';
-import React, { useState, useEffect } from 'react';
-import Layout from '../components/Layout';
 import { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
+import 'tailwindcss/tailwind.css';
+import Layout from '../components/global/Layout';
 import Icons from '../components/Icons';
+import PageLoader from '../components/PageLoader';
+import '../style/global.css';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();

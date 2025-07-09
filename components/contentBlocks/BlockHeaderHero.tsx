@@ -1,5 +1,5 @@
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
-// import TypingEffect from '@/hooks/useTyping';
+import TypingEffect from '@/hooks/useTyping';
 import React, { useRef } from 'react';
 import CustomLink from '../CustomLink';
 import LottieFromCms from '../LottieFromCms';
@@ -70,7 +70,7 @@ const BlockHeaderHero: React.FC<BlockHeaderHeroProps> = ({
               data-aos="fade-down"
               data-aos-delay="300"
             >
-              {/* <TypingEffect strings={subheadings}></TypingEffect> */}
+              <TypingEffect strings={subheadings}></TypingEffect>
             </h1>
           )}
           {shouldRenderDescription && (

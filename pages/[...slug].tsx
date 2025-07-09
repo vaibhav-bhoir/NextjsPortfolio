@@ -1,6 +1,7 @@
 import { BLOCK_COMPONENTS } from '@/utils/blockMapper';
 import { client, getClient, getGlobalSettings, getPageBySlug } from '@/utils/contentful';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -17,8 +18,20 @@ export default function DynamicPage({ page, preview }: any) {
 
   const blocks = page.fields.pageBlocks || [];
 
+  const metaTitle = 'Vaibhav Bhoir';
+  const metaDescription = "Vaibhav Bhoir's Portfolio";
+
   return (
-    <div>
+    <>
+      <Head>
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </Head>
+
       {preview && (
         <div className="bg-yellow-300 text-black text-center p-1.5 fixed z-50 top-0 left-0 w-full">
           Preview Mode is ON -{' '}
@@ -27,6 +40,7 @@ export default function DynamicPage({ page, preview }: any) {
           </Link>
         </div>
       )}
+
       {blocks.map((block: any, idx: number) => {
         const blockType = block.sys.contentType.sys.id;
         const Component = BLOCK_COMPONENTS[blockType];
@@ -40,12 +54,12 @@ export default function DynamicPage({ page, preview }: any) {
         }
 
         return (
-          <section key={block.sys.id} className={`cc-${idx} cc-${blockType} py-16`}>
+          <section key={block.sys.id} className={`cc-${idx} cc-${blockType} py-10 lg:py-16`}>
             <Component {...block.fields} />
           </section>
         );
       })}
-    </div>
+    </>
   );
 }
 

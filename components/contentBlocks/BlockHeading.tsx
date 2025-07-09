@@ -17,7 +17,7 @@ const BlockHeading: React.FC<BlockHeadingProps> = ({
     return null;
   }
   return (
-    <div className="container relative w-full flex justify-center items-center mt-12">
+    <div className="container relative w-full flex justify-center items-center mt-6 lg:mt-12">
       <h1
         className="font-poppins text-6xl md:text-9xl lg:text-10xl tracking-tight absolute bottom-5 md:bottom-8 lg:bottom-11 text-transparent m-0"
         data-aos="fade-down"

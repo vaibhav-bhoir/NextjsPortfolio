@@ -2,10 +2,26 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import useScrollDirection from '../hooks/useScrollDirection';
-import brandLogo from '../public/icons/brand-logo.svg';
+import useScrollDirection from '../../hooks/useScrollDirection';
+// import brandLogo from '../../public/images/brand-logo.svg'; // Adjust the path as necessary
+
+export interface SiteLogo {
+  fields?: {
+    file: {
+      url: string;
+      details: {
+        image: {
+          width: number;
+          height: number;
+        };
+      };
+    };
+    title: string;
+  };
+}
 
 interface HeaderProps {
+  siteLogo?: SiteLogo;
   mainNavigation: {
     fields: {
       label: string;
@@ -14,7 +30,7 @@ interface HeaderProps {
   }[];
 }
 
-const Header: React.FC<HeaderProps> = ({ mainNavigation }) => {
+const Header: React.FC<HeaderProps> = ({ siteLogo, mainNavigation }) => {
   const [showNav, setShowNav] = useState(false);
   const router = useRouter();
 
@@ -28,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ mainNavigation }) => {
     setShowNav(!showNav);
   };
 
-  if (!mainNavigation || mainNavigation.length === 0) {
+  if (!mainNavigation || mainNavigation.length === 0 || !siteLogo) {
     return null; // Return null if mainNavigation is not provided or empty
   }
 
@@ -51,7 +67,14 @@ const Header: React.FC<HeaderProps> = ({ mainNavigation }) => {
         <div className="flex items-center justify-between">
           <Link href="/" className="inline-flex items-center mr-4 ">
             <div className="logo w-[125px] lg:w-[180px] h-auto">
-              <Image src={brandLogo} alt="logo" className="" />
+              {siteLogo?.fields?.file?.url && (
+                <Image
+                  src={siteLogo.fields.file.url}
+                  alt={siteLogo.fields.title || 'Site Logo'}
+                  width={siteLogo.fields.file.details.image.width}
+                  height={siteLogo.fields.file.details.image.height}
+                />
+              )}
             </div>
           </Link>
 
@@ -78,16 +101,17 @@ const Header: React.FC<HeaderProps> = ({ mainNavigation }) => {
         >
           {mainNavigation.map((data, index) => {
             const field = data.fields;
+
             return (
               <li
                 key={index}
                 onClick={toggleSidebar}
-                className={`${router.pathname === field.link ? 'active' : ''} ${
+                className={`${router?.asPath === field?.link ? 'active' : ''} ${
                   showNav ? 'fade' : ''
                 } text-7xl md:text-lg font-semibold items-center justify-center text-transform: uppercase relative transition-all after:block after:bg-primary-bg after:absolute after:bottom-[-8px] after:content-[''] after:h-1 after:left-0 after:transition-all after:duration-500 after:w-0 hover:after:w-full`}
               >
-                <Link href={field.link} className="text-primary hover:text-primary">
-                  {field.label}
+                <Link href={field?.link} className="text-primary hover:text-primary">
+                  {field?.label}
                 </Link>
               </li>
             );

@@ -71,6 +71,11 @@ const ExperienceItemsGrid: React.FC<ExperienceItemsGridProps> = ({ EXP_DATA = []
           </div>
         </div>
 
+        {/* filter count  */}
+        <div className="text-primary text-sm lg:text-base mb-4">
+          {filteredData.length} {filter === 'all' ? '' : filter} projects found
+        </div>
+
         <div className="flex flex-col gap-6 lg:gap-10 transition ease-in-out">
           {(filteredData as any).map((data: any, index: number) => (
             <WorkCover data={data} key={index} />
