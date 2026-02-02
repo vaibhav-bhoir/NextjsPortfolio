@@ -24,14 +24,21 @@ interface BlockSkillsProps {
 }
 
 const SkillBadge = ({ title }: Skill) => (
-  <div className="badge flex items-center gap-2 border rounded-full px-4 py-1 mb-2 mr-2">
-    <span>{title}</span>
+  <div className="group bg-main-bg border border-gray-200/50 dark:border-gray-700/50 rounded-lg px-4 py-3 mb-3 mr-3 transition-all duration-300 hover:shadow-lg hover:shadow-primary-bg/20 hover:scale-105 hover:border-primary-bg/50">
+    <div className="flex items-center gap-3">
+      <span className="text-sm font-medium text-primary group-hover:text-primary-bg transition-colors duration-300">
+        {title}
+      </span>
+    </div>
   </div>
 );
 
 const SkillGroup = ({ title, skills }: { title: string; skills: Skill[] }) => (
-  <div className="mb-8 last:mb-0">
-    <h3 className="text-lg font-medium mb-4">{title}</h3>
+  <div className="mb-10 last:mb-0">
+    <h3 className="text-xl font-semibold text-primary mb-4 relative">
+      {title}
+      <div className="absolute -bottom-1 left-0 w-12 h-0.5 bg-primary-bg rounded-full"></div>
+    </h3>
     <div className="flex flex-wrap">
       {skills.map((skill, idx) => (
         <SkillBadge key={idx} {...skill} />
@@ -55,16 +62,31 @@ const BlockSkills: React.FC<BlockSkillsProps> = ({ heading, skillGroups }) => {
 
   return (
     <div className="container">
-      <h2 className="text-2xl font-bold mb-8">{heading}</h2>
+      <div className="mb-12">
+        <h2 className="text-3xl font-bold text-primary mb-4 relative inline-block">
+          {heading}
+          <div className="absolute -bottom-2 left-0 w-20 h-1 bg-gradient-to-r from-primary-bg to-primary-bg/50 rounded-full"></div>
+        </h2>
+        <p className="text-primary/70 text-lg">
+          Technologies and tools I work with to build amazing projects
+        </p>
+      </div>
 
-      <SkillGroup title="CSS Frameworks" skills={frontend.css_frameworks} />
-      <SkillGroup title="JS Frameworks" skills={frontend.js_frameworks} />
-      <SkillGroup title="CMS" skills={cms} />
-      <SkillGroup title="Build dev tools" skills={build_dev_tools} />
-      <SkillGroup title="API Design Architectures" skills={api_design_architectures} />
-      <SkillGroup title="Database Management" skills={database_management} />
-      <SkillGroup title="Project Management" skills={project_management} />
-      <SkillGroup title="Others" skills={others} />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="space-y-8">
+          <SkillGroup title="CSS Frameworks" skills={frontend?.css_frameworks || []} />
+          <SkillGroup title="JS Frameworks" skills={frontend?.js_frameworks || []} />
+          <SkillGroup title="CMS" skills={cms || []} />
+          <SkillGroup title="Build dev tools" skills={build_dev_tools || []} />
+        </div>
+
+        <div className="space-y-8">
+          <SkillGroup title="API Design Architectures" skills={api_design_architectures || []} />
+          <SkillGroup title="Database Management" skills={database_management || []} />
+          <SkillGroup title="Project Management" skills={project_management || []} />
+          <SkillGroup title="Others" skills={others || []} />
+        </div>
+      </div>
     </div>
   );
 };
